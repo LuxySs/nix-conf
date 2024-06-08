@@ -45,8 +45,6 @@
     isNormalUser = true;
     description = "lulu";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
-    shell = pkgs.fish;
   };
 
   # Allow unfree packages
@@ -61,9 +59,6 @@
     ripgrep
     #  wget
   ];
-
-  # enable fish shell
-  programs.fish.enable = true;
 
   # enable Hyprland WM
   programs.hyprland.enable = true;
