@@ -14,20 +14,21 @@
     let
       lib = nixpkgs.lib; 
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
     nixosConfigurations = {
       nixTesMorts = lib.nixosSystem {
-        system = system;
+        inherit system;
         modules = [ ./configuration.nix ];
       };
     };
-    # homeConfiguration = {
-    #   nixTesMorts = lib.nixosSystem {
-    #     system = system;
-    #     modules = [ ./configuration.nix ];
-    #   };
-    # };
+    homeConfiguration = {
+      lulu = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home.nix ];
+      };
+    };
 
   };
 }
