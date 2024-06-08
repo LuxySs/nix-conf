@@ -7,6 +7,7 @@
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
   };
 
   programs.fuzzel = {
