@@ -2,6 +2,7 @@
 
   programs.bash = {
     enable = true;
+    enableCompletion = true;
   };
 
   programs.fish = {

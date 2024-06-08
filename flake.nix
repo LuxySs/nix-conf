@@ -20,7 +20,10 @@
     nixosConfigurations = {
       nixTesMorts = lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/desktop/configuration.nix ];
+        modules = [ 
+          ./hosts/desktop/configuration.nix
+          ./nixosModules
+        ];
       };
     };
     homeConfiguration = {
