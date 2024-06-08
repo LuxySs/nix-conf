@@ -9,6 +9,10 @@
     enable = true;
   };
 
+  programs.fuzzel = {
+    enable = true;
+  };
+
   programs.foot = {
     enable = true;
   };
