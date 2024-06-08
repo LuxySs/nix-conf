@@ -46,6 +46,7 @@
     description = "lulu";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ ];
+    shell = pkgs.fish;
   };
 
   # Allow unfree packages
@@ -54,11 +55,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
     home-manager
+    vim
+    git
+    ripgrep
     #  wget
   ];
+
+  # enable fish shell
+  programs.fish.enable = true;
 
   # enable Hyprland WM
   programs.hyprland.enable = true;

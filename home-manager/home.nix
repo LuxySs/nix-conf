@@ -17,10 +17,14 @@
     enable = true;
   };
 
-  programs.bash = {
+  programs.fish = {
     enable = true;
     shellAliases = {
       coucou_test = "echo coucou";
     };
+  };
+
+  programs.bash = {
+    enable = true;
   };
 }
