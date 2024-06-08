@@ -8,7 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./host/hyprland.nix
+      ./../../modules/default.nix
     ];
 
   # Bootloader.
@@ -63,8 +63,8 @@
   # enable Hyprland WM
   programs.hyprland.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" ];
-
+  # enable flakes and nix-command
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
