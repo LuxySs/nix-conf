@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 {
-
-  imports = [./programs/hyprland.nix];
-
+  imports = [
+    ./programs/hyprland.nix
+    ./services/openssh.nix
+    
+  ];
 }
 
