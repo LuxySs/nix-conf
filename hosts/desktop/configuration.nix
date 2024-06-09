@@ -8,9 +8,8 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./main-user.nix
     ];
-
-  programs.hyprland.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -34,13 +33,6 @@
 
   # Configure console keymap
   console.keyMap = "us-acentos";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lulu = {
-    isNormalUser = true;
-    description = "lulu";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

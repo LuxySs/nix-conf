@@ -3,7 +3,7 @@
 {
   imports = [
     ./services/openssh.nix
-    
+    ./programs/hyprland.nix
   ];
 }
 

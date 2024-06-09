@@ -7,5 +7,6 @@
     ./shells/default.nix
     ./terminals/default.nix
     ./multiplexers/default.nix
+    ./hyprland/default.nix
   ];
 }
