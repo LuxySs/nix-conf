@@ -11,6 +11,10 @@
       ./main-user.nix
     ];
 
+  main-user.enable = true;
+  main-user.userName = "lulu";
+  main-user.extraGroups = [ "wheel" "NetworkManager" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
