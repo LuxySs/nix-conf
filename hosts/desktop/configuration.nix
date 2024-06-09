@@ -1,58 +1,18 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
       ./main-user.nix
+      ../../nixosModules/locale/locale.nix
     ];
 
   main-user.enable = true;
   main-user.userName = "lulu";
   main-user.extraGroups = [ "wheel" "NetworkManager" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixTesMorts";  # Enable networking
-
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Brussels";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
-  };
-
-  # Configure console keymap
-  console.keyMap = "us-acentos";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    home-manager
-    vim
-    git
-    ripgrep
-    #  wget
-  ];
-
-  # enable flakes and nix-command
-  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+  locale.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

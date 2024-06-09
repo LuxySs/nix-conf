@@ -14,26 +14,31 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let
+      hostName = "NixTesMorts";
       lib = nixpkgs.lib; 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    nixosConfigurations = {
-      nixTesMorts = lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./hosts/desktop/configuration.nix
-          ./nixosModules
-        ];
+      nixosConfigurations = {
+        ${hostName} = lib.nixosSystem {
+          inherit system;
+          modules = [ 
+            ({ config, pkgs, ... }: {
+              networking.hostName = hostName;
+            })
+            ./hosts/desktop/configuration.nix
+            ./nixosModules
+          ];
+        };
       };
-    };
-    homeConfiguration = {
-      lulu = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
-      };
-    };
 
-  };
+      homeConfigurations = {
+        lulu = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home.nix ];
+        };
+      };
+    };
 }
+
