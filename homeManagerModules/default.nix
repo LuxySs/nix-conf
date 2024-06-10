@@ -4,11 +4,11 @@
     ./bars/bars.nix
     ./browsers/browsers.nix
     ./editors/editors.nix
-    ./terminals/terminals.nix
-    ./wm/wm.nix
     ./launchers/launchers.nix
     ./multiplexers/multiplexers.nix
-    ./shells/default.nix
+    ./shells/shells.nix
+    ./terminals/terminals.nix
+    ./wm/wm.nix
   ];
 
   options = {
@@ -31,6 +31,11 @@
     multiplexers = {
       enable = lib.mkEnableOption "Enable multiplexers module";
       enableTmux = lib.mkEnableOption "Enable tmux multiplexer";
+    };
+    shells = {
+      enable = lib.mkEnableOption "Enable shells module";
+      enableBash = lib.mkEnableOption "Enable bash shell";
+      enableFish = lib.mkEnableOption "Enable fish shell";
     };
     terminals = {
       enable = lib.mkEnableOption "Enable terminals module";
@@ -57,6 +62,10 @@
 
     multiplexers.enable = true;
     multiplexers.enableTmux = true;
+
+    shells.enable = true;
+    shells.enableBash = true;
+    shells.enableFish = true;
 
     terminals.enable = true;
     terminals.enableFoot = true;
