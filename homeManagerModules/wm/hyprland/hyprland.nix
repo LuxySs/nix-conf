@@ -11,14 +11,261 @@ in
   };
 
   config = mkIf cfg.enable {
-    wayland.windowManager.hyprland = {
-      enable = true;
-      settings = {
-        "$mod" = "SUPER";
-        bind = [
-          "$mod, RETURN, exec, foot"
+    wayland.windowManager.hyprland.enable = true;
+
+    wayland.windowManager.hyprland.settings = {
+
+      # desktop_hyprland.conf
+
+      env = [
+        "WLR_DRM_DEVICES,/dev/dri/card1"
+        "QT_QPA_PLATFORM,wayland"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
+      ];
+      exec-once = "hyprpaper & waybar";
+   
+      monitor = "DP-2,3440x1440@99.98Hz,0x0,1";
+
+ 
+      # conf/animations.conf
+
+      animation = {
+        enabled = true;
+        bezier = [
+          "wind, 0.05, 0.9, 0.1, 1"
+          "winIn, 0.1, 1.1, 0.1, 1.1"
+          "winOut, 0.3, -0.3, 0, 1"
+          "liner, 1, 1, 1, 1"
         ];
+        animation = "windows, 1, 6, wind, slide";
       };
+
+
+      # conf/decoration.conf
+
+      decoration = {
+        # rounding = 1#
+        blur = {
+          enabled = true;
+          size = 6;
+          passes = 3;
+          new_optimizations = "on";
+          ignore_opacity = true;
+          xray = true;
+          blurls = "waybar";
+        };
+
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+        fullscreen_opacity = 1.0;
+      
+        drop_shadow = true;
+        shadow_range = 30;
+        shadow_render_power = 3;
+        "col.shadow" = "0x66000000";
+      }; 
+
+
+      # conf/desktop_keyboard.conf
+
+      input = { 
+        kb_layout = "us";
+        kb_variant = "intl";
+        kb_options = "caps:swapescape";
+      
+        follow_mouse = 1;
+      
+        touchpad = {
+          natural_scroll = "no";
+        };
+        
+        sensitivity = -0.4;
+        accel_profile = "flat";
+      };
+
+
+      # conf/desktop_workspacerules.conf
+
+      workspace = [
+        "name:1, monitor:DP-2"
+        "name:2, monitor:DP-2"
+        "name:3, monitor:DP-2"
+        "name:4, monitor:DP-2"
+        "name:5, monitor:DP-2"
+        "name:6, monitor:DP-2"
+        "name:7, monitor:DP-2"
+        "name:8, monitor:DP-2"
+        "name:9, monitor:DP-2"
+        "name:10, monitor:DP-2"
+      ];
+
+
+      # conf/keybindings.conf
+
+      "$mod" = "SUPER";
+      bind = [
+        "$mod, Print, exec, ~/.config/hypr/scripts/captureArea_buffer.sh"
+        "$mod SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
+        
+        "$mod SHIFT, S, exec, ~/.config/hypr/scripts/notes_screenshot/notes_screenshot.sh"
+        
+        "$mod SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
+        
+        "$mod, M, exec, pkill -x spt || foot --title spt -e spt"
+        
+        "$mod SHIFT, M, exec, pkill -x cava || foot --title cava -e /usr/bin/cava"
+        
+        "$mod, O, exec, pkill -x ags || ags"
+        "$mod, End, exec, swaylock --config ~/swaylock/config"
+        
+        "$mod, RETURN, exec, foot"
+        "$mod, E, exec, foot -e /usr/bin/yazi"
+        "$mod SHIFT, E, exec, nautilus"
+        "$mod, B, exec, firefox"
+        "$mod SHIFT, B, exec, firefox --private-window"
+        "$mod, N, exec, emacsclient -c -a 'emacs'"
+        "$mod, D, exec, pkill -x fuzzel || fuzzel "
+        "$mod, S, exec, foot -e nvim"
+        "$mod, C, exec, foot -e qalc"
+        
+        "$mod SHIFT CTRL, End, exit,"
+        
+        "ALT, H, exec, wtype -P left"
+        "ALT, L, exec, wtype -P right"
+        "ALT, J, exec, wtype -P down"
+        "ALT, K, exec, wtype -P up"
+        
+        "$mod, Space, fullscreen"
+        "$mod SHIFT, Q, killactive"
+        "$mod, T, togglefloating"
+        "$mod SHIFT, T, exec, hyprctl dispatch workspaceopt allfloat"
+        
+        "ALT, TAB, bringactivetotop"
+        
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
+        
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
+        
+        # qwerty binds #
+        
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
+        "$mod, 0, workspace, 10"
+        
+        "$mod SHIFT, 1, movetoworkspacesilent, 1"
+        "$mod SHIFT, 2, movetoworkspacesilent, 2"
+        "$mod SHIFT, 3, movetoworkspacesilent, 3"
+        "$mod SHIFT, 4, movetoworkspacesilent, 4"
+        "$mod SHIFT, 5, movetoworkspacesilent, 5"
+        "$mod SHIFT, 6, movetoworkspacesilent, 6"
+        "$mod SHIFT, 7, movetoworkspacesilent, 7"
+        "$mod SHIFT, 8, movetoworkspacesilent, 8"
+        "$mod SHIFT, 9, movetoworkspacesilent, 9"
+        "$mod SHIFT, 0, movetoworkspacesilent, 10"
+        
+        # azerty binds #
+        
+        "$mod, ampersand, workspace, 1"
+        "$mod, eacute, workspace, 2"
+        "$mod, quotedbl, workspace, 3"
+        "$mod, apostrophe, workspace, 4"
+        "$mod, parenleft, workspace, 5"
+        "$mod, section, workspace, 6"
+        "$mod, egrave, workspace, 7"
+        "$mod, exclam, workspace, 8"
+        "$mod, ccedilla, workspace, 9"
+        "$mod, agrave, workspace, 10"
+        
+        "$mod SHIFT, ampersand, movetoworkspacesilent, 1"
+        "$mod SHIFT, eacute, movetoworkspacesilent, 2"
+        "$mod SHIFT, quotedbl, movetoworkspacesilent, 3"
+        "$mod SHIFT, apostrophe, movetoworkspacesilent, 4"
+        "$mod SHIFT, parenleft, movetoworkspacesilent, 5"
+        "$mod SHIFT, section, movetoworkspacesilent, 6"
+        "$mod SHIFT, egrave, movetoworkspacesilent, 7"
+        "$mod SHIFT, exclam, movetoworkspacesilent, 8"
+        "$mod SHIFT, ccedilla, movetoworkspacesilent, 9"
+        "$mod SHIFT, agrave, movetoworkspacesilent, 10"
+      ];
+
+      binde = [
+        # move focus
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
+
+        # resize
+        "$mainMod CTRL, l, resizeactive, 100 0"
+        "$mainMod CTRL, h, resizeactive, -100 0"
+        "$mainMod CTRL, k, resizeactive, 0 -100"
+        "$mainMod CTRL, j, resizeactive, 0 100"
+
+        # audio
+        "ALT, up, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        "ALT, down, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+
+        # brightness
+        ",XF86MonBrightnessDown, exec, brightnessctl set 3%-"
+        ",XF86MonBrightnessUp, exec, brightnessctl set 3%+"
+      ];
+
+      bindm = [ 
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
+
+      gestures.workspace_swipe = false;
+
+
+      # conf/layouts.conf
+
+      dwindle = {
+          pseudotile = true;
+          preserve_split = true;
+      };
+      master.new_is_master = true;
+
+
+      # conf/misc.conf
+      misc = {
+          "disable_hyprland_logo" = true;
+          "disable_splash_rendering" = true;
+      };
+
+
+      # conf/window.conf
+
+      general = {
+          gaps_in = 5;
+          gaps_out = 7;
+          border_size = 2;
+          "col.active_border" = "rgba(00bdffde) rgba(ee0000da) 45deg";
+          "col.inactive_border" = "rgba(eeeeee00)";
+          layout = "dwindle";
+      };
+
+
+      # conf/windowrules.conf
+
+      windowrulev2 = [
+        "rounding 3, class:(Alacritty);"
+        "rounding 3, class:(foot);"
+        "float, class:(Nautilus);"
+      ];
     };
   };
 }
