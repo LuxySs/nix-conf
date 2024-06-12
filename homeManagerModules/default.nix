@@ -11,67 +11,45 @@
     ./wm/wm.nix
   ];
 
-  options = {
-    bars = {
-      enable = lib.mkEnableOption "Enable browsers module";
-      enableWaybar = lib.mkEnableOption "Enable firefox browser";
-    };
-    browsers = {
-      enable = lib.mkEnableOption "Enable browsers module";
-      enableFirefox = lib.mkEnableOption "Enable firefox browser";
-    };
-    editors = {
-      enable = lib.mkEnableOption "Enable editors module";
-      enableNeovim = lib.mkEnableOption "Enable neovim editor";
-    };
-    launchers = {
-      enable = lib.mkEnableOption "Enable launchers module";
-      enableFuzzel = lib.mkEnableOption "Enable fuzzel launcher";
-    };
-    multiplexers = {
-      enable = lib.mkEnableOption "Enable multiplexers module";
-      enableTmux = lib.mkEnableOption "Enable tmux multiplexer";
-    };
-    shells = {
-      enable = lib.mkEnableOption "Enable shells module";
-      enableBash = lib.mkEnableOption "Enable bash shell";
-      enableFish = lib.mkEnableOption "Enable fish shell";
-    };
-    terminals = {
-      enable = lib.mkEnableOption "Enable terminals module";
-      enableFoot = lib.mkEnableOption "Enable foot terminal";
-    };
-    windowManagers = {
-      enable = lib.mkEnableOption "Enable window managers";
-      enableHyprland = lib.mkEnableOption "Enable Hyprland window manager";
-    };
+  bars = {
+    enable = true;
+    enableWaybar = true;
   };
 
-  config = {
-    bars.enable = true;
-    bars.enableWaybar = true;
-
-    browsers.enable = true;
-    browsers.enableFirefox = true;
-
-    editors.enable = true;
-    editors.enableNeovim = true;
-
-    launchers.enable = true;
-    launchers.enableFuzzel = true;
-
-    multiplexers.enable = true;
-    multiplexers.enableTmux = true;
-
-    shells.enable = true;
-    shells.enableBash = true;
-    shells.enableFish = true;
-
-    terminals.enable = true;
-    terminals.enableFoot = true;
-
-    windowManagers.enable = true;
-    windowManagers.enableHyprland = true;
+  browsers = {
+    enable = true;
+    enableFirefox = true;
   };
+
+  editors = {
+    enable = true;
+    enableNeovim = true;
+  };
+
+  launchers = {
+    enable = true;
+    enableFuzzel = true;
+  };
+
+  multiplexers = {
+    enable = true;
+    enableTmux = true;
+  };
+
+  shells = {
+    enable = true;
+    enableBash = true;
+    enableFish = true;
+  };
+
+  terminals = {
+    enable = true;
+    enableFoot = true;
+  };
+
+  windowManagers = {
+    enable = true;
+    enableHyprland = true;
+  };
+
 }
-

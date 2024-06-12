@@ -6,10 +6,8 @@ let
   cfg = config.footModule;
 in
 {
-  options = {
-    footModule = {
+  options.footModule = {
       enable = mkEnableOption "Enable Foot";
-    };
   };
 
   config = mkIf cfg.enable {

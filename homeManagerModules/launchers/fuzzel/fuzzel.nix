@@ -6,10 +6,8 @@ let
   cfg = config.fuzzelModule;
 in
 {
-  options = {
-    fuzzelModule = {
-      enable = lib.mkEnableOption "Enable Fuzzel";
-    };
+  options.fuzzelModule = {
+      enable = lib.mkEnableOption "Enable fuzzel";
   };
 
   config = mkIf cfg.enable {

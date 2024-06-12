@@ -6,10 +6,8 @@ let
   cfg = config.hyprlandModule;
 in
 {
-  options = {
-    hyprlandModule = {
+  options.hyprlandModule = {
       enable = lib.mkEnableOption "Enable Hyprland";
-    };
   };
 
   config = mkIf cfg.enable {

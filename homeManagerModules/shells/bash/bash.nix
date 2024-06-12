@@ -6,10 +6,8 @@ let
   cfg = config.bashModule;
 in
 {
-  options = {
-    bashModule = {
+  options.bashModule = {
       enable = lib.mkEnableOption "Enable bash";
-    };
   };
 
   config = mkIf cfg.enable {

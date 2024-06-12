@@ -6,10 +6,8 @@ let
   cfg = config.fishModule;
 in
 {
-  options = {
-    fishModule = {
-      enable = lib.mkEnableOption "Enable fish";
-    };
+  options.fishModule = {
+    enable = lib.mkEnableOption "Enable fish";
   };
 
   config = mkIf cfg.enable {
