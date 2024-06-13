@@ -21,7 +21,7 @@ in
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
-      # exec-once = "hyprpaper & waybar";
+      exec-once = "swww-daemon";
    
       monitor = "DP-3,3440x1440@99.98Hz,0x0,1";
 
@@ -85,16 +85,16 @@ in
       # conf/desktop_workspacerules.conf
 
       workspace = [
-        "name:1, monitor:DP-2"
-        "name:2, monitor:DP-2"
-        "name:3, monitor:DP-2"
-        "name:4, monitor:DP-2"
-        "name:5, monitor:DP-2"
-        "name:6, monitor:DP-2"
-        "name:7, monitor:DP-2"
-        "name:8, monitor:DP-2"
-        "name:9, monitor:DP-2"
-        "name:10, monitor:DP-2"
+        "name:1, monitor:DP-3"
+        "name:2, monitor:DP-3"
+        "name:3, monitor:DP-3"
+        "name:4, monitor:DP-3"
+        "name:5, monitor:DP-3"
+        "name:6, monitor:DP-3"
+        "name:7, monitor:DP-3"
+        "name:8, monitor:DP-3"
+        "name:9, monitor:DP-3"
+        "name:10, monitor:DP-3"
       ];
 
 
@@ -173,27 +173,27 @@ in
         
         # azerty binds #
         
-        "SUPER, ampersand, workspace, 1"
-        "SUPER, eacute, workspace, 2"
-        "SUPER, quotedbl, workspace, 3"
-        "SUPER, apostrophe, workspace, 4"
-        "SUPER, parenleft, workspace, 5"
-        "SUPER, section, workspace, 6"
-        "SUPER, egrave, workspace, 7"
-        "SUPER, exclam, workspace, 8"
-        "SUPER, ccedilla, workspace, 9"
-        "SUPER, agrave, workspace, 10"
-        
-        "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
-        "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
-        "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"
-        "SUPER SHIFT, apostrophe, movetoworkspacesilent, 4"
-        "SUPER SHIFT, parenleft, movetoworkspacesilent, 5"
-        "SUPER SHIFT, section, movetoworkspacesilent, 6"
-        "SUPER SHIFT, egrave, movetoworkspacesilent, 7"
-        "SUPER SHIFT, exclam, movetoworkspacesilent, 8"
-        "SUPER SHIFT, ccedilla, movetoworkspacesilent, 9"
-        "SUPER SHIFT, agrave, movetoworkspacesilent, 10"
+         "SUPER, ampersand, workspace, 1"
+         "SUPER, eacute, workspace, 2"
+         "SUPER, quotedbl, workspace, 3"
+         "SUPER, apostrophe, workspace, 4"
+         "SUPER, parenleft, workspace, 5"
+         "SUPER, section, workspace, 6"
+         "SUPER, egrave, workspace, 7"
+         "SUPER, exclam, workspace, 8"
+         "SUPER, ccedilla, workspace, 9"
+         "SUPER, agrave, workspace, 10"
+         
+         "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
+         "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
+         "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"
+         "SUPER SHIFT, apostrophe, movetoworkspacesilent, 4"
+         "SUPER SHIFT, parenleft, movetoworkspacesilent, 5"
+         "SUPER SHIFT, section, movetoworkspacesilent, 6"
+         "SUPER SHIFT, egrave, movetoworkspacesilent, 7"
+         "SUPER SHIFT, exclam, movetoworkspacesilent, 8"
+         "SUPER SHIFT, ccedilla, movetoworkspacesilent, 9"
+         "SUPER SHIFT, agrave, movetoworkspacesilent, 10"
       ];
 
       binde = [

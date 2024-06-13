@@ -12,21 +12,21 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      hostName = "NixTesMorts";
-      lib = nixpkgs.lib; 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
-        ${hostName} = lib.nixosSystem {
-          inherit system;
+        NixTesMorts = nixpkgs.lib.nixosSystem {
+          specialArgs = { 
+            inherit inputs; 
+          };
+          
           modules = [ 
-            ({ config, pkgs, ... }: {
-              networking.hostName = hostName;
-            })
+            ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts" ; })
+
             ./hosts/desktop/configuration.nix
             ./nixosModules
           ];

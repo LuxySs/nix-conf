@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ./wm/wm.nix
+    ./hyprDE/default.nix
   ];
 
-  windowManagers = {
+  hyprDE = {
     enable = true;
     enableHyprland = true;
+    enableSwww = true;
   };
 }

@@ -38,19 +38,14 @@
     enableTmux = true;
   };
 
-  prompts = {
-    enable = true;
-    enableStarship = true;
-  };
-
   nerdfonts = {
     enable = true;
   };
 
-  # prompts = {
-  #   enable = true;
-  #   enableStarship = true;
-  # };
+  prompts = {
+    enable = true;
+    enableStarship = true;
+  };
 
   shells = {
     enable = true;
