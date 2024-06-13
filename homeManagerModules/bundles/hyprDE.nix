@@ -16,6 +16,8 @@
       enableFirefox = true;
     };
 
+    btopModule.enable = true;
+
     editors = {
       enable = true;
       enableNeovim = true;

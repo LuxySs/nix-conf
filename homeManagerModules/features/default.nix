@@ -4,6 +4,7 @@
   imports = [
     ./bars/bars.nix
     ./browsers/browsers.nix
+    ./btop.nix
     ./editors/editors.nix
     ./fileManagers/fileManagers.nix
     ./launchers/launchers.nix

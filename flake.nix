@@ -10,9 +10,11 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -26,15 +28,15 @@
           
           modules = [ 
             ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts" ; })
-
             ./hosts/desktop/configuration.nix
             ./nixosModules
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };
 
       homeConfigurations = {
-        lulu = home-manager.lib.homeManagerConfiguration {
+        lulu = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home.nix ];
         };

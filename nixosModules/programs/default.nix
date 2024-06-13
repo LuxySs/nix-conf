@@ -5,6 +5,7 @@
     ./hyprDE/default.nix
     ./audio/pavucontrol.nix
     ./spotify.nix
+    ./nautilus.nix
   ];
 
   pavucontrolModule = {
@@ -18,4 +19,5 @@
   };
 
   spotifyModule.enable = true;
+  nautilusModule.enable = true;
 }
