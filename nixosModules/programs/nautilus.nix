@@ -13,6 +13,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       gnome.adwaita-icon-theme 
+      gnome.nautilus 
     ];
   };
 }
