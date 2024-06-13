@@ -4,6 +4,7 @@
   imports = [
     ./hyprDE/default.nix
     ./audio/pavucontrol.nix
+    ./spotify.nix
   ];
 
   pavucontrolModule = {
@@ -15,4 +16,6 @@
     enableHyprland = true;
     enableSwww = true;
   };
+
+  spotifyModule.enable = true;
 }

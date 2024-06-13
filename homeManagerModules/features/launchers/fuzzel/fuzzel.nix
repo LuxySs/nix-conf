@@ -16,10 +16,11 @@ in
       main = {
         terminal = "${pkgs.foot}/bin/foot";
         layer = "overlay";
-        prompt = "❯ ";
-        lines = 10;
+        prompt = "'❯ '";
+        width = 65;
+        lines = 13;
         line-height = 20;
-        font = "IosevkaTermNerdFont:size=13";
+        font = "IosevkaTermNerdFont:weight=bold:size=15";
       };
       colors = {
         background = "24273add";
