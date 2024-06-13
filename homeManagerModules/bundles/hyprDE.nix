@@ -21,6 +21,11 @@
       enableNeovim = true;
     };
 
+    fileManagers = {
+      enable = true;
+      enableYazi = true;
+    };
+
     launchers = {
       enable = true;
       enableFuzzel = true;
@@ -50,6 +55,9 @@
       enable = true;
       enableFoot = true;
     };
+
+    # this one makes takes much time to install
+    webcordModule.enable = true;
 
     windowManagers = {
       enable = true;
