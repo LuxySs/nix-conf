@@ -58,8 +58,8 @@
       enableFoot = true;
     };
 
-    # this one makes takes much time to install
-    webcordModule.enable = true;
+    ## there must be a mistake with this one
+    # webcordModule.enable = true;
 
     windowManagers = {
       enable = true;

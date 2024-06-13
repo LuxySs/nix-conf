@@ -15,16 +15,14 @@ in
     programs.foot.settings = {
       main = {
         term = "xterm-256color";
-        font = "IosevkaTermNerdFont:size=13";
-        dpi-aware = "yes";
+        font = mkForce "IosevkaTermNerdFont:size=13";
+        dpi-aware = mkForce "yes";
       };
       colors = {
-        alpha="0.3";
-        # foreground="222436";
-        # background="2d3f76";
+        alpha = mkDefault "0.3";
       };
       cursor = {
-        color = "000000 ffffff";
+        color = mkDefault "000000 ffffff";
       };
       mouse = {
         hide-when-typing = "yes";

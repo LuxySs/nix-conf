@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "who cares ?";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -10,9 +10,11 @@
     };
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,23 +22,14 @@
     {
       nixosConfigurations = {
         NixTesMorts = nixpkgs.lib.nixosSystem {
-          specialArgs = { 
-            inherit inputs; 
-          };
-          
+          specialArgs = {inherit inputs;};
           modules = [ 
-            ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts" ; })
-
+            ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts"; })
             ./hosts/desktop/configuration.nix
-            ./nixosModules
+            ./nixosModules/default.nix
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
           ];
-        };
-      };
-
-      homeConfigurations = {
-        lulu = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ];
         };
       };
     };

@@ -60,7 +60,7 @@ in
         drop_shadow = true;
         shadow_range = 30;
         shadow_render_power = 3;
-        "col.shadow" = "0x66000000";
+        "col.shadow" = mkDefault "0x66000000";
       }; 
 
 
@@ -250,8 +250,8 @@ in
           gaps_in = 5;
           gaps_out = 7;
           border_size = 2;
-          "col.active_border" = "rgba(00bdffde) rgba(ee0000da) 45deg";
-          "col.inactive_border" = "rgba(eeeeee00)";
+          "col.active_border" = mkDefault "rgba(00bdffde) rgba(ee0000da) 45deg";
+          "col.inactive_border" = mkDefault "rgba(eeeeee00)";
           layout = "dwindle";
       };
 

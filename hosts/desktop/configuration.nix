@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports =
@@ -6,13 +6,24 @@
       ./hardware-configuration.nix
       ./main-user.nix
       ../../nixosModules/locale/locale.nix
+      inputs.home-manager.nixosModules.default
     ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   main-user.enable = true;
   main-user.userName = "lulu";
   main-user.extraGroups = [ "wheel" "NetworkManager" ];
 
   locale.enable = true;
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "lulu" = import ./home.nix;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -23,3 +34,4 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
+
