@@ -15,7 +15,7 @@ in
     programs.foot.settings = {
       main = {
         term = "xterm-256color";
-        font = "font=Iosevka Nerd Font:size=13";
+        font = "IosevkaTermNerdFont:size=13";
         dpi-aware = "yes";
       };
       mouse = {
@@ -23,6 +23,9 @@ in
       };
       cursor = {
         color = "000000 ffffff";
+      };
+      tweak = {
+       font-monospace-warn="no";
       };
     };
   };

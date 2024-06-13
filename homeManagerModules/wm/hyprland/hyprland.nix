@@ -18,7 +18,6 @@ in
       # desktop_hyprland.conf
 
       env = [
-        # "WLR_DRM_DEVICES,/dev/dri/card1"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
@@ -205,10 +204,10 @@ in
         "SUPER, j, movefocus, d"
 
         # resize
-        "$mainMod CTRL, l, resizeactive, 100 0"
-        "$mainMod CTRL, h, resizeactive, -100 0"
-        "$mainMod CTRL, k, resizeactive, 0 -100"
-        "$mainMod CTRL, j, resizeactive, 0 100"
+        "SUPER CTRL, l, resizeactive, 100 0"
+        "SUPER CTRL, h, resizeactive, -100 0"
+        "SUPER CTRL, k, resizeactive, 0 -100"
+        "SUPER CTRL, j, resizeactive, 0 100"
 
         # audio
         "ALT, up, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"

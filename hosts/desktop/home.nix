@@ -10,9 +10,9 @@
     stateVersion = "24.11";
   };
 
-  home.packages = with pkgs; [  
-    (nerdfonts.override { fonts = [ "FiraCode" "IosevkaTerm" ]; })
-    (iosevka-bin.override { variant = "Slab";})
-    iosevka-bin
-  ];
+  # home.packages = with pkgs; [  
+  #   (nerdfonts.override { fonts = [ "FiraCode" "IosevkaTerm" ]; })
+  #   (iosevka-bin.override { variant = "Slab";})
+  #   iosevka-bin
+  # ];
 }

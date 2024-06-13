@@ -3,16 +3,18 @@
 with lib;
 
 let
-  cfg = config.nerdFontsModule;
+  cfg = config.nerdfonts;
 in
 {
-  options.nerdFontsModule = {
+  options.nerdfonts = {
       enable = lib.mkEnableOption "Enable nerd fonts";
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs [
-      iosevka-nerd
+    home.packages = with pkgs; [  
+      (nerdfonts.override { fonts = [ "FiraCode" "IosevkaTerm" ]; })
+      # (iosevka-bin.override { variant = "Slab";})
+      # iosevka-bin
     ];
   };
 }
