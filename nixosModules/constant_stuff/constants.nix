@@ -9,6 +9,7 @@
     git
     ripgrep
     tree
+    gcc
   ];
 
   # Allow unfree packages

@@ -11,6 +11,14 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.neovim.enable = true;
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      extraPackages = with pkgs; [
+        wl-clipboard
+        nil
+        lua-language-server
+      ];
+    };
   };
 }

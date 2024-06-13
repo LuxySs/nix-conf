@@ -6,6 +6,7 @@
     ./editors/editors.nix
     ./launchers/launchers.nix
     ./multiplexers/multiplexers.nix
+    # ./prompts/prompts.nix
     ./shells/shells.nix
     ./terminals/terminals.nix
     ./wm/wm.nix
@@ -36,6 +37,11 @@
     enableTmux = true;
   };
 
+  # prompts = {
+  #   enable = true;
+  #   enableStarship = true;
+  # };
+
   shells = {
     enable = true;
     enableBash = true;
@@ -51,5 +57,4 @@
     enable = true;
     enableHyprland = true;
   };
-
 }

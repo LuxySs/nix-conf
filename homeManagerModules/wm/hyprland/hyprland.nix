@@ -18,19 +18,18 @@ in
       # desktop_hyprland.conf
 
       env = [
-        "WLR_DRM_DEVICES,/dev/dri/card1"
+        # "WLR_DRM_DEVICES,/dev/dri/card1"
         "QT_QPA_PLATFORM,wayland"
         "QT_QPA_PLATFORMTHEME,qt6ct"
       ];
-      exec-once = "hyprpaper & waybar";
+      # exec-once = "hyprpaper & waybar";
    
-      monitor = "DP-2,3440x1440@99.98Hz,0x0,1";
+      monitor = "DP-3,3440x1440@99.98Hz,0x0,1";
 
  
       # conf/animations.conf
 
       animation = {
-        enabled = true;
         bezier = [
           "wind, 0.05, 0.9, 0.1, 1"
           "winIn, 0.1, 1.1, 0.1, 1.1"
@@ -102,109 +101,108 @@ in
 
       # conf/keybindings.conf
 
-      "$mod" = "SUPER";
       bind = [
-        "$mod, Print, exec, ~/.config/hypr/scripts/captureArea_buffer.sh"
-        "$mod SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
+        "SUPER, Print, exec, ~/.config/hypr/scripts/captureArea_buffer.sh"
+        "SUPER SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
         
-        "$mod SHIFT, S, exec, ~/.config/hypr/scripts/notes_screenshot/notes_screenshot.sh"
+        "SUPER SHIFT, S, exec, ~/.config/hypr/scripts/notes_screenshot/notes_screenshot.sh"
         
-        "$mod SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
+        "SUPER SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
         
-        "$mod, M, exec, pkill -x spt || foot --title spt -e spt"
+        "SUPER, M, exec, pkill -x spt || foot --title spt -e spt"
         
-        "$mod SHIFT, M, exec, pkill -x cava || foot --title cava -e /usr/bin/cava"
+        "SUPER SHIFT, M, exec, pkill -x cava || foot --title cava -e /usr/bin/cava"
         
-        "$mod, O, exec, pkill -x ags || ags"
-        "$mod, End, exec, swaylock --config ~/swaylock/config"
+        "SUPER, O, exec, pkill -x ags || ags"
+        "SUPER, End, exec, swaylock --config ~/swaylock/config"
         
-        "$mod, RETURN, exec, foot"
-        "$mod, E, exec, foot -e /usr/bin/yazi"
-        "$mod SHIFT, E, exec, nautilus"
-        "$mod, B, exec, firefox"
-        "$mod SHIFT, B, exec, firefox --private-window"
-        "$mod, N, exec, emacsclient -c -a 'emacs'"
-        "$mod, D, exec, pkill -x fuzzel || fuzzel "
-        "$mod, S, exec, foot -e nvim"
-        "$mod, C, exec, foot -e qalc"
+        "SUPER, RETURN, exec, foot"
+        "SUPER, E, exec, foot -e /usr/bin/yazi"
+        "SUPER SHIFT, E, exec, nautilus"
+        "SUPER, B, exec, firefox"
+        "SUPER SHIFT, B, exec, firefox --private-window"
+        "SUPER, N, exec, emacsclient -c -a 'emacs'"
+        "SUPER, D, exec, pkill -x fuzzel || fuzzel "
+        "SUPER, S, exec, foot -e nvim"
+        "SUPER, C, exec, foot -e qalc"
         
-        "$mod SHIFT CTRL, End, exit,"
+        "SUPER SHIFT CTRL, End, exit,"
         
         "ALT, H, exec, wtype -P left"
         "ALT, L, exec, wtype -P right"
         "ALT, J, exec, wtype -P down"
         "ALT, K, exec, wtype -P up"
         
-        "$mod, Space, fullscreen"
-        "$mod SHIFT, Q, killactive"
-        "$mod, T, togglefloating"
-        "$mod SHIFT, T, exec, hyprctl dispatch workspaceopt allfloat"
+        "SUPER, Space, fullscreen"
+        "SUPER SHIFT, Q, killactive"
+        "SUPER, T, togglefloating"
+        "SUPER SHIFT, T, exec, hyprctl dispatch workspaceopt allfloat"
         
         "ALT, TAB, bringactivetotop"
         
-        "$mod SHIFT, H, movewindow, l"
-        "$mod SHIFT, L, movewindow, r"
-        "$mod SHIFT, K, movewindow, u"
-        "$mod SHIFT, J, movewindow, d"
+        "SUPER SHIFT, H, movewindow, l"
+        "SUPER SHIFT, L, movewindow, r"
+        "SUPER SHIFT, K, movewindow, u"
+        "SUPER SHIFT, J, movewindow, d"
         
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
+        "SUPER, mouse_down, workspace, e+1"
+        "SUPER, mouse_up, workspace, e-1"
         
         # qwerty binds #
         
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
+        "SUPER, 1, workspace, 1"
+        "SUPER, 2, workspace, 2"
+        "SUPER, 3, workspace, 3"
+        "SUPER, 4, workspace, 4"
+        "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
+        "SUPER, 8, workspace, 8"
+        "SUPER, 9, workspace, 9"
+        "SUPER, 0, workspace, 10"
         
-        "$mod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mod SHIFT, 0, movetoworkspacesilent, 10"
+        "SUPER SHIFT, 1, movetoworkspacesilent, 1"
+        "SUPER SHIFT, 2, movetoworkspacesilent, 2"
+        "SUPER SHIFT, 3, movetoworkspacesilent, 3"
+        "SUPER SHIFT, 4, movetoworkspacesilent, 4"
+        "SUPER SHIFT, 5, movetoworkspacesilent, 5"
+        "SUPER SHIFT, 6, movetoworkspacesilent, 6"
+        "SUPER SHIFT, 7, movetoworkspacesilent, 7"
+        "SUPER SHIFT, 8, movetoworkspacesilent, 8"
+        "SUPER SHIFT, 9, movetoworkspacesilent, 9"
+        "SUPER SHIFT, 0, movetoworkspacesilent, 10"
         
         # azerty binds #
         
-        "$mod, ampersand, workspace, 1"
-        "$mod, eacute, workspace, 2"
-        "$mod, quotedbl, workspace, 3"
-        "$mod, apostrophe, workspace, 4"
-        "$mod, parenleft, workspace, 5"
-        "$mod, section, workspace, 6"
-        "$mod, egrave, workspace, 7"
-        "$mod, exclam, workspace, 8"
-        "$mod, ccedilla, workspace, 9"
-        "$mod, agrave, workspace, 10"
+        "SUPER, ampersand, workspace, 1"
+        "SUPER, eacute, workspace, 2"
+        "SUPER, quotedbl, workspace, 3"
+        "SUPER, apostrophe, workspace, 4"
+        "SUPER, parenleft, workspace, 5"
+        "SUPER, section, workspace, 6"
+        "SUPER, egrave, workspace, 7"
+        "SUPER, exclam, workspace, 8"
+        "SUPER, ccedilla, workspace, 9"
+        "SUPER, agrave, workspace, 10"
         
-        "$mod SHIFT, ampersand, movetoworkspacesilent, 1"
-        "$mod SHIFT, eacute, movetoworkspacesilent, 2"
-        "$mod SHIFT, quotedbl, movetoworkspacesilent, 3"
-        "$mod SHIFT, apostrophe, movetoworkspacesilent, 4"
-        "$mod SHIFT, parenleft, movetoworkspacesilent, 5"
-        "$mod SHIFT, section, movetoworkspacesilent, 6"
-        "$mod SHIFT, egrave, movetoworkspacesilent, 7"
-        "$mod SHIFT, exclam, movetoworkspacesilent, 8"
-        "$mod SHIFT, ccedilla, movetoworkspacesilent, 9"
-        "$mod SHIFT, agrave, movetoworkspacesilent, 10"
+        "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
+        "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
+        "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"
+        "SUPER SHIFT, apostrophe, movetoworkspacesilent, 4"
+        "SUPER SHIFT, parenleft, movetoworkspacesilent, 5"
+        "SUPER SHIFT, section, movetoworkspacesilent, 6"
+        "SUPER SHIFT, egrave, movetoworkspacesilent, 7"
+        "SUPER SHIFT, exclam, movetoworkspacesilent, 8"
+        "SUPER SHIFT, ccedilla, movetoworkspacesilent, 9"
+        "SUPER SHIFT, agrave, movetoworkspacesilent, 10"
       ];
 
       binde = [
         # move focus
-        "$mainMod, h, movefocus, l"
-        "$mainMod, l, movefocus, r"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, j, movefocus, d"
+        "SUPER, h, movefocus, l"
+        "SUPER, l, movefocus, r"
+        "SUPER, k, movefocus, u"
+        "SUPER, j, movefocus, d"
 
         # resize
         "$mainMod CTRL, l, resizeactive, 100 0"
@@ -224,8 +222,8 @@ in
       ];
 
       bindm = [ 
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
       ];
 
       gestures.workspace_swipe = false;
