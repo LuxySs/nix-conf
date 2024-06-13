@@ -14,8 +14,11 @@ in
     programs.fish = {
       enable = true;
       shellAliases = {
-        coucou_fish = "echo this is the fish shell";
+        myShell = "echo shell";
       };
+      shellInit = ''
+        set -g fish_greeting""
+      '';
     };
   };
 }

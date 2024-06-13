@@ -7,14 +7,17 @@ let
 in
 {
   options.bashModule = {
-      enable = lib.mkEnableOption "Enable bash";
+    enable = lib.mkEnableOption "Enable bash";
   };
 
   config = mkIf cfg.enable {
     programs.bash = {
       enable = true;
+      # rather use fish shell but not recommended to
+      # set it as $SHELL cuz not posix-compliant
+      initExtra = "fish";
       shellAliases = {
-        coucou_bash = "echo this is the bash shell";
+        myShell = "echo bash";
       };
     };
   };

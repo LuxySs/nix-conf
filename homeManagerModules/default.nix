@@ -7,7 +7,7 @@
     ./launchers/launchers.nix
     ./multiplexers/multiplexers.nix
     ./fonts/nerdfonts.nix
-    # ./prompts/prompts.nix
+    ./prompts/prompts.nix
     ./shells/shells.nix
     ./terminals/terminals.nix
     ./wm/wm.nix
@@ -36,6 +36,11 @@
   multiplexers = {
     enable = true;
     enableTmux = true;
+  };
+
+  prompts = {
+    enable = true;
+    enableStarship = true;
   };
 
   nerdfonts = {
