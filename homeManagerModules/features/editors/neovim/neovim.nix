@@ -16,7 +16,7 @@ in
       defaultEditor = true;
       vimAlias = true;
       extraPackages = with pkgs; [
-        wl-clipboard
+        # lsps
         nil
         lua-language-server
       ];
