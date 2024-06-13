@@ -1,13 +1,12 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ./hyprDE/default.nix
+    ./audio/pavucontrol.nix
   ];
 
-  hyprDE = {
+  pavucontrolModule = {
     enable = true;
-    enableHyprland = true;
-    enableSwww = true;
   };
 }

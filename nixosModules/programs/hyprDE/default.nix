@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, config, ... }:
 
 with lib;                      
 
@@ -10,7 +10,6 @@ in
     ./hyprland.nix 
     ./swww.nix 
   ];
-
 
   options.hyprDE = {
     enable = mkEnableOption "enable WM module";

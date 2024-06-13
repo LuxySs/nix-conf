@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
     ./openssh.nix
+    ./pipewire.nix
   ];
 }
 

@@ -19,7 +19,7 @@ in
         prompt = "❯ ";
         lines = 10;
         line-height = 20;
-        "font=Dank Mono:weight = bold:size" = 15;
+        font = "IosevkaTermNerdFont:size=13";
       };
       colors = {
         background = "24273add";
