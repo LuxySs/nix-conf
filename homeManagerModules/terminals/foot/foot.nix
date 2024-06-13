@@ -18,14 +18,19 @@ in
         font = "IosevkaTermNerdFont:size=13";
         dpi-aware = "yes";
       };
-      mouse = {
-        hide-when-typing = "yes";
+      colors = {
+        # alpha="0.3";
+        # foreground="222436";
+        # background="2d3f76";
       };
       cursor = {
         color = "000000 ffffff";
       };
+      mouse = {
+        hide-when-typing = "yes";
+      };
       tweak = {
-       font-monospace-warn="no";
+        font-monospace-warn="no";
       };
     };
   };
