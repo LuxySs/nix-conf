@@ -16,7 +16,6 @@
     ./prompts/prompts.nix
     ./shells/shells.nix
     ./terminals/terminals.nix
-    ./webcord.nix
     ./wm/wm.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ inputs, config, lib, ... }:
 
 with lib;
 
@@ -13,7 +13,12 @@ in
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      profiles.lulu = {};
+      profiles.lulu = {
+        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          ublock-origin
+          vimium
+        ];
+      };
     };
   };
 }
