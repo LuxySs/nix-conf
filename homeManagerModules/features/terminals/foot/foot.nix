@@ -19,7 +19,7 @@ in
         dpi-aware = mkForce "yes";
       };
       colors = {
-        alpha = mkDefault "0.3";
+        alpha = mkDefault"0.10";
       };
       cursor = {
         color = mkDefault "000000 ffffff";

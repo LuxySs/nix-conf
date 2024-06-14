@@ -28,6 +28,8 @@
       enableYazi = true;
     };
 
+    gitModule.enable = true;
+
     launchers = {
       enable = true;
       enableFuzzel = true;

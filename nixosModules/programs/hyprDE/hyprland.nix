@@ -1,4 +1,4 @@
-{ lib,  config, ... }:
+{ lib,  config, inputs, pkgs, ... }:
 with lib;                      
 let
   cfg = config.hyprlandModule;
@@ -10,9 +10,9 @@ in {
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       xwayland.enable = true;
     };
-
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -35,5 +35,12 @@ in {
     };
 
     services.xserver.videoDrivers = [ "nvidia" ];
+
+
+
+    xdg.portal = { 
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    }; 
   };
 }

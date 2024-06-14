@@ -7,6 +7,7 @@
     ./btop.nix
     ./editors/editors.nix
     ./fileManagers/fileManagers.nix
+    ./git.nix
     ./launchers/launchers.nix
     ./multiplexers/multiplexers.nix
     ./fonts/nerdfonts.nix
