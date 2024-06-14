@@ -105,19 +105,8 @@ in
         # conf/keybindings.conf
 
         bind = [
-          "SUPER, Print, exec, ~/.config/hypr/scripts/captureArea_buffer.sh"
-          "SUPER SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
-          
-          "SUPER SHIFT, S, exec, ~/.config/hypr/scripts/notes_screenshot/notes_screenshot.sh"
-          
-          "SUPER SHIFT, Print, exec, ~/.config/hypr/scripts/captureArea_save.sh"
-          
-          "SUPER, M, exec, pkill -x spt || foot --title spt -e spt"
-          
-          "SUPER SHIFT, M, exec, pkill -x cava || foot --title cava -e /usr/bin/cava"
-          
           "SUPER, O, exec, pkill -x ags || ags"
-          "SUPER, End, exec, swaylock --config ~/swaylock/config"
+          "SUPER, End, exec, hyprlock"
           
           "SUPER, RETURN, exec, foot"
           "SUPER, E, exec, foot -e yazi"
