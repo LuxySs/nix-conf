@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 
 {
   imports = [
@@ -17,6 +17,8 @@
     };
 
     btopModule.enable = true;
+
+    discordModule.enable = true;
 
     editors = {
       enable = true;
@@ -67,5 +69,6 @@
       enable = true;
       enableHyprland = true;
     };
+
   };
 }

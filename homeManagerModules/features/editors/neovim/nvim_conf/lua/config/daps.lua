@@ -1,0 +1,4 @@
+return {
+	"codelldb",
+	"debugpy",
+}
