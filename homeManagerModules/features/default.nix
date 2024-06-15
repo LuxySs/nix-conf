@@ -17,6 +17,7 @@
     ./fonts/nerdfonts.nix
     ./prompts/prompts.nix
     ./shells/shells.nix
+    ./swww.nix
     ./terminals/terminals.nix
     ./wm/wm.nix
   ];

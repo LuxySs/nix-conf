@@ -31,6 +31,7 @@
     fileManagers = {
       enable = true;
       enableYazi = true;
+      enableNautilus = true;
     };
 
     gitModule.enable = true;
@@ -59,6 +60,8 @@
       enableBash = true;
       enableFish = true;
     };
+
+    swwwModule.enable = true;
 
     spotifyModule = {
       enable = true;

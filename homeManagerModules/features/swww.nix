@@ -1,6 +1,7 @@
 { lib, pkgs, config, ... }:
 
 with lib;                      
+
 let
   cfg = config.swwwModule;
 in {
@@ -9,7 +10,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
+    home.packages = [
       pkgs.swww
     ];
   };
