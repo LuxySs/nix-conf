@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, ... }:
+{ config, lib, ... }:
 
 with lib;
 
@@ -25,9 +25,13 @@ in
           "QT_QPA_PLATFORM,wayland"
           "QT_QPA_PLATFORMTHEME,qt6ct"
         ];
+
+        monitor = [
+          "DP-3,3440x1440@99.98Hz,0x0,1"
+          "Unknown-1,disable" # disable ghost monitor du to nvidia fuckery
+        ];
+
         exec-once = "swww-daemon";
-   
-        monitor = "DP-3,3440x1440@99.98Hz,0x0,1";
 
  
         # conf/animations.conf
@@ -41,31 +45,6 @@ in
           ];
           animation = "windows, 1, 6, wind, slide";
         };
-
-
-        # conf/decoration.conf
-
-        decoration = {
-          # rounding = 1#
-          blur = {
-            enabled = true;
-            size = 6;
-            passes = 3;
-            new_optimizations = "on";
-            ignore_opacity = true;
-            xray = true;
-            blurls = "waybar";
-          };
-
-          active_opacity = 1.0;
-          inactive_opacity = 1.0;
-          fullscreen_opacity = 1.0;
-        
-          drop_shadow = true;
-          shadow_range = 30;
-          shadow_render_power = 3;
-          "col.shadow" = mkDefault "0x66000000";
-        }; 
 
 
         # conf/desktop_keyboard.conf
@@ -86,26 +65,10 @@ in
         };
 
 
-        # conf/desktop_workspacerules.conf
-
-        workspace = [
-          "name:1, monitor:DP-3"
-          "name:2, monitor:DP-3"
-          "name:3, monitor:DP-3"
-          "name:4, monitor:DP-3"
-          "name:5, monitor:DP-3"
-          "name:6, monitor:DP-3"
-          "name:7, monitor:DP-3"
-          "name:8, monitor:DP-3"
-          "name:9, monitor:DP-3"
-          "name:10, monitor:DP-3"
-        ];
-
-
         # conf/keybindings.conf
 
         bind = [
-          "SUPER, O, exec, pkill -x ags || ags"
+          "SUPER, O, exec, pkill .ags-wrapped || ags"
           "SUPER, End, exec, hyprlock"
           
           "SUPER, RETURN, exec, foot"
@@ -113,7 +76,6 @@ in
           "SUPER SHIFT, E, exec, nautilus"
           "SUPER, B, exec, firefox"
           "SUPER SHIFT, B, exec, firefox --private-window"
-          "SUPER, N, exec, emacsclient -c -a 'emacs'"
           "SUPER, D, exec, pkill -x fuzzel || fuzzel "
           "SUPER, S, exec, foot -e nvim"
           "SUPER, C, exec, foot -e qalc"
@@ -129,8 +91,6 @@ in
           "SUPER SHIFT, Q, killactive"
           "SUPER, T, togglefloating"
           "SUPER SHIFT, T, exec, hyprctl dispatch workspaceopt allfloat"
-          
-          "ALT, TAB, bringactivetotop"
           
           "SUPER SHIFT, H, movewindow, l"
           "SUPER SHIFT, L, movewindow, r"
@@ -151,7 +111,6 @@ in
           "SUPER, 7, workspace, 7"
           "SUPER, 8, workspace, 8"
           "SUPER, 9, workspace, 9"
-          "SUPER, 0, workspace, 10"
           
           "SUPER SHIFT, 1, movetoworkspacesilent, 1"
           "SUPER SHIFT, 2, movetoworkspacesilent, 2"
@@ -162,31 +121,30 @@ in
           "SUPER SHIFT, 7, movetoworkspacesilent, 7"
           "SUPER SHIFT, 8, movetoworkspacesilent, 8"
           "SUPER SHIFT, 9, movetoworkspacesilent, 9"
-          "SUPER SHIFT, 0, movetoworkspacesilent, 10"
           
           # azerty binds #
           
-           "SUPER, ampersand, workspace, 1"
-           "SUPER, eacute, workspace, 2"
-           "SUPER, quotedbl, workspace, 3"
-           "SUPER, apostrophe, workspace, 4"
-           "SUPER, parenleft, workspace, 5"
-           "SUPER, section, workspace, 6"
-           "SUPER, egrave, workspace, 7"
-           "SUPER, exclam, workspace, 8"
-           "SUPER, ccedilla, workspace, 9"
-           "SUPER, agrave, workspace, 10"
-           
-           "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
-           "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
-           "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"
-           "SUPER SHIFT, apostrophe, movetoworkspacesilent, 4"
-           "SUPER SHIFT, parenleft, movetoworkspacesilent, 5"
-           "SUPER SHIFT, section, movetoworkspacesilent, 6"
-           "SUPER SHIFT, egrave, movetoworkspacesilent, 7"
-           "SUPER SHIFT, exclam, movetoworkspacesilent, 8"
-           "SUPER SHIFT, ccedilla, movetoworkspacesilent, 9"
-           "SUPER SHIFT, agrave, movetoworkspacesilent, 10"
+           # "SUPER, ampersand, workspace, 1"
+           # "SUPER, eacute, workspace, 2"
+           # "SUPER, quotedbl, workspace, 3"
+           # "SUPER, apostrophe, workspace, 4"
+           # "SUPER, parenleft, workspace, 5"
+           # "SUPER, section, workspace, 6"
+           # "SUPER, egrave, workspace, 7"
+           # "SUPER, exclam, workspace, 8"
+           # "SUPER, ccedilla, workspace, 9"
+           # "SUPER, agrave, workspace, 10"
+           # 
+           # "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
+           # "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
+           # "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"
+           # "SUPER SHIFT, apostrophe, movetoworkspacesilent, 4"
+           # "SUPER SHIFT, parenleft, movetoworkspacesilent, 5"
+           # "SUPER SHIFT, section, movetoworkspacesilent, 6"
+           # "SUPER SHIFT, egrave, movetoworkspacesilent, 7"
+           # "SUPER SHIFT, exclam, movetoworkspacesilent, 8"
+           # "SUPER SHIFT, ccedilla, movetoworkspacesilent, 9"
+           # "SUPER SHIFT, agrave, movetoworkspacesilent, 10"
         ];
 
         binde = [
@@ -218,18 +176,6 @@ in
           "SUPER, mouse:273, resizewindow"
         ];
 
-        gestures.workspace_swipe = false;
-
-
-        # conf/layouts.conf
-
-        dwindle = {
-            pseudotile = true;
-            preserve_split = true;
-        };
-        master.new_is_master = true;
-
-
         # conf/misc.conf
         misc = {
             "disable_hyprland_logo" = true;
@@ -243,8 +189,6 @@ in
             gaps_in = 5;
             gaps_out = 7;
             border_size = 2;
-            "col.active_border" = mkDefault "rgba(00bdffde) rgba(ee0000da) 45deg";
-            "col.inactive_border" = mkDefault "rgba(eeeeee00)";
             layout = "dwindle";
         };
 

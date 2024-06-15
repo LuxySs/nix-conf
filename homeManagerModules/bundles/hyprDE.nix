@@ -6,6 +6,8 @@
   ];
 
   config = {
+    agsModule.enable = true;
+
     bars = {
       enable = true;
       enableWaybar = true;

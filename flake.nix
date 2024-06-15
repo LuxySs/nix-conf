@@ -16,6 +16,8 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    ags.url = "github:Aylur/ags";
+
     stylix.url = "github:danth/stylix";
 
     firefox-addons = {

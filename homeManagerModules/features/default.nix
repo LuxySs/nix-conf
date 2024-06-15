@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./ags.nix
     ./bars/bars.nix
     ./browsers/browsers.nix
     ./btop.nix
