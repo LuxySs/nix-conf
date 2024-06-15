@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ ... }: 
 
 {
   imports = [
@@ -58,6 +58,10 @@
       enable = true;
       enableBash = true;
       enableFish = true;
+    };
+
+    spotifyModule = {
+      enable = true;
     };
 
     terminals = {

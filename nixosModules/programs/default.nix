@@ -5,7 +5,6 @@
     ./fish.nix
     ./hyprDE/default.nix
     ./audio/pavucontrol.nix
-    ./spotify.nix
     ./nautilus.nix
   ];
 
@@ -21,6 +20,5 @@
     enableSwww = true;
   };
 
-  spotifyModule.enable = true;
   nautilusModule.enable = true;
 }

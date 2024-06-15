@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./spotify.nix
     ./ags.nix
     ./bars/bars.nix
     ./browsers/browsers.nix
