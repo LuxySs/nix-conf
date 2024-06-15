@@ -10,7 +10,7 @@
   stylix.fonts  = {
     monospace = {
       package = pkgs.nerdfonts.override {fonts = [ "IosevkaTerm" ];};
-      name = "IosevkaTerm";
+      name = "IosevkaTermNerdFont";
     };
     sansSerif = {
       package = pkgs.dejavu_fonts;

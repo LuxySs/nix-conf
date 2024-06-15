@@ -29,7 +29,7 @@ in
       isNormalUser = true;
       description = "main user";
       extraGroups = cfg.extraGroups;
-      shell = pkgs.bash;
+      shell = pkgs.fish;
     };
   };
 }

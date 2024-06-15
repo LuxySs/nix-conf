@@ -2,11 +2,14 @@
 
 {
   imports = [
+    ./fish.nix
     ./hyprDE/default.nix
     ./audio/pavucontrol.nix
     ./spotify.nix
     ./nautilus.nix
   ];
+
+  fishModule.enable = true;
 
   pavucontrolModule = {
     enable = true;

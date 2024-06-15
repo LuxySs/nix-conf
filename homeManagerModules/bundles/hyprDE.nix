@@ -23,6 +23,7 @@
     editors = {
       enable = true;
       enableNeovim = true;
+      enableEmacs = true;
     };
 
     fileManagers = {
@@ -61,9 +62,6 @@
       enable = true;
       enableFoot = true;
     };
-
-    ## there must be a mistake with this one
-    # webcordModule.enable = true;
 
     windowManagers = {
       enable = true;
