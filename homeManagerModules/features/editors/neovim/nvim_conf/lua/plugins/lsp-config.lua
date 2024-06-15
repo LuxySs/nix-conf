@@ -43,5 +43,15 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
+
+		require("lspconfig").tsserver.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		require("lspconfig").pyright.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 	end,
 }

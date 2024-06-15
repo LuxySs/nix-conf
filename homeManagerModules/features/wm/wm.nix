@@ -8,6 +8,7 @@ in
 {
   imports = [
     ./hyprland/hyprland.nix
+    ./wayland_utils.nix
   ];
 
   options.windowManagers = {

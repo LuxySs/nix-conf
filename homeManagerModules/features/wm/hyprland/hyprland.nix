@@ -68,6 +68,9 @@ in
         # conf/keybindings.conf
 
         bind = [
+
+          "SUPER, Print, exec, grim -g \"$(slurp)\" - | swappy -f - "
+
           "SUPER, O, exec, pkill .ags-wrapped || ags"
           "SUPER, End, exec, hyprlock"
           

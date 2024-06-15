@@ -16,6 +16,8 @@ in
   config = mkIf cfg.enable {
     # add the home manager module
 
+    programs.bun.enable = true;
+
     programs.ags = {
       enable = true;
 

@@ -22,6 +22,11 @@ in
       extraPackages = with pkgs; [
         # lsps
         lua-language-server
+        typescript
+
+        nodePackages.typescript
+        nodePackages.typescript-language-server
+
         nil
 	rocmPackages_5.llvm.clang-unwrapped
         marksman
