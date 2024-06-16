@@ -14,6 +14,8 @@ in {
     settings = {
       wm = {
         hyprland.enable = true;
+        sway.enable = false;
+
         fuzzel.enable = true;
         hyprlock.enable = true;
         screenshots.enable = true;
@@ -46,6 +48,7 @@ in {
       terminal = {
         # default = lib.mkDefault "foot";
         foot.enable = lib.mkDefault true;
+        alacritty.enable = lib.mkDefault true;
         starshipPrompt.enable = lib.mkDefault true;
       };
 

@@ -4,5 +4,6 @@
   imports = [
     ./hyprland
     ./wayland
+    ./sway
   ];
 }
