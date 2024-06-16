@@ -4,6 +4,7 @@
   imports = [
     ./desktop
     ./shells
+    ./games
     ./TUIs
   ];
 
@@ -13,4 +14,7 @@
 
   settings.shells.fish.enable = true;
   settings.shells.bash.enable = true;
+
+
+  settings.games.minecraft.enable = true;
 }
