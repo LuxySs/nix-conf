@@ -17,7 +17,15 @@ in
   };
 
   config = mkIf cfg.enable {
-    hyprlandModule.enable = cfg.enableHyprland;
+    settings = {
+      wm = {
+        hyprland = {
+          enable = true;
+          useFlake = false; # Set to true if you want to use flake
+          # useLegacyRenderer = false; # This option is removed, no need to set it
+        };
+      };
+    };
   };
 }
 
