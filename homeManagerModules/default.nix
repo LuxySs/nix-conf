@@ -5,12 +5,12 @@
     ./desktop
     ./shells
     ./games
-    ./TUIs
+    ./noGUI
   ];
 
   settings.desktop.enable = true;
 
-  settings.TUIs.enable = true;
+  settings.noGUI.enable = true;
 
   settings.shells.fish.enable = true;
   settings.shells.bash.enable = true;

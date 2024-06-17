@@ -1,7 +1,7 @@
 { lib, config, ... }: 
 
 let
-  cfg = config.settings.TUIs;
+  cfg = config.settings.noGUI;
 in
 {
   imports = [
@@ -9,16 +9,18 @@ in
     ./neovim
     ./btop.nix
     ./yazi.nix
+    ./git.nix
   ];
 
-  options.settings.TUIs.enable = lib.mkEnableOption "enable TUIs";
+  options.settings.noGUI.enable = lib.mkEnableOption "enable noGUI";
 
   config = lib.mkIf cfg.enable {
-    settings.TUIs = {
+    settings.noGUI = {
       tmux.enable = true;
       neovim.enable = true;
       btop.enable = true;
       yazi.enable = true;
+      git.enable = true;
     };
   };
 }

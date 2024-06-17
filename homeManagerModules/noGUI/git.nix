@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.settings.git.enable = lib.mkEnableOption "git";
+  options.settings.noGUI.git.enable = lib.mkEnableOption "git";
 
-  config = lib.mkIf config.settings.git.enable {
+  config = lib.mkIf (config.settings.noGUI.git.enable) {
     programs.git = {
       enable = true;
       userEmail = "lucas.verbeiren@gmail.com";

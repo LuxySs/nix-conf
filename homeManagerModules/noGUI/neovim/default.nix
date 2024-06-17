@@ -1,9 +1,9 @@
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  options.settings.TUIs.neovim.enable = lib.mkEnableOption "neovim";
+  options.settings.noGUI.neovim.enable = lib.mkEnableOption "neovim";
 
-  config = lib.mkIf (config.settings.TUIs.neovim.enable) {
+  config = lib.mkIf (config.settings.noGUI.neovim.enable) {
     programs.neovim = {
       enable = true;
       defaultEditor = true;

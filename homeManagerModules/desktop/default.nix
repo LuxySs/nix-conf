@@ -40,8 +40,6 @@ in {
 
       spotify.enable = lib.mkDefault true;
 
-      git.enable = true;
-
       shells = {
         bash.enable = lib.mkDefault true;
         fish.enable = lib.mkDefault true;
