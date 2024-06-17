@@ -15,6 +15,8 @@ in {
       wm = {
         hyprland.enable = true;
         sway.enable = false;
+
+        brightness.enable = true;
         fuzzel.enable = true;
         hyprlock.enable = true;
         screenshots.enable = true;
