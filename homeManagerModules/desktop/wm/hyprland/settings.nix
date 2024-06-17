@@ -44,7 +44,7 @@
       "SUPER SHIFT, E, exec, nautilus"
       "SUPER, B, exec, firefox"
       "SUPER SHIFT, B, exec, firefox --private-window"
-      "SUPER, D, exec, pkill -x fuzzel || fuzzel "
+      "SUPER, D, exec, pkill -x fuzzel || fuzzel"
       "SUPER, S, exec, foot -e nvim"
       "SUPER, C, exec, foot -e qalc"
       

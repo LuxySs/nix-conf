@@ -12,6 +12,7 @@
     ./locale.nix
     ./networkManager.nix
     ./nix.nix
+    ./nvidia.nix
     ./openssh.nix
     ./stylix.nix
     ./usefulPrograms.nix
@@ -38,6 +39,10 @@
     stylix.enable = true;
     usefulPrograms.enable = true;
 
+    nvidia = {
+      enable = true;
+      open = false;
+    };
 
     nix.substituters.cachix.enable = true;
   };

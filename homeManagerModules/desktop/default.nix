@@ -15,12 +15,11 @@ in {
       wm = {
         hyprland.enable = true;
         sway.enable = false;
-
         fuzzel.enable = true;
         hyprlock.enable = true;
         screenshots.enable = true;
         swww.enable = true;
-        waybar.enable = true;
+        waybar.enable = false;
         wlogout.enable = true;
       };
 
