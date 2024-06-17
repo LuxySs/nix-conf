@@ -10,46 +10,41 @@
       layout = [
         {
           label = "lock";
-          # action = "sleep 1; swaylock";
-          action = "sleep 1; hyprlock";
+          action = "hyprlock";
           text = "Lock";
           keybind = "l";
         }
         {
           label = "hibernate";
-          action = "systemctl hibernate";
+          action = "sleep 1; systemctl hibernate";
           text = "Hibernate";
           keybind = "h";
         }
         {
           label = "logout";
-          # The one with hyprctl causes problems with running programs, such as ags.
-          action = "loginctl terminate-user $USER";
-          # action = "hyprctl dispatch exit";
+          action = "sleep 1; hyprctl dispatch exit";
           text = "Logout";
           keybind = "e";
         }
         {
           label = "shutdown";
-          action = "systemctl poweroff";
+          action = "sleep 1; systemctl poweroff";
           text = "Shutdown";
           keybind = "s";
         }
         {
           label = "suspend";
-          # action = "sleep 1; swaylock & systemctl suspend";
-          action = "sleep 1; hyprlock & systemctl suspend";
+          action = "sleep 1; systemctl suspend";
           text = "Suspend";
           keybind = "u";
         }
         {
           label = "reboot";
-          action = "systemctl reboot";
+          action = "sleep 1; systemctl reboot";
           text = "Reboot";
           keybind = "r";
         }
       ];
-      # style =
     };
   };
 }
