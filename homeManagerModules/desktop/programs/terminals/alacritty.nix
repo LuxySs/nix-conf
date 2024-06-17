@@ -13,9 +13,6 @@
           font = lib.mkForce "IosevkaTermNerdFont:size=13";
           dpi-aware = lib.mkForce "yes";
         };
-        colors = {
-          alpha = lib.mkDefault"0.10";
-        };
         cursor = {
           color = lib.mkDefault "000000 ffffff";
         };

@@ -10,5 +10,7 @@
     ./discord.nix  
     ./pavucontrol.nix
     ./spotify.nix  
+    ./webcord.nix  
+    ./zathura.nix  
   ];
 }

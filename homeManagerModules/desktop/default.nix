@@ -25,15 +25,20 @@ in {
 
       files.nautilus.enable = lib.mkDefault true;
 
-      # zathura.enable = lib.mkDefault true;
-      browsers.firefox.enable = lib.mkDefault true;
-      # browser.qutebrowser.enable = lib.mkDefault true;
+      zathura.enable = lib.mkDefault true;
 
-      discord.enable = lib.mkDefault true;
+      browsers = {
+        firefox.enable = lib.mkDefault true;
+        qutebrowser.enable = lib.mkDefault true;
+      };
+
+      
+      discord.enable = lib.mkDefault false;
+      webcord.enable = lib.mkDefault true;
 
       pavucontrol.enable = lib.mkDefault true;
 
-      emacs.enable = lib.mkDefault true;
+      emacs.enable = lib.mkDefault false;
 
       ags.enable = lib.mkDefault true;
 

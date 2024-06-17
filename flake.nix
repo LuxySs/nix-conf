@@ -26,6 +26,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    webcord.url = "github:fufexan/webcord-flake";
   };
 
   outputs = { self, nixpkgs, spicetify-nix, ... }@inputs:
