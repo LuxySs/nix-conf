@@ -32,6 +32,8 @@ in {
 
       discord.enable = lib.mkDefault true;
 
+      pavucontrol.enable = lib.mkDefault true;
+
       emacs.enable = lib.mkDefault true;
 
       ags.enable = lib.mkDefault true;

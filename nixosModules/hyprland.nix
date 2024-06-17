@@ -1,13 +1,13 @@
-{ lib,  config, inputs, pkgs, ... }:
-with lib;                      
-let
-  cfg = config.hyprlandModule;
-in {
-  options.hyprlandModule = {
-    enable = mkEnableOption "enable Hyprland";
+{ lib, config, inputs, pkgs, ... }:
+
+{
+  options.settings.hyprland.enable = lib.mkEnableOption {
+    type = lib.types.bool;
+    default = true;
+    description = "hyprland";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf (config.settings.hyprland.enable)  {
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;

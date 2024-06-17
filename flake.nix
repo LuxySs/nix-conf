@@ -40,7 +40,7 @@
           modules = [ 
             ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts"; })
             ./hosts/desktop/configuration.nix
-            ./nixosModules/default.nix
+            ./nixosModules
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
           ];
