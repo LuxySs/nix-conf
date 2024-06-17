@@ -44,11 +44,6 @@
     stylix.enable = true;
     usefulPrograms.enable = true;
 
-    nvidia = {
-      enable = true;
-      open = false;
-    };
-
     nix.substituters.cachix.enable = true;
   };
 

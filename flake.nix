@@ -37,12 +37,20 @@
     in
     {
       nixosConfigurations = {
-        NixTesMorts = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ({ config, pkgs, ... }: { networking.hostName = "NixTesMorts"; })
+            ({ config, pkgs, ... }: { networking.hostName = "dishwasher"; })
             ./hosts/desktop/configuration.nix
-            ./nixosModules
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ({ config, pkgs, ... }: { networking.hostName = "cookingPlate"; })
+            ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
           ];

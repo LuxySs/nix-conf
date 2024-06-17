@@ -17,33 +17,4 @@
     ./stylix.nix
     ./usefulPrograms.nix
   ];
-
-  settings = {
-    allowUnfree.enable = true;
-    audio.pipewire.enable = true;
-
-    console.keyMap = "us-acentos";
-
-    experimentalFeatures.enable = true;
-    fish.enable = true;
-    greeter.enable = true;
-    hyprland.enable = true;
-
-    locale = {
-      main = "en_US.UTF-8";
-      timeZone = "Europe/Brussels";
-    };
-
-    networkManager.enable = true;
-    openssh.enable = true;
-    stylix.enable = true;
-    usefulPrograms.enable = true;
-
-    nvidia = {
-      enable = true;
-      open = false;
-    };
-
-    nix.substituters.cachix.enable = true;
-  };
 }

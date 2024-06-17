@@ -4,7 +4,7 @@
   options.settings.nvidia = {
     enable = lib.mkEnableOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "nvidia";
     };
     open = lib.mkEnableOption {
