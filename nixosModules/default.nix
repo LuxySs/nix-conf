@@ -10,6 +10,7 @@
     ./greeter.nix
     ./hyprland.nix
     ./locale.nix
+    ./minecraftServer.nix
     ./networkManager.nix
     ./nix.nix
     ./nvidia.nix

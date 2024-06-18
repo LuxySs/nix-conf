@@ -27,6 +27,8 @@
     allowUnfree.enable = true;
     audio.pipewire.enable = true;
 
+    minecraftServer.enable = true;
+
     console.keyMap = "us-acentos";
 
     experimentalFeatures.enable = true;
