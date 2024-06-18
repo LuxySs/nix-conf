@@ -14,7 +14,7 @@
 
   main-user.enable = true;
   main-user.userName = "lulu";
-  main-user.extraGroups = [ "wheel" "NetworkManager" ];
+  main-user.extraGroups = [ "wheel" "networkmanager" ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
