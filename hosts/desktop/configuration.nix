@@ -47,6 +47,7 @@
     nvidia = {
       enable = true;
       open = false;
+      release = "beta";
     };
 
     nix.substituters.cachix.enable = true;

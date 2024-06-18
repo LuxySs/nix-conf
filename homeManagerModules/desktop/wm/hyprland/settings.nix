@@ -10,7 +10,7 @@
     ];
 
     monitor = [
-      "DP-3,3440x1440@99.98Hz,0x0,1"
+      "DP-1,3440x1440@99.98,0x0,1"
       "Unknown-1,disable" # disable ghost monitor du to nvidia fuckery
     ];
 
