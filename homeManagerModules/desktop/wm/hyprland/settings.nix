@@ -14,7 +14,7 @@
       "Unknown-1,disable" # disable ghost monitor du to nvidia fuckery
     ];
 
-    exec-once = "swww-daemon";
+    exec-once = "swww-daemon & ags";
 
   };
 }
