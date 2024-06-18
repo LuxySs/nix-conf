@@ -2,15 +2,16 @@
 
 {
   imports = [
-    ./browsers  
-    ./emacs  
-    ./files  
-    ./terminals
-    ./ags.nix  
-    ./discord.nix  
+    ./browser
+    ./emacs
+    ./files
+    ./terminal
+    ./ags.nix
+    ./discord.nix
     ./pavucontrol.nix
-    ./spotify.nix  
-    ./webcord.nix  
-    ./zathura.nix  
+    ./spotify.nix
+    ./imageViewer
+    ./webcord.nix
+    ./zathura.nix
   ];
 }

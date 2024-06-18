@@ -1,14 +1,12 @@
 { config, lib, inputs, pkgs, ... }:
 
 {
-
   # add the home manager module
   imports = [ inputs.ags.homeManagerModules.default ];
 
   options.settings.ags.enable = lib.mkEnableOption "AGS (aylurs gtk shell)";
 
   config = lib.mkIf config.settings.ags.enable { 
-
     programs.bun.enable = true;
 
     programs.ags = {

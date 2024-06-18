@@ -29,7 +29,7 @@ in {
 
       zathura.enable = lib.mkDefault true;
 
-      browsers = {
+      browser = {
         firefox.enable = lib.mkDefault true;
         qutebrowser.enable = lib.mkDefault true;
       };
@@ -46,11 +46,6 @@ in {
 
       spotify.enable = lib.mkDefault true;
 
-      shells = {
-        bash.enable = lib.mkDefault true;
-        fish.enable = lib.mkDefault true;
-      };
-
       terminal = {
         # default = lib.mkDefault "foot";
         foot.enable = lib.mkDefault true;
@@ -58,7 +53,7 @@ in {
         starshipPrompt.enable = lib.mkDefault true;
       };
 
-      # imageviewer.enable = lib.mkDefault true;
+      imageViewer.loupe.enable = lib.mkDefault true;
     };
   };
 }

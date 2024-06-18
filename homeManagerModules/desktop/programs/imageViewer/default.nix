@@ -1,7 +1,6 @@
 { ... }:
-
 {
   imports = [
-    ./nautilus.nix
+    ./loupe.nix
   ];
 }

@@ -1,11 +1,11 @@
 { config, lib, ... }: 
 
 {
-  options.settings.browsers = {
+  options.settings.browser = {
     qutebrowser.enable = lib.mkEnableOption "qutebrowser";
   };
 
-  config = lib.mkIf (config.settings.browsers.qutebrowser.enable) {
+  config = lib.mkIf (config.settings.browser.qutebrowser.enable) {
       programs.qutebrowser.enable = true;
     };
 }

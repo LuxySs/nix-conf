@@ -1,13 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-  options.settings.shells.fish.enable = lib.mkOption {
+  options.settings.shell.fish.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
       description = "enable fish";
   };
 
-  config = lib.mkIf (config.settings.shells.fish.enable){
+  config = lib.mkIf (config.settings.shell.fish.enable){
     programs.fish = {
       enable = true;
       shellAliases = {

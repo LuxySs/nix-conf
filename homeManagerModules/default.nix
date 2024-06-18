@@ -1,19 +1,23 @@
-{ ... }:
+{ lib, ... }:
 
 {
   imports = [
     ./desktop
-    ./shells
+    ./shell
     ./games
     ./noGUI
   ];
 
-  settings.desktop.enable = true;
+  settings = {
+    noGUI.enable = lib.mkDefault true;
 
-  settings.noGUI.enable = true;
+    desktop.enable = lib.mkDefault true;
 
-  settings.shells.fish.enable = true;
-  settings.shells.bash.enable = true;
+    shell = {
+      bash.enable = lib.mkDefault true;
+      fish.enable = lib.mkDefault true;
+    };
 
-  settings.games.minecraft.enable = true;
+    games.minecraft.enable = true;
+  };
 }

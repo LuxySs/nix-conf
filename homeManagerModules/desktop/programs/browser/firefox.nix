@@ -1,9 +1,9 @@
 { inputs, config, lib, ... }:
 
 {
-  options.settings.browsers.firefox.enable = lib.mkEnableOption "firefox";
+  options.settings.browser.firefox.enable = lib.mkEnableOption "firefox";
 
-  config = lib.mkIf (config.settings.browsers.firefox.enable) {
+  config = lib.mkIf (config.settings.browser.firefox.enable) {
     programs.firefox = {
       enable = true;
       profiles.lulu = {
