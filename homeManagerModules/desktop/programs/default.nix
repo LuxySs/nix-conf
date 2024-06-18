@@ -10,7 +10,7 @@
     ./discord.nix
     ./pavucontrol.nix
     ./spotify.nix
-    ./imageViewer
+    ./imageViewer.nix
     ./webcord.nix
     ./zathura.nix
   ];

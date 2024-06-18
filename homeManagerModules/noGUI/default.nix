@@ -16,11 +16,12 @@ in
 
   config = lib.mkIf cfg.enable {
     settings.noGUI = {
-      tmux.enable = true;
-      neovim.enable = true;
       btop.enable = true;
-      yazi.enable = true;
       git.enable = true;
+      neovim.enable = true;
+      tmux.enable = true;
+      yazi.enable = true;
+      zellij.enable = true;
     };
   };
 }
