@@ -20,11 +20,6 @@
       
       "SUPER SHIFT CTRL, End, exit,"
       
-      "ALT, H, exec, wtype -P left"
-      "ALT, L, exec, wtype -P right"
-      "ALT, J, exec, wtype -P down"
-      "ALT, K, exec, wtype -P up"
-      
       "SUPER, Space, fullscreen"
       "SUPER SHIFT, Q, killactive"
       "SUPER, T, togglefloating"
