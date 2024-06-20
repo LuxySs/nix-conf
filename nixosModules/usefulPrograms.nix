@@ -8,7 +8,7 @@
 
   config = lib.mkIf (config.settings.usefulPrograms.enable)  {
     environment.systemPackages = with pkgs; [
-      neovim
+      #neovim
       ripgrep
       tree
     ];

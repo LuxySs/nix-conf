@@ -36,7 +36,8 @@ in {
 
       
       discord.enable = lib.mkDefault false;
-      webcord.enable = lib.mkDefault true;
+      vesktop.enable = lib.mkDefault true;
+      webcord.enable = lib.mkDefault false;
 
       pavucontrol.enable = lib.mkDefault true;
 

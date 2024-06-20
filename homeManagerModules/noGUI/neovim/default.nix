@@ -6,7 +6,7 @@
   config = lib.mkIf (config.settings.noGUI.neovim.enable) {
     programs.neovim = {
       enable = true;
-      defaultEditor = true;
+      defaultEditor = false;
     
       viAlias = true;
       vimAlias = true;

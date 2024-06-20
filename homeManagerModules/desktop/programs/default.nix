@@ -11,6 +11,7 @@
     ./pavucontrol.nix
     ./spotify.nix
     ./imageViewer.nix
+    ./vesktop.nix
     ./webcord.nix
     ./zathura.nix
   ];
