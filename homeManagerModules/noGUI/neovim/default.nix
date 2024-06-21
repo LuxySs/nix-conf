@@ -6,7 +6,7 @@
   config = lib.mkIf (config.settings.noGUI.neovim.enable) {
     programs.neovim = {
       enable = true;
-      defaultEditor = false;
+      defaultEditor = true;
     
       viAlias = true;
       vimAlias = true;
@@ -37,7 +37,7 @@
 
 
     xdg.configFile."nvim" = {
-      source = ./nvim_conf;
+      source = ./conf;
       recursive = true;
     };
   };
