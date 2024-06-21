@@ -15,17 +15,13 @@
       extraPackages = with pkgs; [
         # lsps
         lua-language-server
-        typescript
-
-        nodePackages.typescript
+        nixd
+	clang-tools
+        rust-analyzer
         nodePackages.typescript-language-server
-
-        nil
-	rocmPackages_5.llvm.clang-unwrapped
-        marksman
 	pyright
-        rust-analyzer-unwrapped
 	texlab
+        marksman
 
         # # linters
         ruff
