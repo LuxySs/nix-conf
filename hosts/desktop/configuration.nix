@@ -21,6 +21,7 @@
     users = {
       "lulu" = import ./home.nix;
     };
+    useGlobalPkgs = true;
   };
 
   settings = {

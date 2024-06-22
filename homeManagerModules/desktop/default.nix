@@ -55,6 +55,10 @@ in {
       };
 
       imageViewer.loupe.enable = lib.mkDefault true;
+
+      noteTaking = {
+        obsidian.enable = true;
+      };
     };
   };
 }
