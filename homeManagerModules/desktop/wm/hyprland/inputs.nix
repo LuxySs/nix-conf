@@ -16,5 +16,11 @@
       sensitivity = -0.4;
       accel_profile = "flat";
     };
+
+    device = {
+      name = "syna8018:00-06cb:ce67-touchpad";
+      sensitivity = 0;
+    };
   };
+
 }
