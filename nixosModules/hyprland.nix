@@ -18,11 +18,6 @@
       NIXOS_OZONE_WL = "1";
     };
 
-    hardware.opengl = {
-      enable = true;
-      driSupport = true;
-   };
-
     xdg.portal = { 
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

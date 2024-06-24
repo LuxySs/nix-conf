@@ -5,6 +5,7 @@
     ./allowUnfree.nix
     ./audio.nix
     ./bluetooth.nix
+    ./flatpak.nix
     ./console.nix
     ./experimentalFeatures.nix
     ./fish.nix

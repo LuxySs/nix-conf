@@ -53,6 +53,8 @@
       release = "beta";
     };
 
+    flatpak.enable = true;
+
     nix.substituters.cachix.enable = true;
   };
 
