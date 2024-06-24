@@ -31,12 +31,11 @@ in {
 
       browser = {
         firefox.enable = lib.mkDefault true;
-        qutebrowser.enable = lib.mkDefault true;
+        qutebrowser.enable = lib.mkDefault false;
       };
 
-      
-      discord.enable = lib.mkDefault false;
-      vesktop.enable = lib.mkDefault true;
+      discord.enable = lib.mkDefault true;
+      vesktop.enable = lib.mkDefault false;
       webcord.enable = lib.mkDefault false;
 
       pavucontrol.enable = lib.mkDefault true;
@@ -48,7 +47,6 @@ in {
       spotify.enable = lib.mkDefault true;
 
       terminal = {
-        # default = lib.mkDefault "foot";
         foot.enable = lib.mkDefault true;
         alacritty.enable = lib.mkDefault true;
         starshipPrompt.enable = lib.mkDefault true;
