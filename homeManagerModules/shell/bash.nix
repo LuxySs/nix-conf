@@ -11,7 +11,13 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        myShell = "echo bash";
+        "v" = "nvim";
+        "vi" = "nvim";
+        "vim" = "nvim";
+
+        ".." = "cd ..";
+        "..." = "cd ../../";
+        "...." = "cd ../../../";
       };
     };
   };
