@@ -14,6 +14,7 @@
     ./locale.nix
     ./minecraftServer.nix
     ./networkManager.nix
+    ./virt.nix
     ./nix.nix
     ./nvidia.nix
     ./openssh.nix
