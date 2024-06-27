@@ -6,7 +6,7 @@ in
 {
   imports = [
     ./multiplexers
-    ./neovim
+    ./neovim.nix
     ./btop.nix
     ./yazi.nix
     ./git.nix

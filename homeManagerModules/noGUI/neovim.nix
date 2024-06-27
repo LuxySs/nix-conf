@@ -17,7 +17,7 @@
       texlab
       marksman
 
-      # # linters
+      # linters
       ruff
 
       # formatters
