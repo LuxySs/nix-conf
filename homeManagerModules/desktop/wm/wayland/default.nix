@@ -8,6 +8,6 @@
     ./screenshots.nix
     ./swww.nix
     ./waybar.nix
-    ./wlogout.nix
+    ./wlogout
   ];
 }

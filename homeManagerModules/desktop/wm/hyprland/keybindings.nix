@@ -7,6 +7,7 @@
       "SUPER, Print, exec, grim -g \"$(slurp)\" - | swappy -f - "
 
       "SUPER, O, exec, pkill .ags-wrapped || ags"
+      "SUPER, Home, exec, pkill wlogout || wlogout"
       "SUPER, End, exec, hyprlock"
       
       "SUPER, RETURN, exec, foot"
