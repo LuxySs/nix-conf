@@ -2,9 +2,11 @@
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
-      "rounding 3, class:(Alacritty);"
-      "rounding 3, class:(foot);"
-      "float, class:(Nautilus);"
+      "rounding 3, class:(Alacritty)"
+      "rounding 3, class:(foot)"
+      "opacity 0.90, title:(vim)(.*)"
+      "opacity 0.95, initialTitle:(Spotify Premium)" 
+      "float, class:(Nautilus)"
     ];
   };
 }
