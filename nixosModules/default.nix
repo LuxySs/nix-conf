@@ -20,6 +20,7 @@
     ./nvidia.nix
     ./openssh.nix
     ./stylix.nix
+    ./steam.nix
     ./usefulPrograms.nix
   ];
 }

@@ -57,6 +57,8 @@
 
     flatpak.enable = true;
 
+    steam.enable = true;
+
     nix.substituters.cachix.enable = true;
   };
 
