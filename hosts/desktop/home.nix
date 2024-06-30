@@ -14,4 +14,7 @@
   settings = {
     latexSupport.enable = true;
   };
+
+  # disable stylix for kde cuz not working great/at all
+  stylix.targets.kde.enable = false;
 }

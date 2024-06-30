@@ -4,6 +4,8 @@
   imports = [
     ./allowUnfree.nix
     ./nix-ld.nix
+    ./kde.nix
+    ./sddm.nix
     ./audio.nix
     ./bluetooth.nix
     ./flatpak.nix

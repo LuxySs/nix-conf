@@ -7,7 +7,7 @@ in
 {
   options.settings.greeter.enable = lib.mkEnableOption {
     type = lib.types.bool;
-    default = true;
+    default = false;
     description = "greeter";
   };
 

@@ -36,7 +36,6 @@
 
     experimentalFeatures.enable = true;
     fish.enable = true;
-    greeter.enable = true;
     hyprland.enable = true;
 
     locale = {
