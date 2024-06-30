@@ -3,6 +3,7 @@
 {
   imports = [
     ./allowUnfree.nix
+    ./nix-ld.nix
     ./audio.nix
     ./bluetooth.nix
     ./flatpak.nix
