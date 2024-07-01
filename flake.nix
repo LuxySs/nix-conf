@@ -34,22 +34,26 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      lib = pkgs.lib.extend (self: super: {
+        mkIfCoucou = word: codeBlock: if word == "coucou" then codeBlock else {};
+      });
     in
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs lib;};
           modules = [ 
-            ({ config, pkgs, ... }: { networking.hostName = "dishwasher"; })
+            { networking.hostName = "dishwasher"; }
             ./hosts/desktop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs lib;};
           modules = [ 
-            ({ config, pkgs, ... }: { networking.hostName = "cookingPlate"; })
+            { networking.hostName = "cookingPlate"; }
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix

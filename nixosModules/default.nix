@@ -24,5 +24,6 @@
     ./stylix.nix
     ./steam.nix
     ./usefulPrograms.nix
+    ./test.nix
   ];
 }
