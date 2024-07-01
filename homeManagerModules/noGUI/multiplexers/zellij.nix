@@ -1,9 +1,10 @@
 { config, lib, ... }:
 
+let
+  cfg = config.settings.noGUI.zellij;
+in
 {
   options.settings.noGUI.zellij.enable = lib.mkEnableOption "zellij";
 
-  config = lib.mkIf (config.settings.noGUI.zellij.enable) {
-    programs.zellij.enable = true;
-  };
+  config = lib.mkIf (cfg.enable) { programs.zellij.enable = true; };
 }

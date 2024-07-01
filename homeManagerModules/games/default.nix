@@ -1,12 +1,10 @@
-{ lib, config, ... }: 
+{ lib, config, ... }:
 
 let
   cfg = config.settings.games;
 in
 {
-  imports = [
-    ./minecraft.nix
-  ];
+  imports = [ ./minecraft.nix ];
 
   options.settings.games.enable = lib.mkEnableOption "enable games";
 

@@ -30,7 +30,8 @@
     webcord.url = "github:fufexan/webcord-flake";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -40,8 +41,10 @@
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs lib;};
-          modules = [ 
+          specialArgs = {
+            inherit inputs lib;
+          };
+          modules = [
             { networking.hostName = "dishwasher"; }
             ./hosts/desktop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
@@ -49,8 +52,10 @@
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs lib;};
-          modules = [ 
+          specialArgs = {
+            inherit inputs lib;
+          };
+          modules = [
             { networking.hostName = "cookingPlate"; }
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
@@ -60,4 +65,3 @@
       };
     };
 }
-

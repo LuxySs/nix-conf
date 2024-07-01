@@ -1,13 +1,20 @@
-{ pkgs, config, lib, inputs, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  inputs,
+  ...
+}:
 
 let
+  cfg = config.settings.greeter;
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
 in
 {
   options.settings.greeter.enable = lib.mkEnableOption "greeter";
 
-  config = lib.mkIf (config.settings.greeter.enable) {
+  config = lib.mkIf (cfg.enable) {
     services.greetd = {
       enable = true;
       settings = {
@@ -17,7 +24,7 @@ in
         };
       };
     };
-  
+
     systemd.services.greetd.serviceConfig = {
       Type = "idle";
       StandardInput = "tty";

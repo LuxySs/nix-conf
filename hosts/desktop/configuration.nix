@@ -1,23 +1,27 @@
 { inputs, ... }:
 
 {
-  imports =
-    [
-      inputs.home-manager.nixosModules.default
-      ./hardware-configuration.nix
-      ./main-user.nix
-      ./../../nixosModules
-    ];
+  imports = [
+    inputs.home-manager.nixosModules.default
+    ./hardware-configuration.nix
+    ./main-user.nix
+    ./../../nixosModules
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   main-user.enable = true;
   main-user.userName = "lulu";
-  main-user.extraGroups = [ "wheel" "networkmanager" ];
+  main-user.extraGroups = [
+    "wheel"
+    "networkmanager"
+  ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = {
       "lulu" = import ./home.nix;
     };
@@ -58,7 +62,7 @@
 
     steam.enable = true;
 
-    nix.substituters.cachix.enable = true;
+    cachix.enable = true;
   };
 
   # This value determines the NixOS release from which the default

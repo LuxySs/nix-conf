@@ -1,8 +1,6 @@
-{ ... }: {
-  imports =
-    [
-      ../../homeManagerModules/default.nix
-    ];
+{ ... }:
+{
+  imports = [ ../../homeManagerModules/default.nix ];
 
   home = {
     username = "lulu";

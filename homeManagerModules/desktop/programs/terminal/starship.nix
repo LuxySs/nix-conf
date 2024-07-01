@@ -1,6 +1,8 @@
 { config, lib, ... }:
 
 let
+  cfg = config.settings.terminal.starshipPrompt;
+
   colors = config.lib.stylix.colors;
   base00 = colors.base00;
   base01 = colors.base01;
@@ -22,31 +24,30 @@ in
 {
   options.settings.terminal.starshipPrompt.enable = lib.mkEnableOption "starship prompt";
 
-  config = lib.mkIf (config.settings.terminal.starshipPrompt.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.starship = {
       enable = true;
       settings = {
         command_timeout = 3000;
 
-        format = 
-          "[░▒▓](#${base02})" +
-          "[ ](bg:#${base02} fg:#${base0E})" +
-          "[](bg:#${base02} fg:#${base02})" +
-          "$directory" +
-          "[](fg:#${base02} bg:#${base02})" +
-          "$git_branch" +
-          "$git_status" +
-          "[](fg:#${base02} bg:#${base02})" +
-          "$nodejs" +
-          "$cmd_duration" +
-          "[](fg:#${base02} bg:#${base02})" +
-          "$python" +
-          "[ ](fg:#${base02})" +
-          "\n" +
-          "[ ❯](fg:#${base0B})" +
-          "[❯](fg:#${base0C})" +
-          "[❯ ](fg:#${base0D})"
-        ;
+        format =
+          "[░▒▓](#${base02})"
+          + "[ ](bg:#${base02} fg:#${base0E})"
+          + "[](bg:#${base02} fg:#${base02})"
+          + "$directory"
+          + "[](fg:#${base02} bg:#${base02})"
+          + "$git_branch"
+          + "$git_status"
+          + "[](fg:#${base02} bg:#${base02})"
+          + "$nodejs"
+          + "$cmd_duration"
+          + "[](fg:#${base02} bg:#${base02})"
+          + "$python"
+          + "[ ](fg:#${base02})"
+          + "\n"
+          + "[ ❯](fg:#${base0B})"
+          + "[❯](fg:#${base0C})"
+          + "[❯ ](fg:#${base0D})";
 
         directory = {
           style = "fg:#${base05} bg:#${base02}";

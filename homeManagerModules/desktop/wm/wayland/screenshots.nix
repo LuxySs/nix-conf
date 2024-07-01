@@ -1,10 +1,17 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
+let
+  cfg = config.settings.wm.screenshots;
+in
+{
   options.settings.wm.screenshots.enable = lib.mkEnableOption "screenshots";
 
-  config = lib.mkIf (config.settings.wm.screenshots.enable) {
+  config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [
       grim
       slurp

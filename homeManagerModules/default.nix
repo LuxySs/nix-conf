@@ -19,6 +19,6 @@
       fish.enable = lib.mkDefault true;
     };
 
-    games.minecraft.enable = true;
+    games.minecraft.enable = lib.mkDefault false;
   };
 }

@@ -1,9 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
+let
+  cfg = config.settings.shell.fish;
+in
 {
   options.settings.shell.fish.enable = lib.mkDisableOption "enable fish";
 
-  config = lib.mkIf (config.settings.shell.fish.enable){
+  config = lib.mkIf (cfg.enable) {
     programs.fish = {
       enable = true;
       shellAliases = {
@@ -17,9 +25,9 @@
       };
 
       shellInit = ''
-          set -g fish_greeting""
+        set -g fish_greeting""
       '';
-    
+
       plugins = [
         {
           name = "z";

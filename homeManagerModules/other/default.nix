@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./latexSupport.nix
-  ];
+  imports = [ ./latexSupport.nix ];
 }

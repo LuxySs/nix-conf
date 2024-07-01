@@ -1,9 +1,17 @@
-{ inputs, config, lib, ... }:
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
 
+let
+  cfg = config.settings.browser.firefox;
+in
 {
   options.settings.browser.firefox.enable = lib.mkEnableOption "firefox";
 
-  config = lib.mkIf (config.settings.browser.firefox.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.firefox = {
       enable = true;
       profiles.lulu = {
@@ -15,4 +23,3 @@
     };
   };
 }
-

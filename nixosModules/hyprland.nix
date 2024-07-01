@@ -1,9 +1,18 @@
-{ lib, config, inputs, pkgs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
+let
+  cfg = config.settings.hyprland;
+in
 {
   options.settings.hyprland.enable = lib.mkEnableOption "hyprland";
 
-  config = lib.mkIf (config.settings.hyprland.enable)  {
+  config = lib.mkIf (cfg.enable) {
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -14,9 +23,9 @@
       NIXOS_OZONE_WL = "1";
     };
 
-    xdg.portal = { 
+    xdg.portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    }; 
+    };
   };
 }

@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./nautilus.nix
-  ];
+  imports = [ ./nautilus.nix ];
 }

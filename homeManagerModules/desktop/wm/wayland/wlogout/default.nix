@@ -1,9 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
+let
+  cfg = config.settings.wm.wlogout;
+in
 {
   options.settings.wm.wlogout.enable = lib.mkEnableOption "wlogout";
 
-  config = lib.mkIf (config.settings.wm.wlogout.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.wlogout = {
       enable = true;
       package = pkgs.wlogout;

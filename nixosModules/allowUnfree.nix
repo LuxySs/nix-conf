@@ -1,9 +1,10 @@
 { lib, config, ... }:
 
+let
+  cfg = config.settings.allowUnfree;
+in
 {
   options.settings.allowUnfree.enable = lib.mkDisableOption "allow unfree";
 
-  config = lib.mkIf (config.settings.allowUnfree.enable)  {
-    nixpkgs.config.allowUnfree = true;
-  };
+  config = lib.mkIf (cfg.enable) { nixpkgs.config.allowUnfree = true; };
 }

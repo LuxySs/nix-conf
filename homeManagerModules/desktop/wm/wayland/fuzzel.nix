@@ -1,9 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
+let
+  cfg = config.settings.wm.fuzzel;
+in
 {
   options.settings.wm.fuzzel.enable = lib.mkEnableOption "fuzzel";
 
-  config = lib.mkIf (config.settings.wm.fuzzel.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.fuzzel.enable = true;
     programs.fuzzel.settings = {
       main = {
@@ -23,7 +31,7 @@
         selection-match = lib.mkDefault "ed8796ff";
         selection-text = lib.mkDefault "cad3f5ff";
         border = lib.mkDefault "51A4E7FF";
-      } ;
+      };
       border = {
         radius = "20";
         width = "2";

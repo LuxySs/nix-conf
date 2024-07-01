@@ -10,6 +10,6 @@
         "liner, 1, 1, 1, 1"
       ];
       animation = "windows, 1, 6, wind, slide";
-   };
+    };
   };
- }
+}

@@ -1,5 +1,14 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
+let
+  cfg = config.settings.wm.hyprland;
+in
 {
   imports = [
     ./animations.nix
@@ -18,10 +27,8 @@
   };
 
   config = lib.mkMerge [
-    (lib.mkIf (!config.settings.wm.hyprland.useFlake) {
-      wayland.windowManager.hyprland.package = pkgs.hyprland;
-    })
-    (lib.mkIf (config.settings.wm.hyprland.enable) {
+    (lib.mkIf (!cfg.useFlake) { wayland.windowManager.hyprland.package = pkgs.hyprland; })
+    (lib.mkIf (cfg.enable) {
 
       wayland.windowManager.hyprland = {
         enable = true;
@@ -32,4 +39,3 @@
     })
   ];
 }
-

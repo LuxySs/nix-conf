@@ -1,9 +1,12 @@
 { config, lib, ... }:
 
+let
+  cfg = config.settings.terminal.alacritty;
+in
 {
   options.settings.terminal.alacritty.enable = lib.mkEnableOption "alacritty";
 
-  config = lib.mkIf (config.settings.terminal.alacritty.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.alacritty = {
       enable = true;
 
@@ -20,7 +23,7 @@
           hide-when-typing = "yes";
         };
         tweak = {
-          font-monospace-warn="no";
+          font-monospace-warn = "no";
         };
       };
     };

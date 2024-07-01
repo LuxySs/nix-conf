@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.main-user;
@@ -9,9 +14,12 @@ in
 
     userName = lib.mkStrOption "mainuser" "main user's username";
 
-    extraGroups = lib.mkOption { 
+    extraGroups = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ "networkmanager" "wheel" ];
+      default = [
+        "networkmanager"
+        "wheel"
+      ];
       description = ''
         List of extra groups for the user.
       '';
@@ -27,4 +35,3 @@ in
     };
   };
 }
-

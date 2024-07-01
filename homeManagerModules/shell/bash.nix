@@ -1,9 +1,12 @@
 { config, lib, ... }:
 
+let
+  cfg = config.settings.shell.bash;
+in
 {
   options.settings.shell.bash.enable = lib.mkDisableOption "enable bash";
 
-  config = lib.mkIf (config.settings.shell.bash.enable){
+  config = lib.mkIf (cfg.enable) {
     programs.bash = {
       enable = true;
       shellAliases = {

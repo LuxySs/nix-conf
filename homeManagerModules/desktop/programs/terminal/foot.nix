@@ -1,9 +1,12 @@
 { config, lib, ... }:
 
+let
+  cfg = config.settings.terminal.foot;
+in
 {
   options.settings.terminal.foot.enable = lib.mkEnableOption "foot";
 
-  config = lib.mkIf (config.settings.terminal.foot.enable) {
+  config = lib.mkIf (cfg.enable) {
     programs.foot = {
       enable = true;
 
@@ -14,7 +17,7 @@
           dpi-aware = lib.mkForce "yes";
         };
         colors = {
-          alpha = lib.mkDefault"0.10";
+          alpha = lib.mkDefault "0.10";
         };
         cursor = {
           color = lib.mkDefault "000000 ffffff";
@@ -23,7 +26,7 @@
           hide-when-typing = "yes";
         };
         tweak = {
-          font-monospace-warn="no";
+          font-monospace-warn = "no";
         };
       };
     };

@@ -5,10 +5,13 @@
   ...
 }:
 
+let
+  cfg = config.settings.noGUI.neovim;
+in
 {
   options.settings.noGUI.neovim.enable = lib.mkEnableOption "neovim";
 
-  config = lib.mkIf (config.settings.noGUI.neovim.enable) {
+  config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [
       neovim
 

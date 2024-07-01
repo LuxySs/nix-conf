@@ -2,8 +2,6 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    # desktop_hyprland.conf
-
     env = [
       "QT_QPA_PLATFORM,wayland"
       "QT_QPA_PLATFORMTHEME,qt6ct"

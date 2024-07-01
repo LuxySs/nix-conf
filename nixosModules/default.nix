@@ -12,13 +12,15 @@
     ./console.nix
     ./experimentalFeatures.nix
     ./fish.nix
+
     ./greeter.nix
     ./hyprland.nix
     ./locale.nix
     ./minecraftServer.nix
     ./networkManager.nix
     ./virt.nix
-    ./nix.nix
+
+    ./cachix.nix
     ./nvidia.nix
     ./openssh.nix
     ./stylix.nix

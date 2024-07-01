@@ -1,8 +1,9 @@
-{ config,lib, ... }:
+{ config, lib, ... }:
 
 let
   cfg = config.settings.desktop;
-in {
+in
+{
   imports = [
     ./programs
     ./wm
@@ -10,7 +11,7 @@ in {
 
   options.settings.desktop.enable = lib.mkEnableOption "Default desktop configuration";
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf (cfg.enable) {
     settings = {
       wm = {
         hyprland.enable = true;
