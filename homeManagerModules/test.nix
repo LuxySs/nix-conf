@@ -2,7 +2,7 @@
 
 {
   config = lib.mkIfCoucou ("coucou") {
-    environment.systemPackages = [
+    home.packages = [
       pkgs.cowsay
     ];
   };

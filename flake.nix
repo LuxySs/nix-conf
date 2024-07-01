@@ -34,10 +34,8 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-      lib = pkgs.lib.extend (self: super: {
-        mkIfCoucou = word: codeBlock: if word == "coucou" then codeBlock else {};
-      });
+      customLib = import ./lib/default.nix { inherit (pkgs) lib; };
+      lib = pkgs.lib.extend (self: super: customLib);
     in
     {
       nixosConfigurations = {
