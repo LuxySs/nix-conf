@@ -1,11 +1,7 @@
 { config, lib, ... }:
 
 {
-  options.settings.nix.substituters.cachix.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-    description = "Enable Cachix substituters for Nix";
-  };
+  options.settings.nix.substituters.cachix.enable = lib.mkDisableOption "Enable Cachix substituters for Nix";
 
   config = lib.mkIf config.settings.nix.substituters.cachix.enable {
     nix.settings = {

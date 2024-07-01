@@ -1,10 +1,7 @@
 { pkgs, config, lib, ... }:
 
 {
-  options.settings.usefulPrograms.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.usefulPrograms.enable = lib.mkDisableOption "useful programs";
 
   config = lib.mkIf (config.settings.usefulPrograms.enable)  {
     environment.systemPackages = with pkgs; [

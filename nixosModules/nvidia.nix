@@ -2,19 +2,10 @@
 
 {
   options.settings.nvidia = {
-    enable = lib.mkEnableOption {
-      default = false;
-      description = "nvidia";
-    };
-    open = lib.mkEnableOption {
-      default = false;
-      description = "nvidia open";
-    };
-    release = lib.mkOption {
-      type = lib.types.enum ["stable" "beta"];
-      default = "stable";
-      description = "nvidia release";
-    };
+    enable = lib.mkEnableOption "nvidia";
+    open = lib.mkEnableOption "nvidia open";
+
+    release = lib.mkChoiceOption ["stable" "beta"] "stable" "nvidia release";
   };
 
   config = lib.mkIf (config.settings.nvidia.enable) {

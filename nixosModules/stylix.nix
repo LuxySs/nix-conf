@@ -2,10 +2,7 @@
 
 {
 
-  options.settings.stylix.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.stylix.enable = lib.mkDisableOption "stylix";
 
   config = lib.mkIf (config.settings.stylix.enable) {
 

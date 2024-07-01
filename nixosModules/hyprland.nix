@@ -1,11 +1,7 @@
 { lib, config, inputs, pkgs, ... }:
 
 {
-  options.settings.hyprland.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-    description = "hyprland";
-  };
+  options.settings.hyprland.enable = lib.mkEnableOption "hyprland";
 
   config = lib.mkIf (config.settings.hyprland.enable)  {
     programs.hyprland = {

@@ -2,14 +2,8 @@
 
 {
   options.settings.locale = {
-    main = lib.mkOption {
-      type = lib.types.str;
-      default = "en_US.UTF-8";
-    };
-    timeZone = lib.mkOption {
-      type = lib.types.str;
-      default = "Europe/Brussels";
-    };
+    main = lib.mkStrOption "en_US.UTF-8" "Locale (Main)";
+    timeZone = lib.mkStrOption "Europe/Brussels" "time zone";
   };
 
   config = with config.settings.locale; {

@@ -5,11 +5,7 @@ let
   hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
 in
 {
-  options.settings.greeter.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = false;
-    description = "greeter";
-  };
+  options.settings.greeter.enable = lib.mkEnableOption "greeter";
 
   config = lib.mkIf (config.settings.greeter.enable) {
     services.greetd = {

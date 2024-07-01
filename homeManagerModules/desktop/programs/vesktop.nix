@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   options.settings.vesktop.enable = lib.mkEnableOption "vesktop";

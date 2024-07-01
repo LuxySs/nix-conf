@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, types, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -13,11 +13,8 @@
 
   options.settings.wm.hyprland = {
     enable = lib.mkEnableOption "hyprland";
-  };
-  options.settings.wm.hyprland.useFlake = lib.mkEnableOption {
-    type = types.bool;
-    default = true;
-    description = "Use flake for hyprland";
+
+    useFlake = lib.mkDisableOption "Use flake for hyprland";
   };
 
   config = lib.mkMerge [

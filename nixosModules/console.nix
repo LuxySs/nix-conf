@@ -2,11 +2,7 @@
 
 {
   options.settings.console = {
-    keyMap = lib.mkOption {
-      type = lib.types.str;
-      default = "us-acentos";
-      description = "The default console keyMap layout";
-    };
+    keyMap = lib.mkStrOption "us-acentos" "keyMap";
   };
 
   config = {

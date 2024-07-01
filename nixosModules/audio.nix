@@ -1,10 +1,7 @@
 { config, lib, ... }:
 
 {
-  options.settings.audio.pipewire.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.audio.pipewire.enable = lib.mkDisableOption "pipewire";
 
   config = lib.mkIf (config.settings.audio.pipewire.enable)  {
     security.rtkit.enable = true;

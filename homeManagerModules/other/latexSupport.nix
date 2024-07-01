@@ -1,11 +1,7 @@
 { lib, pkgs, config, ... }:
 
 {
-  options.settings.latexSupport.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = false;
-    description = "latex support";
-  };
+  options.settings.latexSupport.enable = lib.mkEnableOption "latex support";
 
   config = lib.mkIf (config.settings.latexSupport.enable) {
     home.packages = [

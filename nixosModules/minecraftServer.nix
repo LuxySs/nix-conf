@@ -1,11 +1,7 @@
 { lib, config, pkgs, ... }:
 
 {
-  options.settings.minecraftServer.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = false;
-    description = "minecraft server";
-  };
+  options.settings.minecraftServer.enable = lib.mkEnableOption "minecraft server";
 
   config = lib.mkIf (config.settings.minecraftServer.enable)  {
     networking.firewall = {

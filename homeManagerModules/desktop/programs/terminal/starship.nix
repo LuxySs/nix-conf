@@ -21,6 +21,7 @@ let
 in
 {
   options.settings.terminal.starshipPrompt.enable = lib.mkEnableOption "starship prompt";
+
   config = lib.mkIf (config.settings.terminal.starshipPrompt.enable) {
     programs.starship = {
       enable = true;

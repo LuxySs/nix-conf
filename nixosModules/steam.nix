@@ -1,11 +1,7 @@
 { lib, config, ... }:
 
 {
-  options.settings.steam.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = false;
-    description = "Steam";
-  };
+  options.settings.steam.enable = lib.mkEnableOption "Steam";
 
   config = lib.mkIf (config.settings.hyprland.enable)  {
     programs.steam = {

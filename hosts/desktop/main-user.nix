@@ -7,13 +7,7 @@ in
   options.main-user = {
     enable = lib.mkEnableOption "Enable user module";
 
-    userName = lib.mkOption {
-      type = lib.types.str;
-      default = "mainuser";
-      description = ''
-        Username for the main user.
-      '';
-    };
+    userName = lib.mkStrOption "mainuser" "main user's username";
 
     extraGroups = lib.mkOption { 
       type = lib.types.listOf lib.types.str;

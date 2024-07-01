@@ -7,7 +7,6 @@
     ./games
     ./noGUI
     ./other
-    ./test.nix
   ];
 
   settings = {

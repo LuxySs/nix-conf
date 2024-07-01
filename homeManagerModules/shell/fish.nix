@@ -1,11 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  options.settings.shell.fish.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "enable fish";
-  };
+  options.settings.shell.fish.enable = lib.mkDisableOption "enable fish";
 
   config = lib.mkIf (config.settings.shell.fish.enable){
     programs.fish = {

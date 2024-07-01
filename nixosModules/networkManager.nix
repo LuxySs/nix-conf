@@ -1,10 +1,7 @@
 { config, lib, ... }:
 
 {
-  options.settings.networkManager.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.networkManager.enable = lib.mkDisableOption "Network Manager";
 
   config = lib.mkIf (config.settings.networkManager.enable)  {
     networking.networkmanager.enable = true;

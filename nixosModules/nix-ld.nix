@@ -1,10 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.settings.nix-ld.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.nix-ld.enable = lib.mkDisableOption "nix-ld";
 
   config = lib.mkIf (config.settings.nix-ld.enable)  {
     programs.nix-ld = {

@@ -1,10 +1,7 @@
 { lib, config, ... }:
 
 {
-  options.settings.virtualization.enable = lib.mkEnableOption {
-    type = lib.types.bool;
-    default = false;
-  };
+  options.settings.virtualization.enable = lib.mkEnableOption "virtualization";
 
   config = lib.mkIf (config.settings.virtualization.enable)  {
     virtualisation.libvirtd.enable = true;

@@ -1,10 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  options.settings.sddm.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options.settings.sddm.enable = lib.mkDisableOption "sddm";
 
   config = lib.mkIf (config.settings.sddm.enable)  {
     services.displayManager.sddm = {
