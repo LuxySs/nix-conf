@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options.settings.noGUI.neovim.enable = lib.mkEnableOption "neovim";
@@ -13,7 +18,7 @@
       clang-tools
       rust-analyzer
       nodePackages.typescript-language-server
-      pyright
+      ruff-lsp
       texlab
       marksman
 
@@ -22,6 +27,7 @@
 
       # formatters
       stylua
+      nixfmt-rfc-style
     ];
   };
 }
