@@ -35,7 +35,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      customLib = import ./lib/default.nix { inherit (pkgs) lib; };
+      customLib = import ./lib { inherit (pkgs) lib; };
       lib = pkgs.lib.extend (self: super: customLib);
     in
     {

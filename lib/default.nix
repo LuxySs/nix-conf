@@ -8,9 +8,10 @@ rec {
     type: default: description:
     mkOption { inherit type default description; };
 
-  mkStrOption = default: name: mkOption' types.str default name;
-
   mkDisableOption = name: mkEnableOption name // { default = true; };
+
+  mkStrOption = default: name: mkOption' types.str default name;
+  mkPkgOption = default: name: mkOption' types.package default name;
 
   mkChoiceOption =
     choices: default: description:
