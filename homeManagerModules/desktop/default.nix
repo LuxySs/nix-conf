@@ -7,6 +7,7 @@ in
   imports = [
     ./programs
     ./wm
+    ./gtk.nix
   ];
 
   options.settings.desktop.enable = lib.mkEnableOption "Default desktop configuration";

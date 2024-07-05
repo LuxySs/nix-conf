@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.settings.wm.gtk;
+  cfg = config.settings.gtk;
 in
 {
-  options.settings.wm.gtk = {
+  options.settings.gtk = {
     iconTheme = {
       name = lib.mkStrOption "Papirus-Dark" "Icon theme name";
       package = lib.mkPkgOption pkgs.papirus-icon-theme "icon theme package";
