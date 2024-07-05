@@ -28,8 +28,6 @@
     useGlobalPkgs = true;
   };
 
-  environment.variables.EDITOR = "nvim";
-
   settings = {
     allowUnfree.enable = true;
     audio.pipewire.enable = true;
