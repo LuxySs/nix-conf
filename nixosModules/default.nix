@@ -3,6 +3,7 @@
 {
   imports = [
     ./allowUnfree.nix
+    ./maintenance.nix
     ./nix-ld.nix
     ./kde.nix
     ./sddm.nix
