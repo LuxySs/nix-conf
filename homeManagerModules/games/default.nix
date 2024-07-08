@@ -10,10 +10,7 @@ in
 
   config = lib.mkIf cfg.enable {
     settings.games = {
-      minecraft = {
-        enable = true;
-      };
+      minecraft.enable = lib.mkDefault true;
     };
   };
-
 }
