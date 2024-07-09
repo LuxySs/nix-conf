@@ -1,7 +1,5 @@
-{ ... }:
+{ lib, ... }:
 
 {
-  imports = [
-    ./obsidian.nix
-  ];
+  imports = [ ./obsidian.nix ];
 }

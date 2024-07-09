@@ -7,13 +7,13 @@
 }:
 
 let
-  cfg = config.settings.ags;
+  cfg = config.settings.wm.ags;
 in
 {
   # add the home manager module
   imports = [ inputs.ags.homeManagerModules.default ];
 
-  options.settings.ags.enable = lib.mkEnableOption "AGS (aylurs gtk shell)";
+  options.settings.wm.ags.enable = lib.mkEnableOption "AGS (aylurs gtk shell)";
 
   config = lib.mkIf (cfg.enable) {
     programs.bun.enable = true;

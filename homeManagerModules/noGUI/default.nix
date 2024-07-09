@@ -5,23 +5,23 @@ let
 in
 {
   imports = [
+    ./btop.nix
+    ./git.nix
     ./multiplexers
     ./neovim.nix
-    ./btop.nix
     ./yazi.nix
-    ./git.nix
   ];
 
-  options.settings.noGUI.enable = lib.mkEnableOption "enable noGUI";
+  options.settings.noGUI.enable = lib.mkDisableOption "enable noGUI";
 
   config = lib.mkIf cfg.enable {
     settings.noGUI = {
-      btop.enable = true;
-      git.enable = true;
-      neovim.enable = true;
-      tmux.enable = true;
-      yazi.enable = true;
-      zellij.enable = true;
+      btop.enable = lib.mkDefault true;
+      git.enable = lib.mkDefault true;
+      tmux.enable = lib.mkDefault true;
+      zellij.enable = lib.mkDefault true;
+      neovim.enable = lib.mkDefault true;
+      yazi.enable = lib.mkDefault true;
     };
   };
 }

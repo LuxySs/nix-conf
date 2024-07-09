@@ -4,7 +4,7 @@ let
   cfg = config.settings.wm.hypridle;
 in
 {
-  options.settings.wm.hypridle.enable = lib.mkDisableOption "hypridle";
+  options.settings.wm.hypridle.enable = lib.mkEnableOption "hypridle";
 
   config = lib.mkIf (cfg.enable) {
     services.hypridle = {

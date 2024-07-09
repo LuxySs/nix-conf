@@ -11,6 +11,7 @@ let
 in
 {
   imports = [
+    ./../wayland # import the wayland utilities
     ./animations.nix
     ./inputs.nix
     ./keybindings.nix
@@ -29,6 +30,8 @@ in
   config = lib.mkMerge [
     (lib.mkIf (!cfg.useFlake) { wayland.windowManager.hyprland.package = pkgs.hyprland; })
     (lib.mkIf (cfg.enable) {
+
+      settings.wm.wayland.enable = true;
 
       wayland.windowManager.hyprland = {
         enable = true;

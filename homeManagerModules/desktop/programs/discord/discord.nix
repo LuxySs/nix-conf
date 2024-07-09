@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.settings.discord;
+  cfg = config.settings.discordClient.discord;
 in
 {
-  options.settings.discord.enable = lib.mkEnableOption "discord";
+  options.settings.discordClient.discord.enable = lib.mkEnableOption "discord";
 
   config = lib.mkIf (cfg.enable) {
     nixpkgs.config.allowUnfree = true;

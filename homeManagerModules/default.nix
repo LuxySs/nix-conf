@@ -3,16 +3,16 @@
 {
   imports = [
     ./desktop
-    ./shell
     ./games
     ./noGUI
     ./other
+    ./shell
   ];
 
   settings = {
-    noGUI.enable = lib.mkDefault true;
-
     desktop.enable = lib.mkDefault true;
+
+    noGUI.enable = lib.mkDefault true;
 
     shell = {
       bash.enable = lib.mkDefault true;
@@ -20,5 +20,6 @@
     };
 
     games.minecraft.enable = lib.mkDefault false;
+
   };
 }

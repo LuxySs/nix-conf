@@ -4,11 +4,18 @@ let
   cfg = config.settings.wm.sway;
 in
 {
+  imports = [
+    ./../wayland # import the wayland utilities
+  ];
+
   options.settings.wm.sway = {
     enable = lib.mkEnableOption "sway";
   };
 
   config = lib.mkIf (cfg.enable) {
+
+    settings.wm.wayland.enable = true; # import the wayland stuff
+
     wayland.windowManager.sway = {
       enable = true;
       config = {
