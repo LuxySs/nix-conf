@@ -13,7 +13,7 @@ in
       "beta"
     ] "stable" "nvidia release";
 
-    nvidiaSettings = lib.mkEnableOption "nvidia open";
+    nvidiaSettings = lib.mkEnableOption "nvidia settings";
   };
 
   config = lib.mkIf (cfg.enable) {
