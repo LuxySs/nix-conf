@@ -13,8 +13,8 @@ in
 
   config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [
-      gnome.adwaita-icon-theme
-      gnome.nautilus
+      adwaita-icon-theme
+      nautilus
     ];
   };
 }
