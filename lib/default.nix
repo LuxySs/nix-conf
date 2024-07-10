@@ -10,6 +10,7 @@ rec {
 
   mkDisableOption = name: mkEnableOption name // { default = true; };
 
+  mkIntOption = default: name: mkOption' types.int default name;
   mkStrOption = default: name: mkOption' types.str default name;
   mkPkgOption = default: name: mkOption' types.package default name;
 

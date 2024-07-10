@@ -1,9 +1,17 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  cfg = config.settings;
+in
 {
-  nix.gc = {
-    automatic = true;
-    dates = "00:01";
-    options = "--delete-older-than 10d";
+  options.settings = {
+    gc.deleteOlderThan = lib.mkIntOption 10 "delete older than (garbage collection)";
+  };
+
+  config = {
+    nix.gc = {
+      automatic = true;
+      options = "--delete-older-than ${toString cfg.gc.deleteOlderThan}d";
+    };
   };
 }
