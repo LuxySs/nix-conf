@@ -24,8 +24,9 @@ in
 
       browser = {
         firefox.enable = lib.mkDefault true;
-        qutebrowser.enable = lib.mkDefault true;
+        qutebrowser.enable = lib.mkDefault false;
       };
+
       emacs.enable = lib.mkDefault false;
 
       files.nautilus.enable = lib.mkDefault true;
