@@ -1,7 +1,14 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  myNixos,
+  ...
+}:
 
 let
-  cfg = config.settings.wm.sway;
+  cfg = config.settings.wm.sway // {
+    enable = builtins.elem "sway" myNixos.wm;
+  };
 in
 {
   imports = [
@@ -9,7 +16,7 @@ in
   ];
 
   options.settings.wm.sway = {
-    enable = lib.mkEnableOption "sway";
+    enable = lib.mkEnableOption "sway-wm";
   };
 
   config = lib.mkIf (cfg.enable) {

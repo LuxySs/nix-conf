@@ -2,12 +2,15 @@
   config,
   inputs,
   lib,
+  myNixos,
   pkgs,
   ...
 }:
 
 let
-  cfg = config.settings.wm.hyprland;
+  cfg = config.settings.wm.hyprland // {
+    enable = builtins.elem "hyprland" myNixos.wm;
+  };
 in
 {
   imports = [
@@ -22,14 +25,12 @@ in
   ];
 
   options.settings.wm.hyprland = {
-    enable = lib.mkEnableOption "hyprland";
-
     useFlake = lib.mkDisableOption "Use flake for hyprland";
   };
 
   config = lib.mkMerge [
     (lib.mkIf (!cfg.useFlake) { wayland.windowManager.hyprland.package = pkgs.hyprland; })
-    (lib.mkIf (cfg.enable) {
+    (lib.mkIf (builtins.elem "hyprland" myNixos.wm) {
 
       settings.wm.wayland.enable = true;
 

@@ -45,10 +45,8 @@
             inherit inputs lib;
           };
           modules = [
-            { networking.hostName = "dishwasher"; }
             ./hosts/desktop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -56,10 +54,8 @@
             inherit inputs lib;
           };
           modules = [
-            { networking.hostName = "cookingPlate"; }
             ./hosts/laptop/configuration.nix
             inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
           ];
         };
       };

@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -9,6 +10,8 @@ let
   cfg = config.settings.stylix;
 in
 {
+  imports = [ inputs.stylix.nixosModules.stylix ];
+
   options.settings.stylix = {
     enable = lib.mkDisableOption "stylix";
     theme = lib.mkStrOption "catppuccin-mocha" "stylix theme";

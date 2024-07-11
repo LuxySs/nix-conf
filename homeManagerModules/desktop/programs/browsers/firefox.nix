@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  myNixos,
   ...
 }:
 
@@ -14,7 +15,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.firefox = {
       enable = true;
-      profiles.lulu = {
+      profiles.${myNixos.username} = {
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
           ublock-origin
           vimium

@@ -1,16 +1,15 @@
-{ ... }:
+{ myNixos, ... }:
 
 {
   imports = [ ../../homeManagerModules/default.nix ];
 
   home = {
-    username = "lulu";
-    homeDirectory = "/home/lulu";
+    username = myNixos.username;
+    homeDirectory = "/home/${myNixos.username}";
     stateVersion = "24.11";
   };
 
   settings = {
-    wm.hyprland.enable = true;
     latexSupport.enable = true;
   };
 

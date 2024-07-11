@@ -1,6 +1,15 @@
 { inputs, pkgs, ... }:
 
+let
+  myNixos = {
+    hostname = "cookingPlate";
+    username = "lulu";
+    email = "lucas.verbeiren@gmail.com";
+    wm = [ "hyprland" ];
+  };
+in
 {
+
   imports = [
     ./../../nixosModules
     ./../main-user.nix
@@ -15,7 +24,7 @@
 
   main-user = {
     enable = true;
-    userName = "lulu";
+    userName = myNixos.username;
     defaultShell = pkgs.fish;
     extraGroups = [
       "wheel"
@@ -25,16 +34,15 @@
 
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs myNixos;
     };
     users = {
-      "lulu" = import ./home.nix;
+      ${myNixos.username} = import ./home.nix;
     };
     useGlobalPkgs = true;
   };
 
   settings = {
-    hyprland.enable = true;
     greeter.enable = true;
   };
 
@@ -45,5 +53,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
