@@ -36,6 +36,8 @@
 
     hyprland.enable = true;
 
+    greeter.enable = true;
+
     minecraftServer.enable = true;
 
     nvidia = {

@@ -16,6 +16,7 @@ in
       enable = true;
       wayland.enable = true;
       theme = "catppuccin-mocha";
+      package = lib.mkDefault pkgs.kdePackages.sddm;
     };
 
     environment.systemPackages = [

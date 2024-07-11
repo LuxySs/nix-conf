@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -8,8 +7,6 @@
 
 let
   cfg = config.settings.greeter;
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
-  hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
 in
 {
   options.settings.greeter.enable = lib.mkEnableOption "greeter";
@@ -18,21 +15,14 @@ in
     services.greetd = {
       enable = true;
       settings = {
-        default_session = {
-          command = "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
-          user = "greeter";
-        };
+        default_session.command = ''
+          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+            --time \
+            --asterisks \
+            --remember \
+            --user-menu \
+        '';
       };
-    };
-
-    systemd.services.greetd.serviceConfig = {
-      Type = "idle";
-      StandardInput = "tty";
-      StandardOutput = "tty";
-      StandardError = "journal";
-      TTYReset = true;
-      TTYVHangup = true;
-      TTYVTDisallocate = true;
     };
   };
 }
