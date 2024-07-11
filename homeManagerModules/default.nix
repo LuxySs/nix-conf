@@ -10,7 +10,10 @@
   ];
 
   settings = {
+
     desktop.enable = lib.mkDefault true;
+
+    games.minecraft.enable = lib.mkDefault false;
 
     noGUI.enable = lib.mkDefault true;
 
@@ -18,8 +21,5 @@
       bash.enable = lib.mkDefault true;
       fish.enable = lib.mkDefault true;
     };
-
-    games.minecraft.enable = lib.mkDefault false;
-
   };
 }

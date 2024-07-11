@@ -5,9 +5,9 @@ let
 in
 {
   imports = [
+    ./gtk.nix
     ./programs
     ./wm
-    ./gtk.nix
   ];
 
   options.settings.desktop.enable = lib.mkEnableOption "Default desktop configuration";

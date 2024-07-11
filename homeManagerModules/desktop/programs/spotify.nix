@@ -1,8 +1,8 @@
 {
-  pkgs,
   config,
-  lib,
   inputs,
+  lib,
+  pkgs,
   ...
 }:
 
@@ -45,8 +45,8 @@ in
 
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
-        shuffle # shuffle+ (special characters are sanitized out of ext names)
         hidePodcasts
+        shuffle # shuffle+ (special characters are sanitized out of ext names)
       ];
     };
   };

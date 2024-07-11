@@ -1,9 +1,9 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
-    ./foot.nix
     ./alacritty.nix
+    ./foot.nix
     ./starship.nix # cool prompt
   ];
 }

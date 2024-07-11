@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [ ./obsidian.nix ];

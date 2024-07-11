@@ -16,9 +16,9 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    ags.url = "github:Aylur/ags";
-
     stylix.url = "github:danth/stylix";
+
+    ags.url = "github:Aylur/ags";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 

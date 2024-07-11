@@ -3,29 +3,27 @@
 {
   imports = [
     ./allowUnfree.nix
-    ./maintenance.nix
-    ./nix-ld.nix
-    ./kde.nix
-    ./sddm.nix
     ./audio.nix
     ./bluetooth.nix
-    ./flatpak.nix
+    ./cachix.nix
     ./console.nix
     ./experimentalFeatures.nix
     ./fish.nix
-
+    ./flatpak.nix
     ./greeter.nix
     ./hyprland.nix
+    ./kde.nix
     ./locale.nix
+    ./maintenance.nix
     ./minecraftServer.nix
     ./networkManager.nix
-    ./virt.nix
-
-    ./cachix.nix
+    ./nix-ld.nix
     ./nvidia.nix
     ./openssh.nix
-    ./stylix.nix
+    ./sddm.nix
     ./steam.nix
+    ./stylix.nix
     ./usefulPrograms.nix
+    ./virt.nix
   ];
 }

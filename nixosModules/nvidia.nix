@@ -9,8 +9,8 @@ in
     open = lib.mkEnableOption "nvidia open";
 
     release = lib.mkChoiceOption [
-      "stable"
       "beta"
+      "stable"
     ] "stable" "nvidia release";
 
     nvidiaSettings = lib.mkEnableOption "nvidia settings";

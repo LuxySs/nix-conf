@@ -2,21 +2,25 @@
 
 {
   imports = [
-    inputs.home-manager.nixosModules.default
-    ./hardware-configuration.nix
-    ./main-user.nix
     ./../../nixosModules
+    ./../main-user.nix
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
+  };
 
-  main-user.enable = true;
-  main-user.userName = "lulu";
-  main-user.extraGroups = [
-    "wheel"
-    "networkmanager"
-  ];
+  main-user = {
+    enable = true;
+    userName = "lulu";
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
+  };
 
   home-manager = {
     extraSpecialArgs = {
@@ -29,26 +33,9 @@
   };
 
   settings = {
-    allowUnfree.enable = true;
-    audio.pipewire.enable = true;
 
-    console.keyMap = "us-acentos";
-
-    experimentalFeatures.enable = true;
-    fish.enable = true;
     hyprland.enable = true;
 
-    locale = {
-      main = "en_US.UTF-8";
-      timeZone = "Europe/Brussels";
-    };
-
-    networkManager.enable = true;
-    openssh.enable = true;
-    stylix.enable = true;
-    usefulPrograms.enable = true;
-
-    cachix.enable = true;
   };
 
   # This value determines the NixOS release from which the default

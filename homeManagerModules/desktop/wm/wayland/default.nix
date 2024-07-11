@@ -5,12 +5,12 @@ let
 in
 {
   imports = [
+    ./ags.nix
     ./brightness.nix
     ./fuzzel.nix
+    ./hypridle.nix
     ./hyprlock.nix
     ./playerctl.nix
-    ./ags.nix
-    ./hypridle.nix
     ./screenshots.nix
     ./swww.nix
     ./waybar.nix

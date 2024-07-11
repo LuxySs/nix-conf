@@ -9,11 +9,11 @@ in
     ./discord
     ./emacs
     ./files
-    ./terminal
-    ./pavucontrol.nix
-    ./noteTaking
-    ./spotify.nix
     ./imageViewer.nix
+    ./noteTaking
+    ./pavucontrol.nix
+    ./spotify.nix
+    ./terminal
     ./zathura.nix
   ];
 

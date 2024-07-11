@@ -1,6 +1,6 @@
 {
-  lib,
   config,
+  lib,
   pkgs,
   ...
 }:
@@ -14,27 +14,28 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.neovim = {
       enable = true;
+      defaultEditor = true;
       viAlias = true;
       vimAlias = true;
-      defaultEditor = true;
 
       extraPackages = with pkgs; [
         # lsps
-        lua-language-server
-        nixd
         clang-tools
-        rust-analyzer
+        jdt-language-server
+        lua-language-server
+        marksman
+        nixd
         nodePackages.typescript-language-server
         ruff-lsp
+        rust-analyzer
         texlab
-        marksman
 
         # linters
         ruff
 
         # formatters
-        stylua
         nixfmt-rfc-style
+        stylua
       ];
     };
 
