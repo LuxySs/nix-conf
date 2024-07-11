@@ -10,10 +10,6 @@ in
     programs.bash = {
       enable = true;
       shellAliases = {
-        "v" = "nvim";
-        "vi" = "nvim";
-        "vim" = "nvim";
-
         ".." = "cd ..";
         "..." = "cd ../../";
         "...." = "cd ../../../";

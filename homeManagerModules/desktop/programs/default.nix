@@ -27,29 +27,24 @@ in
         qutebrowser.enable = lib.mkDefault false;
       };
 
-      emacs.enable = lib.mkDefault false;
-
-      files.nautilus.enable = lib.mkDefault true;
-
-      noteTaking.obsidian.enable = lib.mkDefault true;
-
-      terminal = {
-        foot.enable = lib.mkDefault true;
-        alacritty.enable = lib.mkDefault false;
-        starshipPrompt.enable = lib.mkDefault true;
-      };
-
       discordClient = {
         discord.enable = true;
         vesktop.enable = true;
         webcord.enable = false;
       };
 
+      emacs.enable = lib.mkDefault false;
+      files.nautilus.enable = lib.mkDefault true;
       imageViewer.loupe.enable = lib.mkDefault true;
-
+      noteTaking.obsidian.enable = lib.mkDefault true;
       pavucontrol.enable = lib.mkDefault true;
-
       spotify.enable = lib.mkDefault true;
+
+      terminal = {
+        alacritty.enable = lib.mkDefault false;
+        foot.enable = lib.mkDefault true;
+        starshipPrompt.enable = lib.mkDefault true;
+      };
 
       zathura.enable = lib.mkDefault true;
     };

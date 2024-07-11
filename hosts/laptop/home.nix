@@ -10,6 +10,7 @@
   };
 
   settings = {
+    wm.hyprland.enable = true;
     latexSupport.enable = true;
   };
 

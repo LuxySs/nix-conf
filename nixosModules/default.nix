@@ -21,7 +21,6 @@
     ./nvidia.nix
     ./openssh.nix
     ./sddm.nix
-    ./steam.nix
     ./stylix.nix
     ./usefulPrograms.nix
     ./virt.nix

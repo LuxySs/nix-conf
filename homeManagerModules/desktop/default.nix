@@ -15,7 +15,6 @@ in
   config = lib.mkIf (cfg.enable) {
     settings = {
       programs.enable = lib.mkDefault true;
-      wm.hyprland.enable = lib.mkDefault true;
     };
   };
 }

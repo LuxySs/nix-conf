@@ -13,6 +13,7 @@
 
     desktop.enable = lib.mkDefault true;
 
+    # don't want the games by default
     games.minecraft.enable = lib.mkDefault false;
 
     noGUI.enable = lib.mkDefault true;
