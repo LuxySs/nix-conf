@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.settings.files.nautilus;
+  cfg = config.settings.fileManager.nautilus;
 in
 {
-  options.settings.files.nautilus.enable = lib.mkEnableOption "nautilus";
+  options.settings.fileManager.nautilus.enable = lib.mkEnableOption "nautilus";
 
   config = lib.mkIf (cfg.enable) {
     home.packages = with pkgs; [

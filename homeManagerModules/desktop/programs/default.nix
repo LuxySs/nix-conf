@@ -5,16 +5,15 @@ let
 in
 {
   imports = [
-    ./browser
-    ./discord
+    ./browsers
+    ./discordClients
     ./emacs
-    ./files
-    ./imageViewer.nix
-    ./noteTaking
+    ./fileManagers
+    ./mediaViewers
+    ./obsidian.nix
     ./pavucontrol.nix
     ./spotify.nix
-    ./terminal
-    ./zathura.nix
+    ./terminals
   ];
 
   options.settings.programs.enable = lib.mkEnableOption "desktop programs";
@@ -22,31 +21,34 @@ in
   config = lib.mkIf (cfg.enable) {
     settings = {
 
-      browser = {
-        firefox.enable = lib.mkDefault true;
-        qutebrowser.enable = lib.mkDefault false;
-      };
+      browsers = [ "firefox" ];
 
-      discordClient = {
-        discord.enable = true;
-        vesktop.enable = true;
-        webcord.enable = false;
-      };
+      discordClients = [
+        "discord"
+        "vesktop"
+      ];
 
       emacs.enable = lib.mkDefault false;
-      files.nautilus.enable = lib.mkDefault true;
-      imageViewer.loupe.enable = lib.mkDefault true;
-      noteTaking.obsidian.enable = lib.mkDefault true;
+
+      fileManagers = lib.mkDefault [ "nautilus" ];
+
+      mediaViewers = lib.mkDefault [
+        "loupe"
+        "zathura"
+      ];
+
       pavucontrol.enable = lib.mkDefault true;
+      obsidian.enable = lib.mkDefault true;
       spotify.enable = lib.mkDefault true;
 
       terminal = {
-        alacritty.enable = lib.mkDefault false;
-        foot.enable = lib.mkDefault true;
+        emulators = lib.mkDefault [
+          "alacritty"
+          "foot"
+        ];
         starshipPrompt.enable = lib.mkDefault true;
       };
-
-      zathura.enable = lib.mkDefault true;
     };
+
   };
 }

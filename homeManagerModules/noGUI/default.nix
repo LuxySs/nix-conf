@@ -18,10 +18,9 @@ in
     settings.noGUI = {
       btop.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
+      multiplexers = lib.mkDefault [ "zellij" ];
       neovim.enable = lib.mkDefault true;
-      tmux.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
-      zellij.enable = lib.mkDefault true;
     };
   };
 }
