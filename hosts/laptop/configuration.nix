@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -16,6 +16,7 @@
   main-user = {
     enable = true;
     userName = "lulu";
+    defaultShell = pkgs.fish;
     extraGroups = [
       "wheel"
       "networkmanager"
@@ -33,11 +34,8 @@
   };
 
   settings = {
-
     hyprland.enable = true;
-
     greeter.enable = true;
-
   };
 
   # This value determines the NixOS release from which the default

@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -16,6 +16,7 @@
   main-user = {
     enable = true;
     userName = "lulu";
+    defaultShell = pkgs.fish;
     extraGroups = [
       "wheel"
       "networkmanager"
@@ -33,13 +34,9 @@
   };
 
   settings = {
-
     hyprland.enable = true;
-
     greeter.enable = true;
-
     minecraftServer.enable = true;
-
     nvidia = {
       enable = true;
       release = "beta";

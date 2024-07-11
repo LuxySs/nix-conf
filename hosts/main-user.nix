@@ -11,27 +11,24 @@ in
 {
   options.main-user = {
     enable = lib.mkEnableOption "Enable user module";
-
     userName = lib.mkStrOption "mainuser" "main user's username";
-
+    defaultShell = lib.mkPkgOption pkgs.bash "user's main shell";
     extraGroups = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
+      description = ''List of extra groups for the user. '';
       default = [
         "networkmanager"
         "wheel"
       ];
-      description = ''
-        List of extra groups for the user.
-      '';
+      type = lib.types.listOf lib.types.str;
     };
   };
 
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
-      isNormalUser = true;
       description = "main user";
       extraGroups = cfg.extraGroups;
-      shell = pkgs.fish;
+      isNormalUser = true;
+      shell = cfg.defaultShell;
     };
   };
 }
