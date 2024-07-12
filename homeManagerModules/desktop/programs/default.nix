@@ -49,6 +49,5 @@ in
         starshipPrompt.enable = lib.mkDefault true;
       };
     };
-
   };
 }

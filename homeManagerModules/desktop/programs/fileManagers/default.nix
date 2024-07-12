@@ -9,10 +9,10 @@ in
   options.settings.fileManagers = lib.mkOption {
     type = lib.types.listOf lib.types.str;
     default = [ ];
-    description = "list of fileManagers name";
+    description = "list of file-managers name";
   };
 
-  config.settings.fileManagers = {
-    discord.enable = builtins.elem "nautilus" cfg;
+  config.settings.fileManager = {
+    nautilus.enable = builtins.elem "nautilus" cfg;
   };
 }
