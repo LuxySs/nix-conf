@@ -53,5 +53,15 @@
           modules = [ ./hosts/laptop/configuration.nix ];
         };
       };
+
+      homeConfigurations = {
+        archNixified = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit inputs lib;
+          };
+          modules = [ ./archNixified/home.nix ];
+        };
+      };
     };
 }
