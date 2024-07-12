@@ -14,5 +14,8 @@
 
     exec-once = "swww-daemon & ags";
 
+    xwayland = {
+      force_zero_scaling = true;
+    };
   };
 }
