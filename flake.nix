@@ -44,19 +44,13 @@
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [
-            ./hosts/desktop/configuration.nix
-            inputs.home-manager.nixosModules.home-manager
-          ];
+          modules = [ ./hosts/desktop/configuration.nix ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [
-            ./hosts/laptop/configuration.nix
-            inputs.home-manager.nixosModules.home-manager
-          ];
+          modules = [ ./hosts/laptop/configuration.nix ];
         };
       };
     };
