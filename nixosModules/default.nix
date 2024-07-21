@@ -14,10 +14,10 @@
     ./hyprland.nix
     ./kde.nix
     ./locale.nix
-    ./maintenance.nix
     ./minecraftServer.nix
     ./networkManager.nix
     ./nix-ld.nix
+    ./nixHelper.nix
     ./nvidia.nix
     ./openssh.nix
     ./sddm.nix
