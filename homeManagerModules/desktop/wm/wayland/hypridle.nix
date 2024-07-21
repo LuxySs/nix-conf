@@ -4,7 +4,13 @@ let
   cfg = config.settings.wm.hypridle;
 in
 {
-  options.settings.wm.hypridle.enable = lib.mkEnableOption "hypridle";
+  options.settings.wm.hypridle = {
+    enable = lib.mkEnableOption "hypridle";
+    timeout = {
+      lock = lib.mkIntOption 60 "hypridle lock timeout";
+      dpms = lib.mkIntOption 120 "hypridle dpms (black screen) timeout";
+    };
+  };
 
   config = lib.mkIf (cfg.enable) {
     services.hypridle = {
@@ -18,11 +24,11 @@ in
 
         listener = [
           {
-            timeout = 30;
+            timeout = cfg.timeout.lock;
             on-timeout = "hyprlock";
           }
           {
-            timeout = 60;
+            timeout = cfg.timeout.dpms;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
