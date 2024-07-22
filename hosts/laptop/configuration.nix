@@ -22,6 +22,8 @@ in
       inputs.home-manager.nixosModules.default
     ];
 
+  networking.hostName = myNixos.hostname;
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;

@@ -12,7 +12,7 @@ in
 
   imports =
     let
-      devices = "/dev/sda";
+      device = "/dev/sda";
     in
     [
       ./../../nixosModules
@@ -21,6 +21,8 @@ in
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
+
+  networking.hostName = myNixos.hostname;
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
