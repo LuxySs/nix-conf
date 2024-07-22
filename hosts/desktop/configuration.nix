@@ -10,13 +10,17 @@ let
 in
 {
 
-  imports = [
-    ./../../nixosModules
-    ./../main-user.nix
-    ./hardware-configuration.nix
-    ./disko-config.nix
-    inputs.home-manager.nixosModules.default
-  ];
+  imports =
+    let
+      devices = "/dev/sda";
+    in
+    [
+      ./../../nixosModules
+      ./../main-user.nix
+      ./disko-config.nix
+      ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
 
   boot.loader = {
     efi.canTouchEfiVariables = true;

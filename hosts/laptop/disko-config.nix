@@ -1,8 +1,9 @@
-{ 
+{
   device ? throw "Set this to your disk devie, e.g /dev/sda",
   inputs,
   ...
-}: {
+}:
+{
   imports = [ inputs.disko.nixosModules.default ];
 
   disko.devices = {
