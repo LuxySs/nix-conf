@@ -52,10 +52,7 @@
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [
-            ./hosts/desktop/configuration.nix
-            inputs.disko.nixosModules.disko
-          ];
+          modules = [ ./hosts/desktop/configuration.nix ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
