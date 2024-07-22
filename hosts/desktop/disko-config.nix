@@ -2,15 +2,17 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/sdb";
         type = "disk";
+        device = "/dev/sdb";
         content = {
           type = "gpt";
           partitions = {
 
             ESP = {
-              type = "EF00";
+              priority = 1;
+              name = "ESP";
               size = "256M";
+              type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -21,8 +23,7 @@
             home = {
               size = "250G";
               content = {
-                type = "filesystem";
-                format = "btrfs";
+                type = "btrfs";
                 mountpoint = "/home";
               };
             };
@@ -30,8 +31,8 @@
             root = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "btrfs";
+                type = "btrfs";
+                extraArgs = [ "-f" ];
                 mountpoint = "/";
               };
             };

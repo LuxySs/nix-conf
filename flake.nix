@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     hyprland-plugins = {
@@ -47,7 +52,10 @@
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [ ./hosts/desktop/configuration.nix ];
+          modules = [
+            ./hosts/desktop/configuration.nix
+            inputs.disko.nixosModules.disko
+          ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
