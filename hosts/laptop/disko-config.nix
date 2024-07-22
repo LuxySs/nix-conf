@@ -1,47 +1,46 @@
-{ inputs, ... }:
-
-{
-  imports = [ inputs.disko.nixosModules.disko ];
+{ 
+  device ? throw "Set this to your disk devie, e.g /dev/sda",
+  inputs,
+  ...
+}: {
+  imports = [ inputs.disko.nixosModules.default ];
 
   disko.devices = {
-    disk = {
-      main = {
-        type = "disk";
-        device = "/dev/disk"; # ajdust this one
-        content = {
-          type = "gpt";
-          partitions = {
+    disk.main = {
+      inherit device;
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions = {
 
-            ESP = {
-              priority = 1;
-              name = "ESP";
-              size = "256M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
+          ESP = {
+            type = "EF00";
+            size = "256M";
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
             };
-
-            home = {
-              size = "250G";
-              content = {
-                type = "btrfs";
-                mountpoint = "/home";
-              };
-            };
-
-            root = {
-              size = "100%";
-              content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ];
-                mountpoint = "/";
-              };
-            };
-
           };
+
+          home = {
+            size = "250G";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/home";
+            };
+          };
+
+          root = {
+            size = "100%";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/";
+            };
+          };
+
         };
       };
     };

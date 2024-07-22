@@ -6,6 +6,7 @@ let
     username = "lulu";
     email = "lucas.verbeiren@gmail.com";
     wm = [ "hyprland" ];
+    device = "/dev/nvme0n1";
   };
 in
 {
