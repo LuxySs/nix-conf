@@ -26,10 +26,13 @@ in
 
       # additional packages to add to gjs's runtime
       extraPackages = with pkgs; [
+        accountsservice
         gtksourceview
         webkitgtk
-        accountsservice
       ];
     };
+
+    # other programs used for ags
+    home.packages = with pkgs; [ sassc ];
   };
 }

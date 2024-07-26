@@ -62,13 +62,14 @@
         };
       };
 
+      # this one is currently unmaintained
       homeConfigurations = {
-        archNixified = inputs.home-manager.lib.homeManagerConfiguration {
+        "lulu" = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = {
             inherit inputs lib;
           };
-          modules = [ ./archNixified/home.nix ];
+          modules = [ ./lulu/home.nix ];
         };
       };
     };

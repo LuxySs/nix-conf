@@ -11,6 +11,7 @@
     ./fish.nix
     ./flatpak.nix
     ./greeter.nix
+    ./gvfs.nix
     ./hyprland.nix
     ./kde.nix
     ./locale.nix
