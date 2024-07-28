@@ -54,7 +54,7 @@ in
     minecraftServer.enable = true;
     nvidia = {
       enable = true;
-      release = "beta";
+      release = "stable";
     };
     DE.kde.enable = true;
   };

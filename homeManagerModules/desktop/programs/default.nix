@@ -23,10 +23,7 @@ in
 
       browsers = [ "firefox" ];
 
-      discordClients = [
-        "discord"
-        "vesktop"
-      ];
+      discordClients = [ "vesktop" ];
 
       emacs.enable = lib.mkDefault false;
 

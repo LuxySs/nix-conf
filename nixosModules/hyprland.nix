@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   myNixos,
   pkgs,
@@ -16,7 +15,6 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.hyprland = {
       enable = if builtins.elem "firefox" myNixos.wm then true else lib.mkEnableOption "hyprland";
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       xwayland.enable = true;
     };
 

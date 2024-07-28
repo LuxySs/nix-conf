@@ -5,6 +5,7 @@
     env = [
       "QT_QPA_PLATFORM,wayland"
       "QT_QPA_PLATFORMTHEME,qt6ct"
+      "WLR_NO_HARDWARE_CURSORS=1"
     ];
 
     monitor = [

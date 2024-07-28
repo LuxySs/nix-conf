@@ -36,7 +36,7 @@ in
 
       wayland.windowManager.hyprland = {
         enable = true;
-        package = lib.mkDefault inputs.hyprland.packages."${pkgs.system}".hyprland;
+        package = lib.mkDefault inputs.hyprland.packages.${pkgs.system}.hyprland;
         systemd.enable = true;
         xwayland.enable = true;
       };
