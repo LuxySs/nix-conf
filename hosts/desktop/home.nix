@@ -11,6 +11,7 @@
 
   settings = {
     latexSupport.enable = true;
+    games.enable = true;
   };
 
   # disable stylix for kde cuz not working great/at all

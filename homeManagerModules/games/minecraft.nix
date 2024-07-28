@@ -11,5 +11,5 @@ in
 {
   options.settings.games.minecraft.enable = lib.mkEnableOption "minecraft";
 
-  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ prismlauncher ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ lunar-client ]; };
 }
