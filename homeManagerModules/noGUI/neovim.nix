@@ -36,6 +36,9 @@ in
         # formatters
         nixfmt-rfc-style
         stylua
+
+        # dap
+        gdb
       ];
     };
 
