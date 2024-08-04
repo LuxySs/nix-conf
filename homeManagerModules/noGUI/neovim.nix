@@ -26,7 +26,7 @@ in
         marksman
         nixd
         nodePackages.typescript-language-server
-        ruff-lsp
+        pyright
         rust-analyzer
         texlab
 
