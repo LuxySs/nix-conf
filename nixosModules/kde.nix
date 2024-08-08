@@ -1,14 +1,8 @@
-{ config, lib, ... }:
+{ settings, lib, ... }:
 
 let
-  cfg = config.settings.DE.kde;
+  cfg.enable = builtins.elem "kde" settings.DE;
 in
 {
-  options.settings.DE.kde.enable = lib.mkEnableOption "KDE";
-
-  config = lib.mkIf (cfg.enable) {
-    services.desktopManager.plasma6.enable = true;
-
-    services.displayManager.defaultSession = "plasma";
-  };
+  config = lib.mkIf (cfg.enable) { services.desktopManager.plasma6.enable = true; };
 }

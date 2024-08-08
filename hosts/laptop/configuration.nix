@@ -46,7 +46,6 @@
   };
 
   settings = {
-    # greeter.enable = true;
     sddm.enable = true;
   };
 

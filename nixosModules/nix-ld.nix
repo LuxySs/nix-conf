@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   cfg = config.settings.nix-ld;
@@ -21,7 +16,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.nix-ld = {
       enable = true;
-      libraries = cfg.packages ++ [ pkgs.vimPlugins.markdown-preview-nvim ];
+      libraries = cfg.packages;
     };
   };
 }

@@ -46,14 +46,12 @@
   };
 
   settings = {
-    # greeter.enable = true;
     sddm.enable = true;
     minecraftServer.enable = true;
     nvidia = {
       enable = true;
       release = "stable";
     };
-    DE.kde.enable = true;
   };
 
   # This value determines the NixOS release from which the default

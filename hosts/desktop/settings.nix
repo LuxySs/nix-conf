@@ -2,8 +2,6 @@
   hostname = "dishwasher";
   username = "lulu";
   email = "lucas.verbeiren@gmail.com";
-  wm = [
-    "hyprland"
-    "sway"
-  ];
+  wm = [ "hyprland" ];
+  DE = [ ];
 }

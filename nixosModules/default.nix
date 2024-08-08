@@ -10,6 +10,7 @@
     ./experimentalFeatures.nix
     ./fish.nix
     ./flatpak.nix
+    ./gnome.nix
     ./greeter.nix
     ./gvfs.nix
     ./hyprland.nix
