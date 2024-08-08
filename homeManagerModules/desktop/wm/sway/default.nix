@@ -1,28 +1,18 @@
-{
-  config,
-  lib,
-  myNixos,
-  ...
-}:
+{ lib, settings, ... }:
 
 let
-  cfg = config.settings.wm.sway // {
-    enable = builtins.elem "sway" myNixos.wm;
+  cfg = {
+    enable = builtins.elem "sway" settings.wm;
   };
 in
 {
+
   imports = [
     ./../wayland # import the wayland utilities
   ];
 
-  options.settings.wm.sway = {
-    enable = lib.mkEnableOption "sway-wm";
-  };
-
   config = lib.mkIf (cfg.enable) {
-
-    settings.wm.wayland.enable = true; # import the wayland stuff
-
+    settings.wm.wayland.enable = true; # toggle the wayland stuff
     wayland.windowManager.sway = {
       enable = true;
       config = {

@@ -1,15 +1,16 @@
 {
-  config,
   inputs,
   lib,
-  myNixos,
+  settings,
   pkgs,
+  config,
   ...
 }:
 
 let
-  cfg = config.settings.wm.hyprland // {
-    enable = builtins.elem "hyprland" myNixos.wm;
+  cfg = {
+    enable = builtins.elem "hyprland" settings.wm;
+    useFlake = config.settings.wm.hyprland.useFlake;
   };
 in
 {
@@ -30,10 +31,8 @@ in
 
   config = lib.mkMerge [
     (lib.mkIf (!cfg.useFlake) { wayland.windowManager.hyprland.package = pkgs.hyprland; })
-    (lib.mkIf (builtins.elem "hyprland" myNixos.wm) {
-
-      settings.wm.wayland.enable = true;
-
+    (lib.mkIf (cfg.enable) {
+      settings.wm.wayland.enable = true; # toggle the wayland stuff
       wayland.windowManager.hyprland = {
         enable = true;
         package = lib.mkDefault inputs.hyprland.packages.${pkgs.system}.hyprland;

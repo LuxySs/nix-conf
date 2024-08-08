@@ -12,11 +12,18 @@ in
   options.settings.sddm.enable = lib.mkDisableOption "sddm";
 
   config = lib.mkIf (cfg.enable) {
-    services.displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "catppuccin-mocha";
-      package = lib.mkDefault pkgs.kdePackages.sddm;
+    services.displayManager = {
+      sessionPackages = [
+        config.programs.hyprland.package
+        config.programs.sway.package
+      ];
+
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+        theme = "catppuccin-mocha";
+        package = lib.mkDefault pkgs.kdePackages.sddm;
+      };
     };
 
     environment.systemPackages = [

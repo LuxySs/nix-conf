@@ -1,20 +1,19 @@
 {
-  config,
+  inputs,
   lib,
-  myNixos,
   pkgs,
+  settings,
   ...
 }:
 
 let
-  cfg = config.settings.hyprland;
+  cfg.enable = builtins.elem "hyprland" settings.wm;
 in
 {
-  options.settings.hyprland.enable = lib.mkEnableOption "hyprland";
-
   config = lib.mkIf (cfg.enable) {
     programs.hyprland = {
-      enable = if builtins.elem "firefox" myNixos.wm then true else lib.mkEnableOption "hyprland";
+      enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       xwayland.enable = true;
     };
 

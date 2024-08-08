@@ -51,12 +51,14 @@
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs lib;
+            settings = import ./hosts/desktop/settings.nix;
           };
           modules = [ ./hosts/desktop/configuration.nix ];
         };
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs lib;
+            settings = import ./hosts/laptop/settings.nix;
           };
           modules = [ ./hosts/laptop/configuration.nix ];
         };

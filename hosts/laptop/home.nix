@@ -1,11 +1,11 @@
-{ myNixos, ... }:
+{ settings, ... }:
 
 {
   imports = [ ../../homeManagerModules/default.nix ];
 
   home = {
-    username = myNixos.username;
-    homeDirectory = "/home/${myNixos.username}";
+    username = settings.username;
+    homeDirectory = "/home/${settings.username}";
     stateVersion = "24.11";
   };
 

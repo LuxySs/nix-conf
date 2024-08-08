@@ -1,15 +1,11 @@
-{ inputs, pkgs, ... }:
-
-let
-  myNixos = {
-    hostname = "dishwasher";
-    username = "lulu";
-    email = "lucas.verbeiren@gmail.com";
-    wm = [ "hyprland" ];
-  };
-in
 {
+  inputs,
+  pkgs,
+  settings,
+  ...
+}:
 
+{
   imports =
     let
       device = "/dev/sda";
@@ -22,7 +18,7 @@ in
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.hostName = myNixos.hostname;
+  networking.hostName = settings.hostname;
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -31,7 +27,7 @@ in
 
   main-user = {
     enable = true;
-    userName = myNixos.username;
+    userName = settings.username;
     defaultShell = pkgs.fish;
     extraGroups = [
       "wheel"
@@ -41,16 +37,17 @@ in
 
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs myNixos;
+      inherit inputs settings;
     };
     users = {
-      ${myNixos.username} = import ./home.nix;
+      ${settings.username} = import ./home.nix;
     };
     useGlobalPkgs = true;
   };
 
   settings = {
-    greeter.enable = true;
+    # greeter.enable = true;
+    sddm.enable = true;
     minecraftServer.enable = true;
     nvidia = {
       enable = true;
