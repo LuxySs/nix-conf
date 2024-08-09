@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ./latexSupport.nix ];
+  imports = [
+    ./direnv.nix
+    ./latexSupport.nix
+  ];
 }
