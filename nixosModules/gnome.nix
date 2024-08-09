@@ -31,5 +31,8 @@ in
         hitori # sudoku game
         atomix # puzzle game
       ]);
+
+    # use pipewire instead of pulseaudio
+    hardware.pulseaudio.enable = lib.mkForce false;
   };
 }

@@ -11,7 +11,7 @@ in
     ./fileManagers
     ./mediaViewers
     ./obsidian.nix
-    ./pavucontrol.nix
+    ./pwvucontrol.nix
     ./spotify.nix
     ./terminals
   ];
@@ -34,7 +34,7 @@ in
         "zathura"
       ];
 
-      pavucontrol.enable = lib.mkDefault true;
+      pwvucontrol.enable = lib.mkDefault true;
       obsidian.enable = lib.mkDefault true;
       spotify.enable = lib.mkDefault true;
 
