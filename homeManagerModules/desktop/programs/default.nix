@@ -5,15 +5,15 @@ let
 in
 {
   imports = [
-    ./browsers
-    ./discordClients
+    ./browser
+    ./discordClient
     ./emacs
-    ./fileManagers
-    ./mediaViewers
+    ./fileManager
+    ./mediaViewer
     ./obsidian.nix
     ./pwvucontrol.nix
     ./spotify.nix
-    ./terminals
+    ./terminal
   ];
 
   options.settings.programs.enable = lib.mkEnableOption "desktop programs";
@@ -21,28 +21,28 @@ in
   config = lib.mkIf (cfg.enable) {
     settings = {
 
-      browsers = [ "firefox" ];
+      browser.firefox.enable = lib.mkDefault true;
 
-      discordClients = [ "vesktop" ];
+      discordClient.vesktop.enable = lib.mkDefault true;
 
       emacs.enable = lib.mkDefault false;
 
-      fileManagers = lib.mkDefault [ "nautilus" ];
+      fileManager.nautilus.enable = lib.mkDefault true;
 
-      mediaViewers = lib.mkDefault [
-        "loupe"
-        "zathura"
-      ];
+      mediaViewer = {
+        loupe.enable = lib.mkDefault true;
+        zathura.enable = lib.mkDefault true;
+      };
+
+      obsidian.enable = lib.mkDefault true;
 
       pwvucontrol.enable = lib.mkDefault true;
-      obsidian.enable = lib.mkDefault true;
+
       spotify.enable = lib.mkDefault true;
 
       terminal = {
-        emulators = lib.mkDefault [
-          "alacritty"
-          "foot"
-        ];
+        alacritty.enable = lib.mkDefault true;
+        foot.enable = lib.mkDefault true;
         starshipPrompt.enable = lib.mkDefault true;
       };
     };

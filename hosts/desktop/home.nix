@@ -1,4 +1,4 @@
-{ settings, ... }:
+{ pkgs, settings, ... }:
 
 {
   imports = [ ../../homeManagerModules/default.nix ];
