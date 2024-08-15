@@ -1,14 +1,11 @@
 { 
   config,
-  inputs,
   lib,
-  pkgs,
   ... 
 }:
 
 let
   cfg = config.settings.noGUI;
-  myNixCats = import ./nixCats { inherit inputs; };
 in
 {
   imports = [
@@ -17,20 +14,18 @@ in
     ./multiplexers
     ./neovim.nix
     ./yazi.nix
+    ./nixCats
   ];
 
   options.settings.noGUI.enable = lib.mkDisableOption "enable noGUI";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      myNixCats.packages.${pkgs.system}.nixCats
-    ];
-
     settings.noGUI = {
       btop.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
       multiplexers = lib.mkDefault [ "zellij" ];
-      neovim.enable = lib.mkDefault true;
+      nixCats.enable = lib.mkDefault true;
+      neovim.enable = lib.mkDefault false;
       yazi.enable = lib.mkDefault true;
     };
   };
