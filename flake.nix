@@ -36,6 +36,8 @@
     };
 
     webcord.url = "github:fufexan/webcord-flake";
+
+    nixCats.url = "github:BirdeeHub/nixCats-nvim?dir=nix";
   };
 
   outputs =

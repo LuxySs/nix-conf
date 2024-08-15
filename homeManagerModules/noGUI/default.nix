@@ -1,7 +1,14 @@
-{ config, lib, ... }:
+{ 
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ... 
+}:
 
 let
   cfg = config.settings.noGUI;
+  myNixCats = import ./nixCats { inherit inputs; };
 in
 {
   imports = [
@@ -15,6 +22,10 @@ in
   options.settings.noGUI.enable = lib.mkDisableOption "enable noGUI";
 
   config = lib.mkIf cfg.enable {
+    home.packages = [
+      myNixCats.packages.${pkgs.system}.nixCats
+    ];
+
     settings.noGUI = {
       btop.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;

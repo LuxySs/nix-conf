@@ -16,7 +16,7 @@ in
       enable = true;
       defaultEditor = true;
       viAlias = true;
-      vimAlias = true;
+      vimAlias = false;
 
       extraPackages = with pkgs; [
         # lsps
