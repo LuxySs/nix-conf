@@ -138,6 +138,16 @@ let
         # oil
         nvim-web-devicons
         oil-nvim
+
+        # telescope
+        nvim-web-devicons
+        plenary-nvim
+        telescope-fzf-native-nvim
+        telescope-nvim
+        telescope-ui-select-nvim
+
+        # ufo
+        nvim-ufo
       ];
 
       markdown = [
