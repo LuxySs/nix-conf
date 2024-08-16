@@ -8,7 +8,7 @@
 
 let
   cfg = config.settings.noGUI.nixCats;
-  myNixCats = import ./entry.nix { inherit inputs; };
+  myNixCats = import ./conf { inherit inputs; };
 in
 {
   options.settings.noGUI.nixCats.enable = lib.mkDisableOption "nixCats"; 
