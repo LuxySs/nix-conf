@@ -11,10 +11,10 @@ in
   imports = [
     ./btop.nix
     ./git.nix
-    ./multiplexers
+    ./multiplexer
     ./neovim.nix
-    ./yazi.nix
     ./nixCats
+    ./yazi.nix
   ];
 
   options.settings.noGUI.enable = lib.mkDisableOption "enable noGUI";
@@ -23,10 +23,11 @@ in
     settings.noGUI = {
       btop.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
-      multiplexers = lib.mkDefault [ "zellij" ];
-      nixCats.enable = lib.mkDefault true;
       neovim.enable = lib.mkDefault false;
+      nixCats.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
+      zellij.enable = lib.mkDefault true;
+      tmux.enable = lib.mkDefault true;
     };
   };
 }
