@@ -3,7 +3,6 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-
       "SUPER, Print, exec, grim -g \"$(slurp)\" - | swappy -f - "
 
       "SUPER, O, exec, pkill .ags-wrapped || ags"
@@ -99,6 +98,8 @@
       "ALT, down, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" # mute/unmute output
+      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" # mute/unmute mic
 
       # brightness
       ",XF86MonBrightnessDown, exec, brightnessctl set 3%-"
