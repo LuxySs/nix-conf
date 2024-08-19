@@ -31,6 +31,7 @@ in
 
       mediaViewer = {
         loupe.enable = lib.mkDefault true;
+        mpv.enable = lib.mkDefault true;
         zathura.enable = lib.mkDefault true;
       };
 
