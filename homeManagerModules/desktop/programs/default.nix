@@ -20,7 +20,6 @@ in
 
   config = lib.mkIf (cfg.enable) {
     settings = {
-
       browser.firefox.enable = lib.mkDefault true;
 
       discordClient.vesktop.enable = lib.mkDefault true;
