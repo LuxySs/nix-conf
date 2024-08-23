@@ -5,6 +5,9 @@ local map = vim.keymap.set
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Basic functionality
+map('n', 'L', 'vg_', { desc = 'Select to end of Line' })
+
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -24,7 +27,7 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- works weirdly (not basic hjkl resizing)
+-- window resizing: works weirdly (not basic wm-like hjkl resizing)
 map('n', '<M-h>', '<c-w>5<')
 map('n', '<M-l>', '<c-w>5>')
 map('n', '<M-k>', '<c-w>+')
