@@ -26,9 +26,11 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
+      nix = { 'nixfmt' },
+      c = { 'clang-format' },
+      cpp = { 'clang-format' },
       python = { 'isort', 'ruff-format' },
       javascript = { 'prettierd' },
-      nix = { 'nixfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
