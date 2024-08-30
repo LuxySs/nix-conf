@@ -14,18 +14,16 @@ in
     environment.gnome.excludePackages =
       (with pkgs; [
         gnome-photos
+        gnome-music
         gnome-tour
-        cheese # webcam tool
         gnome-terminal
+        gnome-characters
+        cheese # webcam tool
         gedit # text editor
         epiphany # web browser
         geary # email reader
         evince # document viewer
         totem # video player
-      ])
-      ++ (with pkgs.gnome; [
-        gnome-music
-        gnome-characters
         tali # poker game
         iagno # go game
         hitori # sudoku game
