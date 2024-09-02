@@ -126,6 +126,9 @@ let
         # gitsigns
         gitsigns-nvim
 
+        # harpoon
+        harpoon2
+
         # mini
         mini-nvim
 

@@ -36,13 +36,13 @@ map('n', '=', ':Neotree toggle<CR>')
 
 -- compile latex / markdown
 map('n', '<leader>ll', function()
-  -- Get the current filetype
   local filetype = vim.bo.filetype
   if filetype == 'tex' then
     vim.cmd 'VimtexCompile'
   elseif filetype == 'markdown' then
+    print 'starting markdown preview'
     vim.cmd 'MarkdownPreviewToggle'
   else
     vim.cmd "echo 'File not compilable'"
   end
-end)
+end, { desc = 'compile latex/markdown' })
