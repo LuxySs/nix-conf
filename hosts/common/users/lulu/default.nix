@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  profile ? "full",
   ...
 }:
 {
@@ -22,15 +23,8 @@
     extraSpecialArgs = {
       inherit inputs;
     };
-    users.lulu = {
 
-      /* profiles names instead of dishwasher would make more sense since the
-      user doesn't care about the machine's hostname but cares about what
-      type of tasks he would do the machine (profile) */
-      imports = [ ../../../../home/lulu/dishwasher.nix ];
-    };
+    # import the user's home-manager according to the disired profile.
+    users.lulu = import ( ../../../../home/lulu + "/${profile}.nix" ); 
   };
-
-  # Import this user's personal/home configurations
-  # home-manager.users.lulu = import (./../../../home/lulu + "/" + config.networking.hostName + ".nix");
 }

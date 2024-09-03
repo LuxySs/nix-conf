@@ -21,7 +21,7 @@
       ./../common/optional
 
       ### USERS ###
-      ./../common/users/lulu
+      ./../common/users/lulu { _module.args.profile = "full"; }
     ];
 
   boot.loader = {
