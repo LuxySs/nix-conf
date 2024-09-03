@@ -1,4 +1,0 @@
-{ testvar }:
-
-assert testvar != null;
-{ }
