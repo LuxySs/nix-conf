@@ -21,5 +21,13 @@ in
         package = lib.mkDefault pkgs.kdePackages.sddm;
       };
     };
+
+    environment.systemPackages = [
+      (pkgs.catppuccin-sddm.override {
+        flavor = "mocha";
+        fontSize = "13";
+        loginBackground = true;
+      })
+    ];
   };
 }
