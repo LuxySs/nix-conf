@@ -10,7 +10,7 @@ let
 
 in
 {
-  options.settings.sddm.enable = lib.mkDisableOption "SDDM";
+  options.settings.sddm.enable = lib.mkEnableOption "SDDM";
 
   config = lib.mkIf (cfg.enable) {
     services.displayManager = {

@@ -7,10 +7,21 @@
 {
   imports =
     [
-      ./disko-config.nix {_module.args = { device = "/dev/sda"; }; }
-      ./hardware-configuration.nix
-      ./../common
       inputs.home-manager.nixosModules.default
+      
+      ### HARDWARE ###
+      ./hardware-configuration.nix
+      # disk config
+      ./disko-config.nix {_module.args = { device = "/dev/sda"; }; }
+
+      ### CORE ###
+      ./../common/core
+
+      ### OPTIONAL ###
+      ./../common/optional
+
+      ### USERS ###
+      ./../common/users/lulu
     ];
 
   boot.loader = {
@@ -24,30 +35,10 @@
 
   programs.fish.enable = true;
 
-  # will have to move this in a users directory
-  users.users.lulu = {
-    description = "main user";
-    isNormalUser = true;
-    shell = pkgs.fish;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ];
-  };
-
-  /* home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users.lulu = {
-      imports = [ ../../homeManagerModules/default.nix ];
-    };
-  }; */
-
   settings = {
     sddm.enable = true;
-    minecraftServer.enable = true;
+    hyprland.enable = true;
+    gnome.enable = true;
     nvidia = {
       enable = true;
       release = "stable";
