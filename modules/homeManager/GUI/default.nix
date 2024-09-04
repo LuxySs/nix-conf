@@ -3,11 +3,12 @@
 {
   imports = [
     ./discord-clients
-    ./file-managers
-    ./media-viewers
-    ./terminal
     ./emacs.nix
+    ./file-managers
+    ./gtk.nix
+    ./media-viewers
     ./obsidian.nix
     ./pwvucontrol.nix
+    ./terminal
   ];
 }

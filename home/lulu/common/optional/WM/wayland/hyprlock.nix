@@ -13,7 +13,7 @@ in
       settings = {
         # BACKGROUND
         background = {
-          path = "${./../../../../wallpapers/wallpaper.png}";
+          path = "${./../../../../../../wallpapers/wallpaper.png}";
           blur_passes = 3;
           contrast = 0.8916;
           brightness = 0.8172;

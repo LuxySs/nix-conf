@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./gtk.nix
-    ./programs
-    ./wm
+    ./browsers
+    ./spotify.nix
+    ./starship.nix
   ];
 }

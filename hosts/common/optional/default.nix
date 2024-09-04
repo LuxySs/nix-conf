@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./services
-    ./audio.nix
     ./bluetooth.nix
     ./cache-substituters.nix
     ./fish.nix
@@ -14,7 +12,9 @@
     ./network-manager.nix
     ./nix-helper.nix
     ./nvidia.nix
+    ./pipewire.nix
     ./sddm.nix
+    ./services
     ./stylix.nix
     ./usefulPrograms.nix
     ./virt.nix

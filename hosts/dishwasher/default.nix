@@ -8,23 +8,19 @@
   imports = [
     inputs.home-manager.nixosModules.default
 
-    ### HARDWARE ###
+    ####### HARDWARE #######
     ./hardware-configuration.nix
-    # disk config
+    ##### disk config
     ./disko-config.nix
-    {
-      _module.args = {
-        device = "/dev/sda";
-      };
-    }
+    { _module.args.device = "/dev/sda"; }
 
-    ### CORE ###
+    ##### CORE
     ./../common/core
 
-    ### OPTIONAL ###
+    ##### OPTIONAL
     ./../common/optional
 
-    ### USERS ###
+    ##### USERS
     ./../common/users/lulu
     { _module.args.profile = "full"; }
   ];
@@ -38,12 +34,10 @@
 
   networking.hostName = "dishwasher";
 
-  programs.fish.enable = true;
-
   settings = {
     sddm.enable = true;
-    hyprland.enable = true;
     gnome.enable = true;
+    hyprland.enable = true;
     nvidia = {
       enable = true;
       release = "stable";

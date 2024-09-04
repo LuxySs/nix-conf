@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.settings.latexSupport;
+  cfg = config.settings.latex-support;
 in
 {
-  options.settings.latexSupport.enable = lib.mkEnableOption "latex support (texlive)";
+  options.settings.latex-support.enable = lib.mkEnableOption "latex support (texlive)";
 
   config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.texlive.combined.scheme-medium ]; };
 }

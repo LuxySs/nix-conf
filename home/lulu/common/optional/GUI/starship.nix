@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.settings.starshipPrompt;
+  cfg = config.settings.starship;
 
   colors = config.lib.stylix.colors;
   base00 = colors.base00;
@@ -22,7 +22,7 @@ let
   base0F = colors.base0F;
 in
 {
-  options.settings.starshipPrompt.enable = lib.mkEnableOption "starship prompt";
+  options.settings.starship.enable = lib.mkEnableOption "starship prompt";
 
   config = lib.mkIf (cfg.enable) {
     programs.starship = {
