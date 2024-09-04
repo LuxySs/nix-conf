@@ -34,10 +34,6 @@
     sddm.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
-    nvidia = {
-      enable = true;
-      release = "stable";
-    };
   };
 
   # This value determines the NixOS release from which the default
