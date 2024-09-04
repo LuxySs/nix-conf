@@ -1,17 +1,13 @@
 {
   inputs,
   lib,
-  settings,
   pkgs,
   config,
   ...
 }:
 
 let
-  cfg = {
-    enable = builtins.elem "hyprland" settings.wm;
-    useFlake = config.settings.wm.hyprland.useFlake;
-  };
+  cfg = config.settings.wm.hyprland;
 in
 {
   imports = [
@@ -26,6 +22,7 @@ in
   ];
 
   options.settings.wm.hyprland = {
+    enable = lib.mkEnableOption "Hyprland WM";
     useFlake = lib.mkDisableOption "Use flake for hyprland";
   };
 
@@ -34,7 +31,6 @@ in
       wayland.windowManager.hyprland.package = pkgs.hyprland;
     })
     (lib.mkIf (cfg.enable) {
-      settings.wm.wayland.enable = true; # toggle the wayland stuff
       wayland.windowManager.hyprland = {
         enable = true;
         package = lib.mkDefault inputs.hyprland.packages.${pkgs.system}.hyprland;

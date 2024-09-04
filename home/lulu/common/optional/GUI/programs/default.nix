@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./GUI
-    ./TUI
-    ./shell
+    ./browsers
+    ./spotify.nix
   ];
 }

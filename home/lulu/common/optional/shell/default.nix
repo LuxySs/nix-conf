@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./GUI
-    ./TUI
-    ./shell
+    ./bash.nix
+    ./fish.nix
   ];
 }

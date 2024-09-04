@@ -1,9 +1,7 @@
-{ lib, settings, ... }:
+{ config, lib, ... }:
 
 let
-  cfg = {
-    enable = builtins.elem "sway" settings.wm;
-  };
+  cfg = config.settings.wm.sway;
 in
 {
 
@@ -11,8 +9,9 @@ in
     ./../wayland # import the wayland utilities
   ];
 
+  options.settings.wm.sway.enable = lib.mkEnableOption "Sway wm";
+
   config = lib.mkIf (cfg.enable) {
-    settings.wm.wayland.enable = true; # toggle the wayland stuff
     wayland.windowManager.sway = {
       enable = true;
       config = {

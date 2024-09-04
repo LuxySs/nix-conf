@@ -3,6 +3,6 @@
 {
   imports = [
     ./direnv.nix
-    ./latexSupport.nix
+    ./latex-support.nix
   ];
 }
