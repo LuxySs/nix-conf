@@ -31,6 +31,9 @@
     bash.enable = true;
     fish.enable = true;
 
+    #### Theming
+    stylix.enable = true;
+
     ###### shared across users ######
     #### GUI
     loupe.enable = true;

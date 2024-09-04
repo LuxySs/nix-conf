@@ -10,10 +10,10 @@ let
   cfg = config.settings.stylix;
 in
 {
-  imports = [ inputs.stylix.nixosModules.stylix ];
+  imports = [ inputs.stylix.homeManagerModules.stylix ];
 
   options.settings.stylix = {
-    enable = lib.mkDisableOption "stylix";
+    enable = lib.mkEnableOption "stylix";
     theme = lib.mkStrOption "catppuccin-mocha" "stylix theme";
   };
 
@@ -21,7 +21,7 @@ in
 
     stylix.enable = true;
 
-    stylix.image = ./../../../wallpapers/wallpaper.png;
+    stylix.image = ./../../../../../wallpapers/wallpaper.png;
 
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
 

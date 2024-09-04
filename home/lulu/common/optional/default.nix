@@ -6,5 +6,6 @@
     ./TUI
     ./WM
     ./shell
+    ./theming
   ];
 }

@@ -15,7 +15,6 @@
     ./pipewire.nix
     ./sddm.nix
     ./services
-    ./stylix.nix
     ./usefulPrograms.nix
     ./virt.nix
   ];
