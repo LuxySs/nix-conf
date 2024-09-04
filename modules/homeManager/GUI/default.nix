@@ -9,6 +9,5 @@
     ./media-viewers
     ./obsidian.nix
     ./pwvucontrol.nix
-    ./terminal
   ];
 }

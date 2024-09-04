@@ -2,9 +2,9 @@
 
 {
   imports = [
+    ./../../modules/homeManager
     ./common/core
     ./common/optional
-    ./../../modules/homeManager
   ];
 
   home = {
@@ -19,6 +19,7 @@
 
     #### GUI
     firefox.enable = true;
+    foot.enable = true;
     spotify.enable = true;
     starship.enable = true;
 
@@ -32,7 +33,6 @@
 
     ###### shared across users ######
     #### GUI
-    foot.enable = true;
     loupe.enable = true;
     mpv.enable = true;
     nautilus.enable = true;
