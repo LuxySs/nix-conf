@@ -10,7 +10,7 @@ in
     programs.nh = {
       enable = true;
       clean.enable = true;
-      flake = "/home/lulu/new-nix-conf";
+      flake = "/home/lulu/nix-conf";
     };
   };
 }
