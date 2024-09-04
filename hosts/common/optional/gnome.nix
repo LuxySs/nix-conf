@@ -13,8 +13,9 @@ in
 
   config = lib.mkIf (cfg.enable) {
     services.xserver.desktopManager.gnome.enable = true;
-    environment.gnome.excludePackages =
-      (with pkgs; [
+    environment.gnome.excludePackages = (
+      with pkgs;
+      [
         gnome-photos
         gnome-music
         gnome-tour
@@ -30,7 +31,8 @@ in
         iagno # go game
         hitori # sudoku game
         atomix # puzzle game
-      ]);
+      ]
+    );
 
     # use pipewire instead of pulseaudio
     hardware.pulseaudio.enable = lib.mkForce false;

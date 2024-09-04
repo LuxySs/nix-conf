@@ -12,7 +12,7 @@
   };
 
   settings = {
-    fileManager.nautilus.enable = true;
+    nautilus.enable = true;
     spotify.enable = true;
     firefox.enable = true;
   };

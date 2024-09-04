@@ -17,7 +17,6 @@
     ];
   };
 
-
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = {
@@ -25,6 +24,6 @@
     };
 
     # import the user's home-manager according to the disired profile.
-    users.lulu = import ( ../../../../home/lulu + "/${profile}.nix" ); 
+    users.lulu = import (../../../../home/lulu + "/${profile}.nix");
   };
 }

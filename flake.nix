@@ -43,12 +43,21 @@
   outputs =
     { nixpkgs, ... }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      customLib = import ./lib { inherit (pkgs) lib; };
-      lib = pkgs.lib.extend (self: super: customLib);
+      systems = [
+        "aarch64-linux"
+        "i686-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+      customLib = import ./lib { inherit (nixpkgs) lib; };
+      lib = nixpkgs.lib.extend (self: super: customLib);
     in
     {
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+
       nixosConfigurations = {
         dishwasher = nixpkgs.lib.nixosSystem {
           specialArgs = {

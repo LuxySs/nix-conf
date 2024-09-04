@@ -5,24 +5,29 @@
 }:
 
 {
-  imports =
-    [
-      inputs.home-manager.nixosModules.default
-      
-      ### HARDWARE ###
-      ./hardware-configuration.nix
-      # disk config
-      ./disko-config.nix {_module.args = { device = "/dev/sda"; }; }
+  imports = [
+    inputs.home-manager.nixosModules.default
 
-      ### CORE ###
-      ./../common/core
+    ### HARDWARE ###
+    ./hardware-configuration.nix
+    # disk config
+    ./disko-config.nix
+    {
+      _module.args = {
+        device = "/dev/sda";
+      };
+    }
 
-      ### OPTIONAL ###
-      ./../common/optional
+    ### CORE ###
+    ./../common/core
 
-      ### USERS ###
-      ./../common/users/lulu { _module.args.profile = "full"; }
-    ];
+    ### OPTIONAL ###
+    ./../common/optional
+
+    ### USERS ###
+    ./../common/users/lulu
+    { _module.args.profile = "full"; }
+  ];
 
   boot.loader = {
     systemd-boot.enable = true;
