@@ -14,15 +14,6 @@
 
   settings = {
     ###### user-specific ######
-    #### WM
-    wm.hyprland.enable = true;
-
-    #### GUI
-    firefox.enable = true;
-    foot.enable = true;
-    spotify.enable = true;
-    starship.enable = true;
-
     #### TUI
     git.enable = true;
     nixCats.enable = true;
@@ -35,15 +26,6 @@
     stylix.enable = true;
 
     ###### shared across users ######
-    #### GUI
-    loupe.enable = true;
-    mpv.enable = true;
-    nautilus.enable = true;
-    obsidian.enable = true;
-    pwvucontrol.enable = true;
-    vesktop.enable = true;
-    zathura.enable = true;
-
     #### TUI
     btop.enable = true;
     direnv.enable = true;
