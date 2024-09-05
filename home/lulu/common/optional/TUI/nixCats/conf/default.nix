@@ -126,6 +126,7 @@ let
           nvim-lint
           nvim-lspconfig
           otter-nvim
+          nvim-jdtls
         ];
 
         ui = [
