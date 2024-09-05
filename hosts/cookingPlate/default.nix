@@ -31,9 +31,10 @@
   networking.hostName = "dishwasher";
 
   settings = {
-    sddm.enable = true;
+    fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
+    sddm.enable = true;
   };
 
   # This value determines the NixOS release from which the default

@@ -161,6 +161,7 @@ let
 
           # harpoon
           harpoon2
+          plenary-nvim
 
           # mini
           mini-nvim

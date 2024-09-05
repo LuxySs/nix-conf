@@ -19,6 +19,7 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 -- or just use <C-\><C-n> to exit terminal mode
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- windows focus
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
@@ -30,9 +31,13 @@ map('n', '<M-l>', '<c-w>5>')
 map('n', '<M-k>', '<c-w>+')
 map('n', '<M-j>', '<c-w>-')
 
+-- switching buffers
+map('n', '<leader>,', '<cmd>bprevious', { desc = 'buffer prev' })
+map('n', '<leader>.', '<cmd>bnext', { desc = 'buffer next' })
+
 -- File browser & tree (oil & Neotree)
-map('n', '-', ':Oil<CR>')
-map('n', '=', ':Neotree toggle<CR>')
+map('n', '-', '<cmd>Oil<CR>')
+map('n', '=', '<cmd>Neotree toggle<CR>')
 
 -- compile latex / markdown
 map('n', '<leader>ll', function()

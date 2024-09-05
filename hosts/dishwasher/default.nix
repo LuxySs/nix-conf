@@ -31,13 +31,14 @@
   networking.hostName = "dishwasher";
 
   settings = {
-    sddm.enable = true;
+    fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
     nvidia = {
       enable = true;
       release = "stable";
     };
+    sddm.enable = true;
   };
 
   # This value determines the NixOS release from which the default
