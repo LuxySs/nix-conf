@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   inputs,
   profile ? "full",
   ...
@@ -20,10 +21,10 @@
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = {
-      inherit inputs;
+      inherit inputs pkgs pkgs-stable;
     };
 
     # import the user's home-manager according to the disired profile.
-    users.lulu = import (../../../../home/lulu + "/${profile}.nix");
+    users.lulu = import (../../../../home/lulu/${profile}.nix);
   };
 }

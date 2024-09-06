@@ -1,6 +1,19 @@
-{ inputs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
+  # allows to use pkgs-stable in addition to pkgs (unstable)
+  _module.args = {
+    pkgs-stable = import inputs.nixpkgs-stable {
+      inherit (config.nixpkgs) config;
+      inherit (pkgs.stdenv.hostPlatform) system;
+    };
+  };
+
   imports = [
     inputs.home-manager.nixosModules.default
 
