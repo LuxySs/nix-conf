@@ -22,6 +22,7 @@
     foot.enable = true;
     spotify.enable = true;
     starship.enable = true;
+    thunderbird.enable = true;
 
     #### TUI
     git.enable = true;
