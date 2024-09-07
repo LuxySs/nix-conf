@@ -17,10 +17,19 @@ in
 
       shellInit = ''
         set -g fish_greeting""
-        set -g fish_key_bindings fish_hybrid_key_bindings
+        set -g fish_key_bindings fish_user_key_bindings
       '';
 
       functions = {
+        fish_user_key_bindings = ''
+          function fish_user_key_bindings
+            fish_hybrid_key_bindings
+
+            bind -M insert \cy forward-word
+            bind \cy forward-word
+          end
+        '';
+
         pwdc = ''
           function pwdc
             echo $(pwd)
