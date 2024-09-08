@@ -41,7 +41,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  networking.hostName = "dishwasher";
+  networking.hostName = "cooking-plate";
 
   settings = {
     fish.enable = true;

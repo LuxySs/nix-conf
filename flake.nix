@@ -65,11 +65,11 @@
           };
           modules = [ ./hosts/dishwasher ];
         };
-        cookingPlate = nixpkgs.lib.nixosSystem {
+        cooking-plate = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [ ./hosts/cookingPlate ];
+          modules = [ ./hosts/cooking-plate ];
         };
       };
     };
