@@ -32,8 +32,8 @@ map('n', '<M-k>', '<c-w>+')
 map('n', '<M-j>', '<c-w>-')
 
 -- switching buffers
-map('n', '<leader>,', '<cmd>bprevious', { desc = 'buffer prev' })
-map('n', '<leader>.', '<cmd>bnext', { desc = 'buffer next' })
+map('n', '<C-,>', '<cmd>bprevious<CR>', { desc = 'buffer prev' })
+map('n', '<C-.>', '<cmd>bnext<CR>', { desc = 'buffer next' })
 
 -- File browser & tree (oil & Neotree)
 map('n', '-', '<cmd>Oil<CR>')
