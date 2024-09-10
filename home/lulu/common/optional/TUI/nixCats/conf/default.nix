@@ -186,6 +186,9 @@ let
 
           # ufo
           nvim-ufo
+
+          # codesnap
+          codesnap-nvim
         ];
 
         markdown = [
