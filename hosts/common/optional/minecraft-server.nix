@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.settings.minecraftServer;
+  cfg = config.settings.minecraft-server;
 in
 {
-  options.settings.minecraftServer.enable = lib.mkEnableOption "minecraft server";
+  options.settings.minecraft-server.enable = lib.mkEnableOption "minecraft server";
 
   config = lib.mkIf (cfg.enable) {
     networking.firewall = {
