@@ -1,6 +1,7 @@
 require 'autocommands'
 require 'keymaps'
 require 'options'
+require 'neovide'
 
 -- NOTE: nixCats: this just gives nixCats global command a default value
 -- so that it doesnt throw an error if you didnt install via nix.

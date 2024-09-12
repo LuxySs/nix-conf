@@ -21,7 +21,7 @@ in
         width = 65;
         lines = 13;
         line-height = 20;
-        font = lib.mkForce "IosevkaTermNerdFont:weight=bold:size=15";
+        font = lib.mkForce "Iosevka NF:weight=bold:size=15";
       };
       colors = {
         background = lib.mkDefault "24273add";

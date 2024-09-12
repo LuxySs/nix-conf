@@ -13,7 +13,7 @@ in
       settings = {
         main = {
           term = "xterm-256color";
-          font = lib.mkForce "IosevkaTermNerdFont:size=13";
+          font = lib.mkForce "Iosevka NF:size=13";
           dpi-aware = lib.mkForce "yes";
         };
         cursor = {
