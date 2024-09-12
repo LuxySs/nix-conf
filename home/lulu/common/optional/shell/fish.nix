@@ -3,6 +3,7 @@
 let
   cfg = config.settings.fish;
 
+  eza_enabled = config.settings.eza.enable;
   eza_ls_replacement = {
     ls = "eza --color=always --group-directories-first";
     la = "eza -a --color=always --group-directories-first";
@@ -23,11 +24,16 @@ in
     programs.fish = {
       enable = true;
 
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../../";
-        "...." = "cd ../../../";
-      } // lib.mkIf (config.settings.eza.enable) eza_ls_replacement;
+      shellAliases = lib.mkMerge [
+        {
+          ".." = "cd ..";
+          "..." = "cd ../../";
+          "...." = "cd ../../../";
+
+          ng = "neovide & disown"; # neovim gui
+        }
+        (lib.mkIf eza_enabled eza_ls_replacement)
+      ];
 
       shellInit = ''
         set -g fish_greeting""

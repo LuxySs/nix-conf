@@ -261,6 +261,7 @@ let
           aliases = [
             "nvim"
             "vim"
+            "nv"
             "v"
           ];
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;

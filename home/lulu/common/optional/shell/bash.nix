@@ -3,6 +3,7 @@
 let
   cfg = config.settings.bash;
 
+  eza_enabled = config.settings.eza.enable;
   eza_ls_replacement = {
     ls = "eza --color=always --group-directories-first";
     la = "eza -a --color=always --group-directories-first";
@@ -19,16 +20,20 @@ in
 {
   options.settings.bash.enable = lib.mkEnableOption "enable bash";
 
-  config = lib.mkIf (cfg.enable) {
+  config = lib.mkIf cfg.enable {
     programs.bash = {
-
       enable = true;
 
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../../";
-        "...." = "cd ../../../";
-      } // lib.mkIf (config.settings.eza.enable) eza_ls_replacement;
+      shellAliases = lib.mkMerge [
+        {
+          ".." = "cd ..";
+          "..." = "cd ../../";
+          "...." = "cd ../../../";
+
+          ng = "neovide & disown"; # neovim gui
+        }
+        (lib.mkIf eza_enabled eza_ls_replacement)
+      ];
 
     };
   };
