@@ -27,6 +27,7 @@
     #### TUI
     eza.enable = true;
     git.enable = true;
+    lazygit.enable = true;
     nixCats.enable = true;
     zellij.enable = true;
 
