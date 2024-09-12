@@ -154,6 +154,9 @@ let
           # autopairs
           nvim-autopairs
 
+          # codesnap
+          codesnap-nvim
+
           # comment
           comment-nvim
 
@@ -184,11 +187,11 @@ let
           telescope-nvim
           telescope-ui-select-nvim
 
+          # toggle-term
+          toggleterm-nvim
+
           # ufo
           nvim-ufo
-
-          # codesnap
-          codesnap-nvim
         ];
 
         markdown = [
