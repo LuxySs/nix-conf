@@ -25,8 +25,10 @@
     thunderbird.enable = true;
 
     #### TUI
+    eza.enable = true;
     git.enable = true;
     nixCats.enable = true;
+    zellij.enable = true;
 
     #### Shell
     bash.enable = true;
@@ -52,7 +54,6 @@
     btop.enable = true;
     direnv.enable = true;
     yazi.enable = true;
-    zellij.enable = true;
 
     #### Other
     latex-support.enable = true;
