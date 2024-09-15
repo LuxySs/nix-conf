@@ -3,6 +3,11 @@
 let
   cfg = config.settings.fish;
 
+  bat_enabled = config.settings.bat.enable;
+  bat_cat_replacement = {
+    cat = "bat";
+  };
+
   eza_enabled = config.settings.eza.enable;
   eza_ls_replacement = {
     ls = "eza --color=always --group-directories-first";
@@ -32,6 +37,7 @@ in
 
           ng = "neovide & disown"; # neovim gui
         }
+        (lib.mkIf bat_enabled bat_cat_replacement)
         (lib.mkIf eza_enabled eza_ls_replacement)
       ];
 

@@ -7,8 +7,8 @@ in
   options.settings.wm.hypridle = {
     enable = lib.mkEnableOption "hypridle";
     timeout = {
-      lock = lib.mkIntOption 60 "hypridle lock timeout";
-      dpms = lib.mkIntOption 120 "hypridle dpms (black screen) timeout";
+      lock = lib.mkIntOption 180 "hypridle lock timeout";
+      dpms = lib.mkIntOption 300 "hypridle dpms (black screen) timeout";
     };
   };
 

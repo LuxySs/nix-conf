@@ -15,6 +15,7 @@
   settings = {
     ###### user-specific ######
     #### TUI
+    bat.enable = true;
     eza.enable = true;
     git.enable = true;
     lazygit.enable = true;
