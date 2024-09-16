@@ -13,9 +13,10 @@
   };
 
   settings = {
-    ###### user-specific ######
+    ###### User-Specific ######
     #### TUI
     bat.enable = true;
+    direnv.enable = true;
     eza.enable = true;
     git.enable = true;
     lazygit.enable = true;
@@ -29,10 +30,15 @@
     #### Theming
     stylix.enable = true;
 
-    ###### shared across users ######
+    #### University
+    gcc.enable = true;
+    java.enable = true;
+    latex-support.enable = true;
+    python.enable = true;
+
+    ###### Shared Across Users ######
     #### TUI
     btop.enable = true;
-    direnv.enable = true;
     yazi.enable = true;
   };
 }

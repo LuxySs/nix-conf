@@ -8,5 +8,6 @@
     ./games
     ./shell
     ./theming
+    ./university
   ];
 }
