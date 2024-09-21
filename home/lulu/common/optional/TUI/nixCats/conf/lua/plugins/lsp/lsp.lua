@@ -155,10 +155,11 @@ return {
     -- NOTE: nixCats: there is help in nixCats for lsps at `:h nixCats.LSPs` and also `:h nixCats.luaUtils`
     local servers = {
       clangd = {},
+      cmake = {},
       gopls = {},
       pyright = {},
       rust_analyzer = {},
-      tsserver = {},
+      ts_ls = {},
       lua_ls = {
         settings = {
           Lua = {
