@@ -45,6 +45,7 @@ in
           fullAppDisplay
           hidePodcasts
           shuffle # shuffle+ (special characters are sanitized out of ext names)
+          keyboardShortcut
         ];
       };
   };

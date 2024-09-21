@@ -70,6 +70,7 @@ let
 
           clang-tools
           gopls
+          jdt-language-server
           pyright
           rust-analyzer
         ];
