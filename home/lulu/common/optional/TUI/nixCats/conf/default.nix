@@ -69,9 +69,9 @@ let
           nixfmt-rfc-style
 
           clang-tools
-          cmake-language-server
           gopls
           jdt-language-server
+          neocmakelsp
           pyright
           rust-analyzer
         ];
