@@ -2,9 +2,10 @@
   pkgs,
   pkgs-stable,
   inputs,
-  profile ? "full",
+  host ? throw "missing host parameter",
   ...
 }:
+
 {
   users.users.lulu = {
     description = "main user";
@@ -24,7 +25,7 @@
       inherit inputs pkgs pkgs-stable;
     };
 
-    # import the user's home-manager according to the disired profile.
-    users.lulu = import ../../../../home/lulu/${profile}.nix;
+    # import the user's home-manager according to the host.
+    users.lulu = import ../../../../home/lulu/${host}.nix;
   };
 }

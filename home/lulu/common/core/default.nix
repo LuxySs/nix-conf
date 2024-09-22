@@ -1,7 +1,7 @@
 { lib, ... }:
 
 {
-  imports = [ ];
+  imports = [ ./monitors.nix ];
 
   home = {
     username = lib.mkDefault "lulu";

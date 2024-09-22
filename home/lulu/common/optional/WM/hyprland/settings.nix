@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -8,10 +8,15 @@
       "WLR_NO_HARDWARE_CURSORS=1"
     ];
 
-    monitor = [
-      "DP-1,3440x1440@99.98,0x0,1"
-      "Unknown-1,disable" # disable ghost monitor du to nvidia fuckery
-    ];
+    # automatically configure monitors based on the monitors.nix module
+    monitor = map (
+      m:
+      let
+        resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+        position = "${toString m.x}x${toString m.y}";
+      in
+      "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
+    ) (config.monitors);
 
     exec-once = "swww-daemon & ags";
 

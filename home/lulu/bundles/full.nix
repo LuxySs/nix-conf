@@ -1,17 +1,6 @@
 { ... }:
 
 {
-  imports = [
-    ./../../modules/homeManager
-    ./common/core
-    ./common/optional
-  ];
-
-  home = {
-    username = "lulu";
-    homeDirectory = "/home/lulu";
-  };
-
   settings = {
     ###### User-Specific ######
     #### WM

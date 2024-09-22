@@ -31,7 +31,7 @@
 
     ##### USERS
     ./../common/users/lulu
-    { _module.args.profile = "full"; }
+    { _module.args.host = "dishwasher"; }
   ];
 
   boot.loader = {
