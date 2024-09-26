@@ -3,12 +3,13 @@
 {
   settings = {
     ###### User-Specific ######
-    #### TUI
+    #### terminal
     bat.enable = true;
     direnv.enable = true;
     eza.enable = true;
     git.enable = true;
     lazygit.enable = true;
+    man-pages.enable = true;
     nixCats.enable = true;
     zellij.enable = true;
 
@@ -26,7 +27,7 @@
     python.enable = true;
 
     ###### Shared Across Users ######
-    #### TUI
+    #### terminal
     btop.enable = true;
     yazi.enable = true;
   };

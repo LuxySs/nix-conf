@@ -3,10 +3,10 @@
 {
   imports = [
     ./GUI
-    ./TUI
     ./WM
     ./games
     ./shell
+    ./terminal
     ./theming
     ./university
   ];

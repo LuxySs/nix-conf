@@ -14,12 +14,13 @@
     starship.enable = true;
     thunderbird.enable = true;
 
-    #### TUI
+    #### terminal
     bat.enable = true;
     direnv.enable = true;
     eza.enable = true;
     git.enable = true;
     lazygit.enable = true;
+    man-pages.enable = true;
     nixCats.enable = true;
     zellij.enable = true;
 
@@ -49,7 +50,7 @@
     vesktop.enable = true;
     zathura.enable = true;
 
-    #### TUI
+    #### terminal
     btop.enable = true;
     yazi.enable = true;
   };

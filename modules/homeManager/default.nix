@@ -3,6 +3,6 @@
 {
   imports = [
     ./GUI
-    ./TUI
+    ./terminal
   ];
 }
