@@ -9,7 +9,6 @@
     #### GUI
     firefox.enable = true;
     foot.enable = true;
-    neovide.enable = true;
     spotify.enable = true;
     starship.enable = true;
     thunderbird.enable = true;
