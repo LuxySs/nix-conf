@@ -19,6 +19,7 @@ in
 
     # Exclude the useless apps unless "bloated" was enabled
     services.gnome.rygel.enable = cfg.bloated;
+    environment.systemPackages = with pkgs; [ gnome-tweaks ];
     environment.gnome.excludePackages = lib.mkIf (!cfg.bloated) (
       with pkgs;
       [
