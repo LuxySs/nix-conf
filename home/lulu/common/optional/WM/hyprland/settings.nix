@@ -5,8 +5,12 @@
     env = [
       "QT_QPA_PLATFORM,wayland"
       "QT_QPA_PLATFORMTHEME,qt6ct"
-      "WLR_NO_HARDWARE_CURSORS=1"
     ];
+
+    cursor.no_hardware_cursors = true;
+    xwayland.force_zero_scaling = true;
+
+    exec-once = "swww-daemon & ags";
 
     # automatically configure monitors based on the monitors.nix module
     monitor = map (
@@ -17,11 +21,5 @@
       in
       "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
     ) (config.monitors);
-
-    exec-once = "swww-daemon & ags";
-
-    xwayland = {
-      force_zero_scaling = true;
-    };
   };
 }
