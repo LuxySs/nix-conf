@@ -1,5 +1,6 @@
 return {
   require 'plugins.utils.autopairs',
+  require 'plugins.utils.colorizer',
   require 'plugins.utils.codesnap',
   require 'plugins.utils.comment',
   require 'plugins.utils.gitsigns',

@@ -6,5 +6,11 @@ in
 {
   options.settings.firefox.enable = lib.mkEnableOption "firefox";
 
-  config = lib.mkIf (cfg.enable) { programs.firefox.enable = true; };
+  config = lib.mkIf (cfg.enable) { 
+    programs.firefox = {
+      enable = true; 
+
+      languagePacks = [ "en-US" "be" ];
+    };
+  };
 }

@@ -2,27 +2,30 @@
 
 let
   cfg = config.settings.starship;
+  stylixEnabled = config.settings.stylix.enable; # check if stylix is enabled
+  stylixColors = config.lib.stylix.colors;
 
-  colors = config.lib.stylix.colors;
-  base00 = colors.base00;
-  base01 = colors.base01;
-  base02 = colors.base02;
-  base03 = colors.base03;
-  base04 = colors.base04;
-  base05 = colors.base05;
-  base06 = colors.base06;
-  base07 = colors.base07;
-  base08 = colors.base08;
-  base09 = colors.base09;
-  base0A = colors.base0A;
-  base0B = colors.base0B;
-  base0C = colors.base0C;
-  base0D = colors.base0D;
-  base0E = colors.base0E;
-  base0F = colors.base0F;
+  colors = # get the stylix colors if stylix is enabled else some other colors
+    if stylixEnabled then
+      stylixColors
+    else
+      {
+        base00 = "#282c34";
+        base01 = "#3a3f58";
+        base02 = "#4e5266";
+        base03 = "#5a5f7a";
+        base04 = "#6c71c4";
+        base05 = "#93a1a1";
+        base0A = "#268bd2";
+        base0B = "#2aa198";
+        base0C = "#b58900";
+        base0D = "#6c71c4";
+        base0E = "#d33682";
+        base08 = "#dc322f";
+      };
 in
 {
-  options.settings.starship.enable = lib.mkEnableOption "starship prompt";
+  options.settings.starship.enable = lib.mkEnableOption "Enable starship prompt";
 
   config = lib.mkIf (cfg.enable) {
     programs.starship = {
@@ -31,26 +34,26 @@ in
         command_timeout = 3000;
 
         format =
-          "[░▒▓](#${base02})"
-          + "[ ](bg:#${base02} fg:#${base0E})"
-          + "[](bg:#${base02} fg:#${base02})"
+          "[░▒▓](#${colors.base02})"
+          + "[ ](bg:#${colors.base02} fg:#${colors.base0E})"
+          + "[](bg:#${colors.base02} fg:#${colors.base02})"
           + "$directory"
-          + "[](fg:#${base02} bg:#${base02})"
+          + "[](fg:#${colors.base02} bg:#${colors.base02})"
           + "$git_branch"
           + "$git_status"
-          + "[](fg:#${base02} bg:#${base02})"
+          + "[](fg:#${colors.base02} bg:#${colors.base02})"
           + "$nodejs"
           + "$cmd_duration"
-          + "[](fg:#${base02} bg:#${base02})"
+          + "[](fg:#${colors.base02} bg:#${colors.base02})"
           + "$python"
-          + "[ ](fg:#${base02})"
+          + "[ ](fg:#${colors.base02})"
           + "\n"
-          + "[ ❯](fg:#${base0B})"
-          + "[❯](fg:#${base0C})"
-          + "[❯ ](fg:#${base0D})";
+          + "[ ❯](fg:#${colors.base0B})"
+          + "[❯](fg:#${colors.base0C})"
+          + "[❯ ](fg:#${colors.base0D})";
 
         directory = {
-          style = "fg:#${base05} bg:#${base02}";
+          style = "fg:#${colors.base05} bg:#${colors.base02}";
           format = "[ $path ]($style)";
           substitutions = {
             "~/Documents" = "󰈙 ";
@@ -64,49 +67,49 @@ in
 
         git_branch = {
           symbol = "";
-          style = "bg:#${base04}";
-          format = "[[ $symbol $branch ](fg:#${base0D} bg:#${base03})]($style)";
+          style = "bg:#${colors.base04}";
+          format = "[[ $symbol $branch ](fg:#${colors.base0D} bg:#${colors.base03})]($style)";
         };
 
         git_status = {
-          style = "bg:#${base04}";
-          format = "[[($all_status$ahead_behind )](fg:#${base0D} bg:#${base03})]($style)";
+          style = "bg:#${colors.base04}";
+          format = "[[($all_status$ahead_behind )](fg:#${colors.base0D} bg:#${colors.base03})]($style)";
         };
 
         nodejs = {
           symbol = "";
-          style = "bg:#${base0D}";
-          format = "[[ $symbol ($version) ](fg:#${base0D} bg:#212736)]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#212736)]($style)";
         };
 
         rust = {
           symbol = "";
-          style = "bg:#${base0D}";
-          format = "[[ $symbol ($version) ](fg:#${base0D} bg:#212736)]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#212736)]($style)";
         };
 
         golang = {
           symbol = "ﳑ";
-          style = "bg:#${base0D}";
-          format = "[[ $symbol ($version) ](fg:#${base0D} bg:#${base02})]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
         };
 
         php = {
           symbol = "";
-          style = "bg:#${base0D}";
-          format = "[[ $symbol ($version) ](fg:#${base0D} bg:#${base02})]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
         };
 
         python = {
           symbol = "";
-          style = "bg:#${base0D}";
-          format = "[[ $symbol ($version) ](fg:#${base0D} bg:#${base02})]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
         };
 
         cmd_duration = {
           disabled = false;
-          style = "bg:#${base0D}";
-          format = "[[  $duration ](fg:#${base0D} bg:#${base02})]($style)";
+          style = "bg:#${colors.base0D}";
+          format = "[[  $duration ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
         };
       };
     };

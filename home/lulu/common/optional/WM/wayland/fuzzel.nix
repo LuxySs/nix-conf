@@ -15,22 +15,19 @@ in
     programs.fuzzel.enable = true;
     programs.fuzzel.settings = {
       main = {
-        terminal = "${pkgs.foot}/bin/foot";
-        layer = "overlay";
-        prompt = "'❯ '";
-        width = 65;
-        lines = 13;
-        line-height = 20;
         font = lib.mkForce "Iosevka NF:weight=bold:size=15";
+        prompt = "❯ ";
+        terminal = "${lib.getBin pkgs.foot}";
+        width = 65;
       };
       colors = {
-        background = lib.mkDefault "24273add";
-        text = lib.mkDefault "cad3f5ff";
-        match = lib.mkDefault "ed8796ff";
-        selection = lib.mkDefault "5b6078ff";
-        selection-match = lib.mkDefault "ed8796ff";
-        selection-text = lib.mkDefault "cad3f5ff";
-        border = lib.mkDefault "51A4E7FF";
+        background = lib.mkDefault "#1616164D";
+        border = lib.mkDefault "#78afe3CC";
+        match = lib.mkDefault "#ECE0A8CC";
+        selection = lib.mkDefault "#78afe3CC";
+        selection-match = lib.mkDefault "#ECE0A8CC";
+        selection-text = lib.mkDefault "#161616CC";
+        text = lib.mkDefault "#E2E0ECCC";
       };
       border = {
         radius = "20";

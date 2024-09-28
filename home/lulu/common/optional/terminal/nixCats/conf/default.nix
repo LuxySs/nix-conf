@@ -159,6 +159,9 @@ let
           # codesnap
           codesnap-nvim
 
+          # colorizer
+          nvim-colorizer-lua
+
           # comment
           comment-nvim
 

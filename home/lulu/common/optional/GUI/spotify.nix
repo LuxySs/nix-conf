@@ -8,6 +8,8 @@
 
 let
   cfg = config.settings.spotify;
+  stylixEnabled = config.settings.stylix.enable; # check if stylix is enabled
+  stylixColor = config.lib.stylix.colors;
 in
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
@@ -21,24 +23,24 @@ in
       in
       {
         enable = true;
-        colorScheme = "custom";
-        customColorScheme = {
-          text = "${config.lib.stylix.colors.base05}";
-          subtext = "${config.lib.stylix.colors.base04}";
-          sidebar-text = "${config.lib.stylix.colors.base05}";
-          main = "${config.lib.stylix.colors.base00}";
-          sidebar = "${config.lib.stylix.colors.base01}";
-          player = "${config.lib.stylix.colors.base02}";
-          card = "${config.lib.stylix.colors.base03}";
-          shadow = "${config.lib.stylix.colors.base03}";
-          selected-row = "${config.lib.stylix.colors.base02}";
-          button = "${config.lib.stylix.colors.base0D}";
-          button-active = "${config.lib.stylix.colors.base0B}";
-          button-disabled = "${config.lib.stylix.colors.base03}";
-          tab-active = "${config.lib.stylix.colors.base0A}";
-          notification = "${config.lib.stylix.colors.base0C}";
-          notification-error = "${config.lib.stylix.colors.base08}";
-          misc = "${config.lib.stylix.colors.base07}";
+
+        # Conditionally set colorScheme if stylix is enabled
+        colorScheme = lib.mkIf stylixEnabled "custom";
+        customColorScheme = lib.mkIf stylixEnabled {
+          card = "${stylixColor.base02}";
+          highlight = "${stylixColor.base02}";
+          highlight-elevated = "${stylixColor.base03}";
+          main = "${stylixColor.base00}";
+          main-elevated = "${stylixColor.base02}";
+          misc = "${stylixColor.base03}";
+          notification = "${stylixColor.base02}";
+          notification-error = "${stylixColor.base08}";
+          shadow = "${stylixColor.base01}";
+          sidebar = "${stylixColor.base01}";
+          sidebar-text = "${stylixColor.base05}";
+          subtext = "${stylixColor.base05}";
+          tab-active = "${stylixColor.base02}";
+          text = "${stylixColor.base05}";
         };
 
         enabledExtensions = with spicePkgs.extensions; [
