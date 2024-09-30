@@ -38,16 +38,3 @@ map('n', '<C-.>', '<cmd>bnext<CR>', { desc = 'buffer next' })
 -- File browser & tree (oil & Neotree)
 map('n', '-', '<cmd>Oil<CR>')
 map('n', '=', '<cmd>Neotree toggle<CR>')
-
--- compile latex / markdown
-map('n', '<leader>ll', function()
-  local filetype = vim.bo.filetype
-  if filetype == 'tex' then
-    vim.cmd 'VimtexCompile'
-  elseif filetype == 'markdown' then
-    print 'starting markdown preview'
-    vim.cmd 'MarkdownPreviewToggle'
-  else
-    vim.cmd "echo 'File not compilable'"
-  end
-end, { desc = 'compile latex/markdown' })
