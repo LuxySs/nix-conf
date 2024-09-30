@@ -34,5 +34,7 @@ in
         width = "2";
       };
     };
+
+    home.packages = [ pkgs.bemoji ];
   };
 }
