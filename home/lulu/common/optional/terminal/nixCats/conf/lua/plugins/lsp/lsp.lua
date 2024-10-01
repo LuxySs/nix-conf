@@ -154,9 +154,10 @@ return {
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     -- NOTE: nixCats: there is help in nixCats for lsps at `:h nixCats.LSPs` and also `:h nixCats.luaUtils`
     local servers = {
+      bash_ls = {},
       clangd = {},
-      neocmake = {},
       gopls = {},
+      neocmake = {},
       pyright = {},
       rust_analyzer = {},
       ts_ls = {},

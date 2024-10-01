@@ -68,12 +68,14 @@ let
           nixd
           nixfmt-rfc-style
 
+          bash-language-server
           clang-tools
           gopls
           jdt-language-server
           neocmakelsp
           pyright
           rust-analyzer
+          shellcheck
         ];
         debug = [
           gcc
