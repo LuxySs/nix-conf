@@ -3,11 +3,10 @@
 let
   cfg = config.settings.starship;
   stylixEnabled = config.settings.stylix.enable; # check if stylix is enabled
-  stylixColors = config.lib.stylix.colors;
 
   colors = # get the stylix colors if stylix is enabled else some other colors
     if stylixEnabled then
-      stylixColors
+      config.lib.stylix.colors
     else
       {
         base00 = "#282c34";
