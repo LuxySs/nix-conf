@@ -18,7 +18,7 @@ in
       extraConfig = ''
         set -ag terminal-overrides ",xterm-256color:RGB"
 
-        set -g status-interval 60
+        set -sg escape-time 10
 
         # vim-like pane switching
         setw -g mode-keys vi
