@@ -194,6 +194,9 @@ let
           telescope-nvim
           telescope-ui-select-nvim
 
+          # vim-tmux-navigator
+          vim-tmux-navigator
+
           # toggle-term
           toggleterm-nvim
 

@@ -11,7 +11,7 @@
     lazygit.enable = true;
     man-pages.enable = true;
     nixCats.enable = true;
-    zellij.enable = true;
+    tmux.enable = true;
 
     #### Shell
     bash.enable = true;
