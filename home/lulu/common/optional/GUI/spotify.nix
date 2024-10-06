@@ -25,7 +25,7 @@ in
         enable = true;
 
         # Conditionally set colorScheme if stylix is enabled
-        colorScheme = lib.mkIf stylixEnabled "custom";
+        colorScheme = if stylixEnabled then "custom" else "default";
         customColorScheme = lib.mkIf stylixEnabled {
           card = "${stylixColor.base02}";
           highlight = "${stylixColor.base02}";
