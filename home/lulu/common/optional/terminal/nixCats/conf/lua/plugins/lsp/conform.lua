@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
   enabled = require('nixCatsUtils').enableForCategory 'lsp',
   keys = {
     {
@@ -28,7 +29,7 @@ return {
       nix = { 'nixfmt' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
-      python = { 'isort', 'ruff-format' },
+      python = { 'isort', 'ruff_format' },
       javascript = { 'prettierd' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },

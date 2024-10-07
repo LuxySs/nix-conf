@@ -71,9 +71,11 @@ let
           bash-language-server
           clang-tools
           gopls
+          isort
           jdt-language-server
           neocmakelsp
           pyright
+          ruff
           rust-analyzer
           shellcheck
         ];

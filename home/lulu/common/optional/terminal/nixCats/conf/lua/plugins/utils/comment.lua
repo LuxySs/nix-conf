@@ -2,7 +2,7 @@ return {
   'numToStr/Comment.nvim',
 
   -- fix different name from url for nixCats
-  name = "comment.nvim",
+  name = 'comment.nvim',
   dev = require('nixCatsUtils').lazyAdd(false, true),
 
   event = 'VeryLazy',

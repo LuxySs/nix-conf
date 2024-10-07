@@ -4,7 +4,7 @@ return {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   enabled = require('nixCatsUtils').enableForCategory 'treesitter',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   build = require('nixCatsUtils').lazyAdd ':TSUpdate',
   opts = {
     -- NOTE: nixCats: use lazyAdd to only set these 2 options if nix wasnt involved.
