@@ -1,10 +1,8 @@
-return { -- Better looking interface to type commands
+return {
   'folke/noice.nvim',
   enabled = require('nixCatsUtils').enableForCategory 'ui',
-  dependencies = {
-    'MunifTanjim/nui.nvim',
-    'echasnovski/mini.nvim',
-  },
+  event = 'VimEnter',
+  dependencies = { 'MunifTanjim/nui.nvim' },
   opts = {
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**

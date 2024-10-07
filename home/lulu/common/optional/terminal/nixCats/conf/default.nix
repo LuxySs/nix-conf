@@ -60,13 +60,13 @@ let
 
       lspsAndRuntimeDeps = with pkgs; {
         general = [
-          nix-doc
-          ripgrep
-          universal-ctags
           lua-language-server
-          stylua
+          nix-doc
           nixd
           nixfmt-rfc-style
+          ripgrep
+          stylua
+          universal-ctags
 
           bash-language-server
           clang-tools
@@ -80,9 +80,9 @@ let
           shellcheck
         ];
         debug = [
+          delve
           gcc
           gdb
-          delve
         ];
         markdown = [ markdownlint-cli ];
       };
@@ -90,9 +90,9 @@ let
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = with pkgs.vimPlugins; {
         completion = [
-          cmp_luasnip
           cmp-nvim-lsp
           cmp-path
+          cmp_luasnip
           friendly-snippets
           luasnip
           nvim-cmp
@@ -109,17 +109,18 @@ let
           # cattppuccin
           catppuccin-nvim
 
-          # tokyonight
-          tokyonight-nvim
-
-          # statusline
+          # lualine (statusline)
           lualine-nvim
 
           # lazy
           lazy-nvim
+
+          # tokyonight
+          tokyonight-nvim
         ];
 
         treesitter = [
+          nvim-treesitter-textobjects
           nvim-treesitter.withAllGrammars
           # This is for if you only want some of the grammars
           # (nvim-treesitter.withPlugins (
@@ -128,17 +129,16 @@ let
           #     lua
           #   ]
           # ))
-          nvim-treesitter-textobjects
         ];
 
         lsp = [
           conform-nvim
+          fidget-nvim
+          lazydev-nvim
+          nvim-jdtls
           nvim-lint
           nvim-lspconfig
           otter-nvim
-          nvim-jdtls
-          fidget-nvim
-          lazydev-nvim
         ];
 
         ui = [
@@ -150,13 +150,12 @@ let
           indent-blankline-nvim
 
           # noice
-          mini-nvim
           noice-nvim
           nui-nvim
 
           # todo-comments
-          todo-comments-nvim
           plenary-nvim
+          todo-comments-nvim
 
           # which-key
           which-key-nvim
@@ -182,8 +181,11 @@ let
           harpoon2
           plenary-nvim
 
-          # mini
-          mini-nvim
+          # mini-ai
+          mini-ai
+
+          # mini-surround
+          mini-surround
 
           # neo-tree
           neo-tree-nvim
@@ -213,11 +215,11 @@ let
         ];
 
         markdown = [
-          # markview
-          markview-nvim
-
           # markdown-preview
           markdown-preview-nvim
+
+          # markview
+          markview-nvim
         ];
 
         latex = [ vimtex ];
