@@ -1,3 +1,4 @@
 return {
-  require 'plugins.colorscheme.colorscheme',
+  require 'plugins.colorscheme.catppuccin',
+  require 'plugins.colorscheme.tokyonight',
 }

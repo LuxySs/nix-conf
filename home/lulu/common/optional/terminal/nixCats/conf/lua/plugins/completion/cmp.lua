@@ -7,7 +7,10 @@ return {
       'L3MON4D3/LuaSnip',
       -- NOTE: nixCats: nix downloads it with a different file name.
       -- tell lazy about that.
+      -- fix different name from url for nixCats
       name = 'luasnip',
+      dev = require('nixCatsUtils').lazyAdd(false, true),
+
       build = require('nixCatsUtils').lazyAdd((function()
         -- Build Step is needed for regex support in snippets.
         -- This step is not supported in many windows environments.

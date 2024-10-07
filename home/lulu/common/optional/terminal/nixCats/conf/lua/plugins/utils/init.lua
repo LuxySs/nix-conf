@@ -10,6 +10,6 @@ return {
   require 'plugins.utils.nvim-tmux-navigator',
   require 'plugins.utils.oil',
   require 'plugins.utils.telescope',
-  require 'plugins.utils.toggle-term',
+  require 'plugins.utils.toggleterm',
   require 'plugins.utils.ufo',
 }

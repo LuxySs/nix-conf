@@ -1,6 +1,10 @@
 return {
   'numToStr/Comment.nvim',
-  name = 'comment.nvim',
+
+  -- fix different name from url for nixCats
+  name = "comment.nvim",
+  dev = require('nixCatsUtils').lazyAdd(false, true),
+
   event = 'VeryLazy',
   enabled = require('nixCatsUtils').enableForCategory 'utils',
   opts = {

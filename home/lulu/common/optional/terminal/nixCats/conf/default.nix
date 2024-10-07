@@ -107,6 +107,9 @@ let
           # cattppuccin
           catppuccin-nvim
 
+          # tokyonight
+          tokyonight-nvim
+
           # statusline
           lualine-nvim
 
@@ -123,6 +126,7 @@ let
           #     lua
           #   ]
           # ))
+          nvim-treesitter-textobjects
         ];
 
         lsp = [
@@ -131,6 +135,8 @@ let
           nvim-lspconfig
           otter-nvim
           nvim-jdtls
+          fidget-nvim
+          lazydev-nvim
         ];
 
         ui = [

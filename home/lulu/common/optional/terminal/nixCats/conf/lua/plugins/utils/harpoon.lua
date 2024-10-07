@@ -1,7 +1,12 @@
 return {
   'ThePrimeagen/harpoon',
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
   branch = 'harpoon2',
+  enabled = require('nixCatsUtils').enableForCategory 'utils',
+
+  -- fix different name from url for nixCats
+  name = "harpoon2",
+  dev = require('nixCatsUtils').lazyAdd(false, true),
+
   dependencies = { 'nvim-lua/plenary.nvim' },
   event = 'VeryLazy',
   config = function()
