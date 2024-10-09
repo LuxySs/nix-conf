@@ -22,6 +22,9 @@ let
         base0E = "#d33682";
         base08 = "#dc322f";
       };
+
+  mkFg = fgColor: "fg:#${fgColor}";
+  mkColors = fgColor: bgColor: "fg:#${fgColor} bg:#${bgColor}";
 in
 {
   options.settings.starship.enable = lib.mkEnableOption "Enable starship prompt";
@@ -29,86 +32,120 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.starship = {
       enable = true;
-      settings = {
+      settings = with colors; {
         command_timeout = 3000;
 
         format =
-          "[░▒▓](#${colors.base02})"
-          + "[ ](bg:#${colors.base02} fg:#${colors.base0E})"
-          + "[](bg:#${colors.base02} fg:#${colors.base02})"
+          "[░▒▓](${mkFg base02})"
+          + "$os"
+          + "[▓](${mkFg base02})"
           + "$directory"
-          + "[](fg:#${colors.base02} bg:#${colors.base02})"
           + "$git_branch"
           + "$git_status"
-          + "[](fg:#${colors.base02} bg:#${colors.base02})"
-          + "$nodejs"
-          + "$cmd_duration"
-          + "[](fg:#${colors.base02} bg:#${colors.base02})"
+
+          ##### languages #####
+          + "$c"
+          + "$custom"
           + "$python"
-          + "[ ](fg:#${colors.base02})"
+          + "$rust"
+          #####################
+
+          + "$nix_shell"
+          + "[](${mkFg base02})"
           + "\n"
-          + "[ ❯](fg:#${colors.base0B})"
-          + "[❯](fg:#${colors.base0C})"
-          + "[❯ ](fg:#${colors.base0D})";
+          + "[ ❯](${mkFg base0B})"
+          + "[❯](${mkFg base0C})"
+          + "[❯ ](${mkFg base0D})";
+
+        os = {
+          disabled = false;
+          style = mkColors base0E base02;
+          symbols = {
+            NixOS = "";
+            Windows = "󰍲";
+            Ubuntu = "󰕈";
+            SUSE = "";
+            Raspbian = "󰐿";
+            Mint = "󰣭";
+            Macos = "󰀵";
+            Manjaro = "";
+            Linux = "󰌽";
+            Gentoo = "󰣨";
+            Fedora = "󰣛";
+            Alpine = "";
+            Arch = "󰣇";
+            Artix = "󰣇";
+            EndeavourOS = "";
+            Debian = "󰣚";
+            Redhat = "󱄛";
+            RedHatEnterprise = "󱄛";
+          };
+        };
 
         directory = {
-          style = "fg:#${colors.base05} bg:#${colors.base02}";
+          style = mkColors base05 base02;
           format = "[ $path ]($style)";
           substitutions = {
             "~/Documents" = "󰈙 ";
             "~/Downloads" = " ";
             "~/Music" = " ";
             "~/Pictures" = " ";
-            "~/.config" = "⚙️";
+            "~/.config" = "⚙️ ";
             "~" = " ";
           };
         };
 
         git_branch = {
           symbol = "";
-          style = "bg:#${colors.base04}";
-          format = "[[ $symbol $branch ](fg:#${colors.base0D} bg:#${colors.base03})]($style)";
+          style = mkFg colors.base04;
+          format = "[[ $symbol $branch ](${mkColors base0D base03})]($style)";
+
         };
 
         git_status = {
-          style = "bg:#${colors.base04}";
-          format = "[[($all_status$ahead_behind )](fg:#${colors.base0D} bg:#${colors.base03})]($style)";
+          style = mkFg colors.base04;
+          format = "[[($all_status$ahead_behind )](${mkColors base0D base03})]($style)";
+
         };
 
-        nodejs = {
-          symbol = "";
-          style = "bg:#${colors.base0D}";
-          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#212736)]($style)";
+        nix_shell = {
+          symbol = "☃️";
+          # other symbols: ❄️  
+          style = mkColors base0D base02;
+          format = "[$symbol]($style)";
         };
 
-        rust = {
-          symbol = "";
-          style = "bg:#${colors.base0D}";
-          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#212736)]($style)";
+        c = {
+          symbol = "";
+          style = mkFg base0D;
+          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
         };
 
-        golang = {
-          symbol = "ﳑ";
-          style = "bg:#${colors.base0D}";
-          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
-        };
+        custom.cpp = {
+          detect_extensions = [
+            "cpp"
+            "cc"
+            "hpp"
+          ];
+          symbol = "";
+          # other symbol: "󰙲 "
+          style = mkFg base0D;
+          command = "g++ --version | awk 'NR==1 {print $3}'";
+          format = "[[ $symbol ($output) ](${mkColors base0D base02})]($style)";
+          disabled = false;
 
-        php = {
-          symbol = "";
-          style = "bg:#${colors.base0D}";
-          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
         };
 
         python = {
           symbol = "";
-          style = "bg:#${colors.base0D}";
-          format = "[[ $symbol ($version) ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
+          style = mkFg base0D;
+          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
         };
 
-        cmd_duration = {
-          disabled = false;
-          style = "bg:#${colors.base0D}";
-          format = "[[  $duration ](fg:#${colors.base0D} bg:#${colors.base02})]($style)";
+        rust = {
+          symbol = "";
+          style = mkFg base0D;
+          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
         };
       };
     };
