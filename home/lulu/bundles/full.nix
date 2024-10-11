@@ -27,9 +27,6 @@
     bash.enable = true;
     fish.enable = true;
 
-    #### Games
-    minecraft.enable = true;
-
     #### Theming
     stylix.enable = true;
 

@@ -16,4 +16,11 @@
       refreshRate = 99.98;
     }
   ];
+
+  # enable host-specific modules here
+  settings = {
+    #### Games
+    minecraft.enable = true;
+  };
+
 }
