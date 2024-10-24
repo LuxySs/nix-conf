@@ -25,6 +25,11 @@ in
 
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
 
+    stylix.cursor = {
+      package = pkgs.banana-cursor;
+      name = "Banana";
+    };
+
     stylix.fonts = {
       monospace = {
         package = pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; };
