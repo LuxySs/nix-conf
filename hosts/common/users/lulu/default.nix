@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-stable,
   inputs,
   host ? throw "missing host parameter",
   ...
@@ -22,7 +21,7 @@
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = {
-      inherit inputs pkgs pkgs-stable;
+      inherit inputs pkgs;
     };
 
     # import the user's home-manager according to the host.
