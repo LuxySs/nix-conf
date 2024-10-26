@@ -18,9 +18,7 @@ in
 
   config = {
     gtk = {
-      iconTheme = with cfg.iconTheme; {
-        inherit package name;
-      };
+      iconTheme = cfg.iconTheme;
     };
   };
 }

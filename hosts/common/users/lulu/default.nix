@@ -9,7 +9,7 @@
   users.users.lulu = {
     description = "main user";
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.bash;
     extraGroups = [
       "audio"
       "networkmanager"

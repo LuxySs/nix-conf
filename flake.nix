@@ -36,7 +36,7 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       systems = [
         "aarch64-linux"
@@ -44,26 +44,43 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-
       forAllSystems = nixpkgs.lib.genAttrs systems;
+
       customLib = import ./lib { inherit (nixpkgs) lib; };
-      lib = nixpkgs.lib.extend (self: super: customLib);
+      lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
     in
     {
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
-      nixosConfigurations = {
-        dishwasher = nixpkgs.lib.nixosSystem {
+      nixosConfigurations =
+        let
           specialArgs = {
             inherit inputs lib;
           };
-          modules = [ ./hosts/dishwasher ];
+        in
+        {
+          dishwasher = nixpkgs.lib.nixosSystem {
+            inherit specialArgs;
+            modules = [ ./hosts/dishwasher ];
+          };
+          cooking-plate = nixpkgs.lib.nixosSystem {
+            inherit specialArgs;
+            modules = [ ./hosts/cooking-plate ];
+          };
         };
-        cooking-plate = nixpkgs.lib.nixosSystem {
-          specialArgs = {
+
+      homeConfigurations = {
+        "lulu@archlinux" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = {
             inherit inputs lib;
           };
-          modules = [ ./hosts/cooking-plate ];
+          modules = [
+            ./home/lulu/archlinux.nix
+          ];
         };
       };
     };

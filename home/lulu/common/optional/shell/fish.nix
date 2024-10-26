@@ -24,6 +24,11 @@ in
     programs.fish = {
       enable = true;
 
+      interactiveShellInit = ''
+        set -g fish_greeting"" 
+        set -g fish_key_bindings fish_user_key_bindings
+      '';
+
       shellAliases = lib.mkMerge [
         {
           ".." = "cd ..";
@@ -34,11 +39,6 @@ in
         }
         (lib.mkIf eza_enabled eza_ls_replacement)
       ];
-
-      shellInit = ''
-        set -g fish_greeting""
-        set -g fish_key_bindings fish_user_key_bindings
-      '';
 
       functions = {
         fish_user_key_bindings = ''

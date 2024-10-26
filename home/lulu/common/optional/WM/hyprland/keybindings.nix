@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, config, ... }:
 
+let
+  shell = if (config.programs.fish.enable) then "${pkgs.fish}/bin/fish" else "${pkgs.bash}/bin/bash";
+in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
@@ -9,7 +12,7 @@
       "SUPER, Home, exec, pkill wlogout || wlogout"
       "SUPER, End, exec, hyprlock"
 
-      "SUPER, RETURN, exec, foot"
+      "SUPER, RETURN, exec, foot -e ${shell}"
       "SUPER, E, exec, foot -e yazi"
       "SUPER SHIFT, E, exec, nautilus"
       "SUPER, B, exec, firefox"
