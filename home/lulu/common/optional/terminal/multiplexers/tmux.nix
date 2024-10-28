@@ -21,6 +21,8 @@ in
         set -ag terminal-overrides ",xterm-256color:RGB"
 
         set -sg escape-time 10
+
+        setw -g mode-keys vi
       '';
 
       # vim-like navigation
