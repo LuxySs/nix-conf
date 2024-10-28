@@ -21,4 +21,5 @@ rec {
       inherit default description;
     };
 
+  ifAnyTrue = boolList: builtins.foldl' (acc: val: acc || val) false boolList;
 }

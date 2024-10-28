@@ -1,5 +1,14 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
+let
+  # true if at least one compositor is enabled
+  compositorEnabled =
+    with config.settings.wm;
+    lib.ifAnyTrue [
+      sway.enable
+      hyprland.enable
+    ];
+in
 {
   imports = [
     ./ags.nix
@@ -14,7 +23,7 @@
     ./wlogout
   ];
 
-  settings.wm = {
+  settings.wm = lib.mkIf compositorEnabled {
     ags.enable = lib.mkDefault true;
     brightness.enable = lib.mkDefault true;
     fuzzel.enable = lib.mkDefault true;
