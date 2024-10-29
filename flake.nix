@@ -51,11 +51,15 @@
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
 
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-        overlays = [ inputs.hyprpanel.overlay ];
-      };
+      # Generate pkgs for each supported system
+      pkgsForSystem = forEachSystem (
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [ inputs.hyprpanel.overlay ];
+        }
+      );
     in
     {
       formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
@@ -63,7 +67,7 @@
       nixosConfigurations =
         let
           specialArgs = {
-            inherit inputs lib pkgs;
+            inherit inputs lib pkgsForSystem;
           };
         in
         {
@@ -76,17 +80,20 @@
             modules = [ ./hosts/cooking-plate ];
           };
         };
-
       homeConfigurations = {
-        "lulu@archlinux" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs lib;
+        "lulu@archlinux" =
+          let
+            system = "x86_64-linux";
+          in
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = pkgsForSystem.${system};
+            extraSpecialArgs = {
+              inherit inputs lib;
+            };
+            modules = [
+              ./home/lulu/archlinux.nix
+            ];
           };
-          modules = [
-            ./home/lulu/archlinux.nix
-          ];
-        };
       };
     };
 }
