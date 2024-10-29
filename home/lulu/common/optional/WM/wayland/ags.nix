@@ -33,6 +33,8 @@ in
     };
 
     # other programs used for ags
-    home.packages = with pkgs; [ sassc ];
+    home.packages = with pkgs; [
+      sassc
+    ];
   };
 }

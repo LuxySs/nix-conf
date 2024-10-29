@@ -33,6 +33,8 @@
     webcord.url = "github:fufexan/webcord-flake";
 
     nixCats.url = "github:BirdeeHub/nixCats-nvim?dir=nix";
+
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs =
@@ -44,18 +46,24 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
+      forEachSystem = nixpkgs.lib.genAttrs systems;
 
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
+
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+        overlays = [ inputs.hyprpanel.overlay ];
+      };
     in
     {
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
       nixosConfigurations =
         let
           specialArgs = {
-            inherit inputs lib;
+            inherit inputs lib pkgs;
           };
         in
         {
@@ -71,10 +79,7 @@
 
       homeConfigurations = {
         "lulu@archlinux" = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          inherit pkgs;
           extraSpecialArgs = {
             inherit inputs lib;
           };
