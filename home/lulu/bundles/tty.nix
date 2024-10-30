@@ -7,6 +7,7 @@
     bat.enable = true;
     direnv.enable = true;
     eza.enable = true;
+    fzf.enable = true;
     git.enable = true;
     lazygit.enable = true;
     man-pages.enable = true;
