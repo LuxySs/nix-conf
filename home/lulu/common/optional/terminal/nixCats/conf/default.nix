@@ -197,6 +197,9 @@ let
           nvim-web-devicons
           oil-nvim
 
+          # plantuml
+          plantuml-syntax
+
           # telescope
           nvim-web-devicons
           plenary-nvim

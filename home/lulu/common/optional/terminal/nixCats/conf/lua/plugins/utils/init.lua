@@ -1,5 +1,6 @@
 return {
   require 'plugins.utils.autopairs',
+  require 'plugins.utils.plantuml',
   require 'plugins.utils.codesnap',
   require 'plugins.utils.colorizer',
   require 'plugins.utils.comment',
