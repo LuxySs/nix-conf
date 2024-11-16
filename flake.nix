@@ -23,7 +23,7 @@
 
     stylix.url = "github:danth/stylix";
 
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:aylur/ags/v1";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";

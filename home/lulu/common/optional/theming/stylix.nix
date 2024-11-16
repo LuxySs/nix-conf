@@ -20,6 +20,7 @@ in
   config = lib.mkIf (cfg.enable) {
 
     stylix.enable = true;
+    stylix.targets.hyprlock.enable = false;
 
     stylix.image = ./../../../../../wallpapers/wallpaper.png;
 
