@@ -33,8 +33,8 @@ in
 
     stylix.fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; };
-        name = "IosevkaNerdFont";
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Nerd Font Mono";
       };
       sansSerif = {
         package = pkgs.dejavu_fonts;
