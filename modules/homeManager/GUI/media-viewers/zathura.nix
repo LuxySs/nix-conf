@@ -6,5 +6,14 @@ in
 {
   options.settings.zathura.enable = lib.mkEnableOption "zathura";
 
-  config = lib.mkIf (cfg.enable) { programs.zathura.enable = true; };
+  config = lib.mkIf (cfg.enable) {
+    programs.zathura = {
+      enable = true;
+
+      options = {
+        selection-clipboard = "clipboard";
+      };
+
+    };
+  };
 }
