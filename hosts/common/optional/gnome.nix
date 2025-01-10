@@ -54,8 +54,5 @@ in
         totem # Video Player
       ]
     );
-
-    # use pipewire instead of pulseaudio
-    hardware.pulseaudio.enable = lib.mkForce false;
   };
 }
