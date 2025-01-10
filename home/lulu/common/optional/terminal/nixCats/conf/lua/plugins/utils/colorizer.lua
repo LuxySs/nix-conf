@@ -1,6 +1,8 @@
 return {
-  'NvChad/nvim-colorizer.lua',
+  'catgoose/nvim-colorizer.lua',
   enabled = require('nixCatsUtils').enableForCategory 'utils',
   cmd = { 'ColorizerToggle' },
-  opts = {},
+  opts = {
+    user_default_options = { mode = 'foreground' },
+  },
 }
