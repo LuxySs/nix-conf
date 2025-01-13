@@ -30,6 +30,8 @@ in
 
         confirm-close-surface = false;
         window-decoration = false;
+
+        gtk-single-instance = true;
       };
     };
   };
