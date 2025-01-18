@@ -118,11 +118,14 @@ let
         };
 
         completion = [
-          cmp-nvim-lsp
+          blink-cmp
           cmp-path
+          cmp-buffer
           cmp_luasnip
-          friendly-snippets
+          cmp-nvim-lsp
           luasnip
+
+          friendly-snippets
           nvim-cmp
         ];
 

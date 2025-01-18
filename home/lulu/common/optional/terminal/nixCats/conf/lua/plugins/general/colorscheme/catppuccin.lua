@@ -2,8 +2,8 @@ return {
   'catppuccin/nvim',
   enabled = require('nixCatsUtils').enableForCategory {'general', 'colorschemes' },
 
-  name = 'catppuccin-nvim',
   -- name = "catppuccin",
+  name = 'catppuccin-nvim',
   dev = require('nixCatsUtils').lazyAdd(false, true),
 
   lazy = false,
