@@ -1,6 +1,6 @@
 return {
   'jmbuhr/otter.nvim',
-  enabled = require('nixCatsUtils').enableForCategory{'programming', 'lsp', 'markdown'} ,
+  enabled = require('nixCatsUtils').enableForCategory { 'programming', 'lsp', 'markdown' },
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'neovim/nvim-lspconfig',

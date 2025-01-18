@@ -1,3 +1,3 @@
 return {
-  require('plugins.general.statusline.lualine'),
+  require 'plugins.general.statusline.lualine',
 }

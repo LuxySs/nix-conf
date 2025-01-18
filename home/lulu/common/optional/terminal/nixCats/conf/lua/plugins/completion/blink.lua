@@ -11,14 +11,14 @@ return {
     keymap = { preset = 'default' },
 
     fuzzy = {
-        prebuilt_binaries = {
-            download = false,
-        },
+      prebuilt_binaries = {
+        download = false,
+      },
     },
 
     appearance = {
       use_nvim_cmp_as_default = true,
-      nerd_font_variant = 'normal'
+      nerd_font_variant = 'normal',
     },
 
     sources = {
@@ -26,5 +26,5 @@ return {
     },
   },
 
-  opts_extend = { "sources.default" }
+  opts_extend = { 'sources.default' },
 }

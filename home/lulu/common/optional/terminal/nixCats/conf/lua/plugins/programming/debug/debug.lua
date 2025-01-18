@@ -1,6 +1,6 @@
 return {
   'mfussenegger/nvim-dap',
-  enabled = require('nixCatsUtils').enableForCategory{'programming', 'debug'} ,
+  enabled = require('nixCatsUtils').enableForCategory { 'programming', 'debug' },
   event = 'VeryLazy',
   dependencies = {
     -- Creates a beautiful debugger UI

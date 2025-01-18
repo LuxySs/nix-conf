@@ -70,5 +70,5 @@ local lazyOptions = {
 -- NOTE: Here is where you install your plugins.
 -- NOTE: nixCats: this the lazy wrapper.
 require('nixCatsUtils.lazyCat').setup(pluginList, nixLazyPath, {
-  {import = 'plugins'}
+  { import = 'plugins' },
 }, lazyOptions)

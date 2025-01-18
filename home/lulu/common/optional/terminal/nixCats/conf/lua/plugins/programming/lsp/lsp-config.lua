@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  enabled = require('nixCatsUtils').enableForCategory{'programming', 'lsp'} ,
+  enabled = require('nixCatsUtils').enableForCategory { 'programming', 'lsp' },
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- Useful status updates for LSP.
@@ -36,24 +36,17 @@ return {
             completion = {
               callSnippet = 'Replace',
             },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
             diagnostics = {
               globals = { 'nixCats' },
               disable = { 'missing-fields' },
             },
           },
         },
-      }
+      },
     },
   },
   config = function(_, opts)
-    local lspconfig = require('lspconfig')
-    for server, config in pairs(opts.servers) do
-        -- passing config.capabilities to blink.cmp merges with the capabilities in your
-        -- `opts[server].capabilities, if you've defined it
-        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
-    end
+    local lspconfig = require 'lspconfig'
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -64,9 +57,9 @@ return {
         -- In this case, we create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc, mode)
-           mode = mode or 'n'
-           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-         end
+          mode = mode or 'n'
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+        end
 
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
@@ -129,13 +122,6 @@ return {
       end,
     })
 
-    -- LSP servers and clients are able to communicate to each other what features they support.
-    --  By default, Neovim doesn't support everything that is in the LSP specification.
-    --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-    --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
     -- NOTE: nixCats: nixd is not available on mason -> replace it with rnix + nil_ls.
     if require('nixCatsUtils').isNixCats then
       opts.servers.nixd = {}
@@ -145,14 +131,11 @@ return {
     end
     -- NOTE: nixCats: if nix, use lspconfig instead of mason
     if require('nixCatsUtils').isNixCats then
-      for server_name, _ in pairs(servers) do
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          settings = servers[server_name],
-          filetypes = (servers[server_name] or {}).filetypes,
-          cmd = (servers[server_name] or {}).cmd,
-          root_pattern = (servers[server_name] or {}).root_pattern,
-        }
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabilities to blink.cmp merges with the capabilities in your
+        -- `opts[server].capabilities, if you've defined it
+        config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+        lspconfig[server].setup(config)
       end
     end
   end,

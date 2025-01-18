@@ -4,7 +4,7 @@ return {
   enabled = require('nixCatsUtils').enableForCategory 'utils',
 
   -- fix different name from url for nixCats
-  name = "harpoon2",
+  name = 'harpoon2',
   dev = require('nixCatsUtils').lazyAdd(false, true),
 
   dependencies = { 'nvim-lua/plenary.nvim' },
