@@ -1,6 +1,6 @@
 return {
   'aklt/plantuml-syntax',
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
+  enabled = require('nixCatsUtils').enableForCategory { 'utils', 'plantuml' },
   ft = { 'pulm', 'plantuml' },
-  config = function() end,
+  opts = {},
 }

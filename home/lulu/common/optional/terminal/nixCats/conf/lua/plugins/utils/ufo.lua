@@ -1,7 +1,7 @@
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = { 'kevinhwang91/promise-async' },
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
+  enabled = require('nixCatsUtils').enableForCategory { 'utils', 'ufo' },
   event = 'VeryLazy',
   config = function()
     vim.o.foldcolumn = '1' -- '0' is not bad

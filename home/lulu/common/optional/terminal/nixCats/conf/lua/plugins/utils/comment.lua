@@ -5,8 +5,10 @@ return {
   name = 'comment.nvim',
   dev = require('nixCatsUtils').lazyAdd(false, true),
 
+  enabled = require('nixCatsUtils').enableForCategory { 'utils', 'comment' },
+
   event = 'VeryLazy',
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
+
   opts = {
     ---Add a space b/w comment and the line
     padding = true,

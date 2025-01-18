@@ -233,7 +233,7 @@ let
 
           vim-tmux-navigator = [ vim-tmux-navigator ];
 
-          toggle-term = [ toggleterm-nvim ];
+          toggleterm = [ toggleterm-nvim ];
 
           ufo = [
             nvim-ufo

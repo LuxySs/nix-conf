@@ -37,4 +37,3 @@ map('n', '<C-.>', '<cmd>bnext<CR>', { desc = 'buffer next' })
 
 -- File browser & tree (oil & Neotree)
 map('n', '-', '<cmd>Oil<CR>')
--- map('n', '=', '<cmd>Neotree toggle<CR>')

@@ -1,7 +1,7 @@
 return {
   'ThePrimeagen/harpoon',
   branch = 'harpoon2',
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
+  enabled = require('nixCatsUtils').enableForCategory { 'utils', 'harpoon' },
 
   -- fix different name from url for nixCats
   name = 'harpoon2',
