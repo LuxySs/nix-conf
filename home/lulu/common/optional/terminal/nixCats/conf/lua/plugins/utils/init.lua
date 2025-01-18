@@ -1,10 +1,8 @@
 return {
   require 'plugins.utils.mini-pairs',
-  require 'plugins.utils.plantuml',
   require 'plugins.utils.codesnap',
   require 'plugins.utils.colorizer',
   require 'plugins.utils.comment',
-  require 'plugins.utils.gitsigns',
   require 'plugins.utils.harpoon',
   require 'plugins.utils.mini-ai',
   require 'plugins.utils.mini-surround',

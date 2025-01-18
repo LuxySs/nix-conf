@@ -99,6 +99,8 @@ let
         };
 
         markdown = [ markdownlint-cli ];
+
+        latex = [ zathura ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -119,10 +121,6 @@ let
 
         completion = [
           blink-cmp
-          cmp-path
-          cmp-buffer
-          cmp_luasnip
-          cmp-nvim-lsp
 
           luasnip # TODO: the snippets
           friendly-snippets
@@ -164,7 +162,7 @@ let
           # ))
         ];
 
-        git-stuff = {
+        git = {
           gitsigns = [ gitsigns-nvim ];
         };
 
@@ -304,7 +302,7 @@ let
           programming = true;
           completion = true;
           treesitter = true;
-          git-stuff = true;
+          git = true;
           ui = true;
           utils = true;
           markdown = true;
