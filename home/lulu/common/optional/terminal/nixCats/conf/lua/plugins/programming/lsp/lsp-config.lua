@@ -126,8 +126,8 @@ return {
     if require('nixCatsUtils').isNixCats then
       opts.servers.nixd = {}
     else
-      servers.rnix = {}
-      servers.nil_ls = {}
+      opts.servers.rnix = {}
+      opts.servers.nil_ls = {}
     end
     -- NOTE: nixCats: if nix, use lspconfig instead of mason
     if require('nixCatsUtils').isNixCats then
