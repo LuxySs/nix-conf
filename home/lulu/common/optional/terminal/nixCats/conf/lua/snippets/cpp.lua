@@ -1,3 +1,16 @@
+local ls = require 'luasnip'
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+local extras = require 'luasnip.extras'
+local rep = extras.rep
+local fmt = require('luasnip.extras.fmt').fmt
+local c = ls.choice_node
+local f = ls.function_node
+local d = ls.dynamic_node
+local sn = ls.snippet_node
+local l = require('luasnip.extras').lambda
+
 ls.add_snippets('cpp', {
   s('std::cout', {
     t 'std::cout << ',
@@ -6,25 +19,26 @@ ls.add_snippets('cpp', {
   }),
 })
 
-local function format_filename()
-  local filename = vim.fn.expand '%:t' -- get current filename with extension
-  return filename:upper():gsub('%.', '_') -- convert to uppercase and replace '.' with '_'
-end
-
 ls.add_snippets('cpp', {
   s(
-    '#ifndef',
+    'guard',
     fmt(
       [[
-#ifndef {filename}
-#define {filename}
+#ifndef {}
+#define {}
 
-{end_guard}
-#endif // {filename}
-]],
+{}
+
+#endif // {}
+    ]],
       {
-        filename = f(format_filename, {}), -- formatted filename for header guard
-        end_guard = i(1),
+        d(1, function(_, parent)
+          local filename = parent.env.TM_FILENAME:upper():gsub('%.', '_')
+          return sn(nil, i(1, filename))
+        end),
+        rep(1),
+        i(2),
+        rep(1),
       }
     )
   ),

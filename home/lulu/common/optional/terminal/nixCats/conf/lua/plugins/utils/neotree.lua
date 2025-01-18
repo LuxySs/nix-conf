@@ -1,7 +1,6 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
-  -- NOTE: nixCats: return true only if category is enabled, else false
-  enabled = require('nixCatsUtils').enableForCategory 'utils',
+  enabled = require('nixCatsUtils').enableForCategory { 'utils', 'neo-tree' },
   version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',

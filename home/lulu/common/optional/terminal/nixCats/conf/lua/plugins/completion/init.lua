@@ -1,3 +1,4 @@
 return {
-  require 'plugins.completion.cmp',
+  require 'plugins.completion.blink',
+  require 'plugins.completion.luasnip',
 }

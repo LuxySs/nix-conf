@@ -49,75 +49,109 @@ let
       pkgs,
       settings,
       categories,
+      extra,
       name,
+      mkNvimPlugin,
       ...
     }@packageDef:
     {
+      # to define and use a new category, simply add a new list to a set here,
+      # and later, you will include categoryname = true; in the set you
+      # provide when you build the package using this builder function.
+      # see :help nixCats.flake.outputs.packageDefinitions for info on that section.
 
-      propagatedBuildInputs = {
-        general = with pkgs; [ ];
-      };
-
+      # lspsAndRuntimeDeps:
+      # this section is for dependencies that should be available
+      # at RUN TIME for plugins. Will be available to PATH within neovim terminal
+      # this includes LSPs
       lspsAndRuntimeDeps = with pkgs; {
         general = [
-          lua-language-server
+          fzf
           nix-doc
           nixd
           nixfmt-rfc-style
           ripgrep
-          stylua
-          universal-ctags
+          fd
+        ];
 
-          bash-language-server
-          clang-tools
-          gopls
-          isort
-          jdt-language-server
-          neocmakelsp
-          pyright
-          ruff
-          rust-analyzer
-          shellcheck
-        ];
-        debug = [
-          delve
-          gcc
-          gdb
-        ];
+        programming = {
+          lsp = [
+            bash-language-server
+            clang-tools
+            gopls
+            jdt-language-server
+            lua-language-server
+            neocmakelsp
+            pyright
+            rust-analyzer
+          ];
+
+          linting = [
+            shellcheck
+            ruff
+          ];
+
+          formatting = [
+            stylua
+            isort
+          ];
+
+          debug = [ gdb ];
+        };
+
         markdown = [ markdownlint-cli ];
+
+        latex = [ zathura ];
+
+        plantuml = [ plantuml ];
       };
 
       # This is for plugins that will load at startup without using packadd:
       startupPlugins = with pkgs.vimPlugins; {
+        general = {
+          colorschemes = [
+            catppuccin-nvim
+            tokyonight-nvim
+          ];
+
+          statusLine = [
+            lualine-nvim
+            nvim-web-devicons
+          ];
+
+          lazy = [ lazy-nvim ];
+        };
+
         completion = [
-          cmp-nvim-lsp
-          cmp-path
-          cmp_luasnip
-          friendly-snippets
+          blink-cmp
+
           luasnip
-          nvim-cmp
+          friendly-snippets
         ];
 
-        debug = [
-          nvim-dap
-          nvim-dap-go
-          nvim-dap-ui
-          nvim-nio
-        ];
+        programming = {
+          lsp = [
+            fidget-nvim
+            lazydev-nvim
+            nvim-jdtls
+            nvim-lspconfig
+            otter-nvim
+          ];
 
-        general = [
-          # cattppuccin
-          catppuccin-nvim
+          linting = [
+            nvim-lint
+          ];
 
-          # lualine (statusline)
-          lualine-nvim
+          formatting = [
+            conform-nvim
+          ];
 
-          # lazy
-          lazy-nvim
-
-          # tokyonight
-          tokyonight-nvim
-        ];
+          debug = [
+            nvim-dap
+            nvim-dap-ui
+            nvim-nio
+          ];
+        };
 
         treesitter = [
           nvim-treesitter-textobjects
@@ -131,127 +165,112 @@ let
           # ))
         ];
 
-        lsp = [
-          conform-nvim
-          fidget-nvim
-          lazydev-nvim
-          nvim-jdtls
-          nvim-lint
-          nvim-lspconfig
-          otter-nvim
-        ];
+        git = {
+          gitsigns = [ gitsigns-nvim ];
+          neogit = [
+            neogit
+            plenary-nvim
+            diffview-nvim
+            telescope-nvim
+          ];
+        };
 
-        ui = [
-          # alpha
-          alpha-nvim
-          nvim-web-devicons
+        ui = {
+          alpha = [
+            alpha-nvim
+            nvim-web-devicons
+          ];
 
-          # indent-blankline
-          indent-blankline-nvim
+          indent-blankline = [
+            indent-blankline-nvim
+          ];
 
-          # noice
-          noice-nvim
-          nui-nvim
+          noice = [
+            noice-nvim
+            nui-nvim
+          ];
 
-          # todo-comments
-          plenary-nvim
-          todo-comments-nvim
+          todo-comments = [
+            plenary-nvim
+            todo-comments-nvim
+          ];
 
-          # which-key
-          which-key-nvim
-        ];
+          which-key = [
+            which-key-nvim
+          ];
+        };
 
-        utils = [
-          # autopairs
-          nvim-autopairs
+        utils = {
+          mini-pairs = [ mini-pairs ];
 
-          # codesnap
-          codesnap-nvim
+          mini-bracketed = [ mini-bracketed ];
 
-          # colorizer
-          nvim-colorizer-lua
+          codesnap = [ codesnap-nvim ];
 
-          # comment
-          comment-nvim
+          colorizer = [ nvim-colorizer-lua ];
 
-          # gitsigns
-          gitsigns-nvim
+          comment = [ comment-nvim ];
 
-          # harpoon
-          harpoon2
-          plenary-nvim
+          harpoon = [
+            harpoon2
+            plenary-nvim
+          ];
 
-          # mini-ai
-          mini-ai
+          mini-ai = [ mini-ai ];
 
-          # mini-surround
-          mini-surround
+          mini-surround = [ mini-surround ];
 
-          # neo-tree
-          neo-tree-nvim
-          nui-nvim
-          nvim-web-devicons
-          plenary-nvim
+          neo-tree = [
+            neo-tree-nvim
+            nui-nvim
+            nvim-web-devicons
+            plenary-nvim
+          ];
 
-          # oil
-          nvim-web-devicons
-          oil-nvim
+          oil = [
+            nvim-web-devicons
+            oil-nvim
+          ];
 
-          # plantuml
-          plantuml-syntax
+          telescope = [
+            telescope-nvim
+            plenary-nvim
+            nvim-web-devicons
+            telescope-fzf-native-nvim
+            telescope-ui-select-nvim # TODO: do I still use it ?
+          ];
 
-          # telescope
-          nvim-web-devicons
-          plenary-nvim
-          telescope-fzf-native-nvim
-          telescope-nvim
-          telescope-ui-select-nvim
+          vim-tmux-navigator = [ vim-tmux-navigator ];
 
-          # vim-tmux-navigator
-          vim-tmux-navigator
+          toggleterm = [ toggleterm-nvim ];
 
-          # toggle-term
-          toggleterm-nvim
+          ufo = [
+            nvim-ufo
+            promise-async
+          ];
+        };
 
-          # ufo
-          nvim-ufo
-        ];
-
-        markdown = [
-          # markdown-preview
-          markdown-preview-nvim
-
-          # markview
-          markview-nvim
-        ];
+        markdown = {
+          markdown-preview = [ markdown-preview-nvim ];
+          markview = [
+            markview-nvim
+            nvim-web-devicons
+          ];
+        };
 
         latex = [ vimtex ];
-      };
 
-      # not loaded automatically at startup.
-      # use with packadd and an autocommand in config to achieve lazy loading
-      # NOTE: this template is using lazy.nvim so, which list you put them in is irrelevant.
-      # startupPlugins or optionalPlugins, it doesnt matter, lazy.nvim does the loading.
-      # I just put them all in startupPlugins. I could have put them all in here instead.
-      optionalPlugins = { };
+        plantuml = [
+          plantuml-syntax
+        ];
+      };
 
       # shared libraries to be added to LD_LIBRARY_PATH
       # variable available to nvim runtime
       sharedLibraries = {
         general = with pkgs; [
-          # libgit2
+          libgit2
         ];
-      };
-
-      environmentVariables = {
-        test = {
-          CATTESTVAR = "It worked!";
-        };
-      };
-
-      extraWrapperArgs = {
-        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/setup-hooks/make-wrapper.sh
-        test = [ ''--set CATTESTVAR2 "It worked again!"'' ];
       };
 
       # lists of the functions you would have passed to
@@ -292,25 +311,16 @@ let
         # and a set of categories that you want
         # (and other information to pass to lua)
         categories = {
-          completion = true;
-
-          debug = true;
-
           general = true;
-
+          programming = true;
+          completion = true;
           treesitter = true;
-
-          lsp = true;
-
+          git = true;
           ui = true;
-
           utils = true;
-
           markdown = true;
-
           latex = true;
-
-          test = true;
+          plantuml = true;
         };
       };
   };
