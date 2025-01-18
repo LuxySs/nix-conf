@@ -1,9 +1,9 @@
 return {
-  require 'plugins.colorscheme',
+  require 'plugins.general.colorscheme',
+  require 'plugins.general.statusline',
   require 'plugins.completion',
   require 'plugins.debug',
   require 'plugins.lsp',
-  require 'plugins.statusline',
   require 'plugins.treesitter',
   require 'plugins.ui',
   require 'plugins.utils',
