@@ -95,7 +95,7 @@ let
             isort
           ];
 
-          dap = [ gdb ];
+          debug = [ gdb ];
         };
 
         markdown = [ markdownlint-cli ];
