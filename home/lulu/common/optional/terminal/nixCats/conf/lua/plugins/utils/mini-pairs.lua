@@ -4,5 +4,9 @@ return {
 
   version = false,
 
-  opts = {},
+  opts = {
+    mappings = {
+      ['<'] = { action = 'open', pair = '<>', neigh_pattern = '[^\\].' },
+    },
+  },
 }
