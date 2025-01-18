@@ -123,10 +123,9 @@ let
           cmp-buffer
           cmp_luasnip
           cmp-nvim-lsp
-          luasnip
 
+          luasnip # TODO: the snippets
           friendly-snippets
-          nvim-cmp
         ];
 
         programming = {
@@ -195,7 +194,7 @@ let
         };
 
         utils = {
-          autopairs = [ nvim-autopairs ];
+          mini-pairs = [ mini-pairs ];
 
           codesnap = [ codesnap-nvim ];
 

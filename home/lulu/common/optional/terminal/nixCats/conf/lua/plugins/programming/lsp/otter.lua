@@ -4,7 +4,7 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'neovim/nvim-lspconfig',
-    'hrsh7th/nvim-cmp',
+    'saghen/blink.cmp',
   },
   ft = { 'nix', 'markdown' },
   config = function()
