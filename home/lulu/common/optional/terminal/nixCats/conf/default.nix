@@ -122,7 +122,7 @@ let
         completion = [
           blink-cmp
 
-          luasnip # TODO: the snippets
+          luasnip
           friendly-snippets
         ];
 

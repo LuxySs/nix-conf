@@ -1,7 +1,6 @@
 return {
   'saghen/blink.cmp',
   enabled = require('nixCatsUtils').enableForCategory 'completion',
-  dependencies = 'rafamadriz/friendly-snippets',
 
   opts = {
     keymap = {
@@ -9,6 +8,8 @@ return {
       ['<C-l>'] = { 'snippet_forward', 'fallback' },
       ['<C-h>'] = { 'snippet_backward', 'fallback' },
     },
+
+    snippets = { preset = 'luasnip' },
 
     appearance = {
       use_nvim_cmp_as_default = true,
