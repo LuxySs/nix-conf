@@ -1,6 +1,3 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
 local map = vim.keymap.set
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
