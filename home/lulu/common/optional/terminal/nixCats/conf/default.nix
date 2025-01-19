@@ -202,6 +202,8 @@ let
         utils = {
           mini-pairs = [ mini-pairs ];
 
+          mini-bracketed = [ mini-bracketed ];
+
           codesnap = [ codesnap-nvim ];
 
           colorizer = [ nvim-colorizer-lua ];

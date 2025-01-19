@@ -1,10 +1,11 @@
 return {
-  require 'plugins.utils.mini-pairs',
+  require 'plugins.utils.bracketed',
   require 'plugins.utils.codesnap',
   require 'plugins.utils.colorizer',
   require 'plugins.utils.comment',
   require 'plugins.utils.harpoon',
   require 'plugins.utils.mini-ai',
+  require 'plugins.utils.mini-pairs',
   require 'plugins.utils.mini-surround',
   require 'plugins.utils.neotree',
   require 'plugins.utils.nvim-tmux-navigator',
