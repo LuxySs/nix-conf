@@ -71,6 +71,7 @@ let
           nixd
           nixfmt-rfc-style
           ripgrep
+          fd
         ];
 
         programming = {
