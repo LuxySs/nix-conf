@@ -166,6 +166,12 @@ let
 
         git = {
           gitsigns = [ gitsigns-nvim ];
+          neogit = [
+            neogit
+            plenary-nvim
+            diffview-nvim
+            telescope-nvim
+          ];
         };
 
         ui = {

@@ -30,19 +30,6 @@ return {
       end)
     end
 
-    -- map('n', '<leader>ha', function()
-    --   harpoon:list():select(1)
-    -- end)
-    -- map('n', '<leader>hs', function()
-    --   harpoon:list():select(2)
-    -- end)
-    -- map('n', '<leader>hd', function()
-    --   harpoon:list():select(3)
-    -- end)
-    -- map('n', '<leader>hf', function()
-    --   harpoon:list():select(4)
-    -- end)
-
     --[[ telescope extension ]]
     --
     -- basic telescope configuration
