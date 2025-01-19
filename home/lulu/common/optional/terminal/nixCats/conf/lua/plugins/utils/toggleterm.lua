@@ -3,5 +3,7 @@ return {
   enabled = require('nixCatsUtils').enableForCategory { 'utils', 'toggleterm' },
   event = 'VeryLazy',
   version = '*',
-  opts = {},
+  opts = {
+    open_mapping = [[<c-\>]],
+  },
 }
