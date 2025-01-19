@@ -101,6 +101,8 @@ let
         markdown = [ markdownlint-cli ];
 
         latex = [ zathura ];
+
+        plantuml = [ plantuml ];
       };
 
       # This is for plugins that will load at startup without using packadd:
@@ -249,7 +251,9 @@ let
 
         latex = [ vimtex ];
 
-        plantuml = [ plantuml-syntax ];
+        plantuml = [
+          plantuml-syntax
+        ];
       };
 
       # shared libraries to be added to LD_LIBRARY_PATH
