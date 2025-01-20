@@ -2,20 +2,22 @@
   config,
   inputs,
   lib,
-  pkgs,
   ...
 }:
 
 let
   cfg = config.settings.nixCats;
-  myNixCats = import ./conf { inherit inputs; };
 in
 {
+  imports = [
+    inputs.myNixCats.homeModule
+  ];
+
   options.settings.nixCats.enable = lib.mkEnableOption "nixCats";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ myNixCats.packages.${pkgs.system}.nixCats ];
+    nixCats.enable = true;
 
-    home.sessionVariables.EDITOR = "nixCats";
+    home.sessionVariables.EDITOR = "nixcats";
   };
 }

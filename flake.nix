@@ -32,7 +32,7 @@
 
     webcord.url = "github:fufexan/webcord-flake";
 
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    myNixCats.url = "github:LuxySs/nixcats-conf";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
