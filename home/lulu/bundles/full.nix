@@ -34,7 +34,7 @@
     #### University
     gcc.enable = true;
     java.enable = true;
-    latex-support.enable = true;
+    latex-support.enable = false;
     python.enable = true;
 
     ###### Shared Across Users ######
