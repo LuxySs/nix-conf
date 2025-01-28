@@ -33,8 +33,6 @@
     webcord.url = "github:fufexan/webcord-flake";
 
     myNixCats.url = "github:LuxySs/nixcats-conf";
-
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs =
@@ -57,7 +55,7 @@
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ inputs.hyprpanel.overlay ];
+          overlays = [ ];
         }
       );
     in

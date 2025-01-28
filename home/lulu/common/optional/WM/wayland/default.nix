@@ -15,7 +15,6 @@ in
     ./brightness.nix
     ./fuzzel.nix
     ./hypridle.nix
-    ./hyprpanel.nix
     ./hyprlock.nix
     ./playerctl.nix
     ./screenshots.nix
@@ -30,7 +29,6 @@ in
     fuzzel.enable = lib.mkDefault true;
     hypridle.enable = lib.mkDefault true;
     hyprlock.enable = lib.mkDefault true;
-    hyprpanel.enable = lib.mkDefault false;
     playerctl.enable = lib.mkDefault true;
     screenshots.enable = lib.mkDefault true;
     swww.enable = lib.mkDefault true;
