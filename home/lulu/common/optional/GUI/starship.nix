@@ -83,7 +83,7 @@ in
         };
 
         directory = {
-          style = mkColors base05 base02;
+          style = mkColors base05 base01;
           format = "[ $path ]($style)";
           substitutions = {
             "~/Documents" = "󰈙 ";
@@ -97,15 +97,13 @@ in
 
         git_branch = {
           symbol = "";
-          style = mkFg colors.base04;
-          format = "[[ $symbol $branch ](${mkColors base0D base03})]($style)";
-
+          style = mkColors base0D base02;
+          format = "[ $symbol $branch ]($style)";
         };
 
         git_status = {
-          style = mkFg colors.base04;
-          format = "[[($all_status$ahead_behind )](${mkColors base0D base03})]($style)";
-
+          style = mkColors base0D base02;
+          format = "[$all_status$ahead_behind ]($style)";
         };
 
         nix_shell = {
@@ -117,8 +115,8 @@ in
 
         c = {
           symbol = "";
-          style = mkFg base0D;
-          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
+          style = mkColors base0D base02;
+          format = "[ $symbol ($version) ]($style)";
         };
 
         custom.cpp = {
@@ -129,23 +127,23 @@ in
           ];
           symbol = "";
           # other symbol: "󰙲 "
-          style = mkFg base0D;
+          style = mkColors base0D base02;
           command = "g++ --version | awk 'NR==1 {print $3}'";
-          format = "[[ $symbol ($output) ](${mkColors base0D base02})]($style)";
+          format = "[ $symbol ($output) ]($style)";
           disabled = false;
 
         };
 
         python = {
           symbol = "";
-          style = mkFg base0D;
-          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
+          style = mkColors base0D base02;
+          format = "[ $symbol ($version) ]($style)";
         };
 
         rust = {
           symbol = "";
-          style = mkFg base0D;
-          format = "[[ $symbol ($version) ](${mkColors base0D base02})]($style)";
+          style = mkColors base0D base02;
+          format = "[ $symbol ($version) ]($style)";
         };
       };
     };

@@ -14,7 +14,7 @@ in
 
   options.settings.stylix = {
     enable = lib.mkEnableOption "stylix";
-    theme = lib.mkStrOption "catppuccin-mocha" "stylix theme";
+    theme = lib.mkStrOption "gruvbox-dark-medium" "stylix theme";
   };
 
   config = lib.mkIf (cfg.enable) {
