@@ -36,9 +36,9 @@ in
         command_timeout = 3000;
 
         format =
-          "[░▒▓](${mkFg base02})"
+          "[▒▓](${mkFg base02})"
           + "$os"
-          + "[▓](${mkFg base02})"
+          + "[▓▒](${mkFg base02})"
           + "$directory"
           + "$git_branch"
           + "$git_status"
@@ -51,7 +51,7 @@ in
           #####################
 
           + "$nix_shell"
-          + "[](${mkFg base02})"
+          + "[](${mkFg base01})"
           + "\n"
           + "[ ❯](${mkFg base0B})"
           + "[❯](${mkFg base0C})"
@@ -80,6 +80,7 @@ in
             Redhat = "󱄛";
             RedHatEnterprise = "󱄛";
           };
+          format = "[$symbol ]($style)";
         };
 
         directory = {
@@ -109,13 +110,13 @@ in
         nix_shell = {
           symbol = "☃️";
           # other symbols: ❄️  
-          style = mkColors base0D base02;
+          style = mkColors base0D base01;
           format = "[$symbol]($style)";
         };
 
         c = {
           symbol = "";
-          style = mkColors base0D base02;
+          style = mkColors base0D base01;
           format = "[ $symbol ($version) ]($style)";
         };
 
@@ -127,7 +128,7 @@ in
           ];
           symbol = "";
           # other symbol: "󰙲 "
-          style = mkColors base0D base02;
+          style = mkColors base0D base01;
           command = "g++ --version | awk 'NR==1 {print $3}'";
           format = "[ $symbol ($output) ]($style)";
           disabled = false;
@@ -136,13 +137,13 @@ in
 
         python = {
           symbol = "";
-          style = mkColors base0D base02;
+          style = mkColors base0D base01;
           format = "[ $symbol ($version) ]($style)";
         };
 
         rust = {
           symbol = "";
-          style = mkColors base0D base02;
+          style = mkColors base0D base01;
           format = "[ $symbol ($version) ]($style)";
         };
       };
