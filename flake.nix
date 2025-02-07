@@ -38,60 +38,42 @@
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     let
-      systems = [
-        "aarch64-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-      forEachSystem = nixpkgs.lib.genAttrs systems;
-
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
-
-      # Generate pkgs for each supported system
-      pkgsForSystem = forEachSystem (
-        system:
-        import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [ ];
-        }
-      );
     in
     {
-      formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
-
-      nixosConfigurations =
-        let
+      nixosConfigurations = {
+        cooking-plate = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs lib pkgsForSystem;
+            inherit inputs lib;
           };
-        in
-        {
-          dishwasher = nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            modules = [ ./hosts/dishwasher ];
-          };
-          cooking-plate = nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            modules = [ ./hosts/cooking-plate ];
-          };
+          modules = [
+            ./hosts/cooking-plate
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+          ];
         };
-      homeConfigurations = {
-        "lulu@archlinux" =
-          let
-            system = "x86_64-linux";
-          in
-          home-manager.lib.homeManagerConfiguration {
-            pkgs = pkgsForSystem.${system};
-            extraSpecialArgs = {
-              inherit inputs lib;
-            };
-            modules = [
-              ./home/lulu/archlinux.nix
-            ];
+
+        dishwasher = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs lib;
           };
+          modules = [
+            ./hosts/dishwasher
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        "lulu@archlinux" = home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = {
+            inherit inputs lib;
+          };
+          modules = [
+            ./home/lulu/archlinux.nix
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+          ];
+        };
       };
     };
 }
