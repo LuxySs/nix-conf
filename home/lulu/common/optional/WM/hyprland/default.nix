@@ -1,7 +1,5 @@
 {
-  inputs,
   lib,
-  pkgs,
   config,
   ...
 }:
@@ -21,22 +19,13 @@ in
     ./windowRules.nix
   ];
 
-  options.settings.wm.hyprland = {
-    enable = lib.mkEnableOption "Hyprland WM";
-    useFlake = lib.mkDisableOption "Use flake for hyprland";
-  };
+  options.settings.wm.hyprland.enable = lib.mkEnableOption "Hyprland WM";
 
-  config = lib.mkMerge [
-    (lib.mkIf (!cfg.useFlake) {
-      wayland.windowManager.hyprland.package = pkgs.hyprland;
-    })
-    (lib.mkIf (cfg.enable) {
-      wayland.windowManager.hyprland = {
-        enable = true;
-        package = lib.mkDefault inputs.hyprland.packages.${pkgs.system}.hyprland;
-        systemd.enable = true;
-        xwayland.enable = true;
-      };
-    })
-  ];
+  config = lib.mkIf (cfg.enable) {
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = null;
+      portalPackage = null;
+    };
+  };
 }

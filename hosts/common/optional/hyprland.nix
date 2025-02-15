@@ -10,24 +10,25 @@ let
   cfg = config.settings.hyprland;
 in
 {
-  options.settings.hyprland.enable = lib.mkEnableOption "Hyprland WM";
+  options.settings.hyprland = {
+    enable = lib.mkEnableOption "Hyprland WM";
+    useFlake = lib.mkDisableOption "use Hyprland flake";
+  };
 
   config = lib.mkIf (cfg.enable) {
     programs.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      package =
+        lib.mkIf cfg.useFlake
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      xwayland.enable = true;
+        lib.mkIf cfg.useFlake
+          inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
     };
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
-    };
-
-    xdg.portal = {
-      enable = true;
-      extraPortals = [ ];
     };
   };
 }
