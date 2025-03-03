@@ -11,7 +11,6 @@
     foot.enable = true;
     spotify.enable = true;
     starship.enable = true;
-    thunderbird.enable = true;
 
     #### terminal
     bat.enable = true;
@@ -19,7 +18,6 @@
     eza.enable = true;
     fzf.enable = true;
     git.enable = true;
-    lazygit.enable = true;
     man-pages.enable = true;
     nixCats.enable = true;
     tmux.enable = true;
@@ -34,7 +32,6 @@
     #### University
     gcc.enable = true;
     java.enable = true;
-    latex-support.enable = false;
     python.enable = true;
 
     ###### Shared Across Users ######
@@ -42,7 +39,6 @@
     loupe.enable = true;
     mpv.enable = true;
     nautilus.enable = true;
-    obsidian.enable = true;
     pwvucontrol.enable = true;
     vesktop.enable = true;
     zathura.enable = true;

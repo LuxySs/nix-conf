@@ -9,7 +9,10 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.nh = {
       enable = true;
-      clean.enable = true;
+      clean = {
+        enable = true;
+        dates = "monthly";
+      };
       flake = "/home/lulu/nix-conf";
     };
   };

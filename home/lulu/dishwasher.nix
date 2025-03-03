@@ -18,8 +18,5 @@
   ];
 
   # enable host-specific modules here
-  settings = {
-    #### Games
-    minecraft.enable = true;
-  };
+  settings = { };
 }
