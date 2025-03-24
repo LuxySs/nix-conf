@@ -28,7 +28,7 @@ in
 
     stylix.cursor = {
       package = pkgs.banana-cursor;
-      size = 10;
+      size = 30;
       name = "Banana";
     };
 
