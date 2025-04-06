@@ -12,8 +12,15 @@ in
 
       languagePacks = [
         "en-US"
-        "be"
+        "fr"
       ];
+
+      profiles = {
+        lulu = {
+          isDefault = true;
+        };
+      };
+
     };
   };
 }

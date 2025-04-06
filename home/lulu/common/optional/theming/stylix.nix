@@ -32,6 +32,8 @@ in
       name = "Banana";
     };
 
+    stylix.targets.firefox.profileNames = [ "lulu" ];
+
     stylix.fonts = {
       monospace = {
         package = pkgs.nerd-fonts.iosevka;
