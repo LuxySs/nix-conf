@@ -23,7 +23,6 @@
 
     #### University
     gcc.enable = true;
-    java.enable = true;
     latex-support.enable = true;
     python.enable = true;
 

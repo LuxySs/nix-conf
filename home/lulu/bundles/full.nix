@@ -31,7 +31,6 @@
 
     #### University
     gcc.enable = true;
-    java.enable = true;
     python.enable = true;
 
     ###### Shared Across Users ######
