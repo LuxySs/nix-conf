@@ -10,7 +10,7 @@ let
   cfg = config.settings.stylix;
 in
 {
-  imports = [ inputs.stylix.homeManagerModules.stylix ];
+  imports = [ inputs.stylix.homeModules.stylix ];
 
   options.settings.stylix = {
     enable = lib.mkEnableOption "stylix";

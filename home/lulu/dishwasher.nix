@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./../../modules/homeManager
+    ./../common
     ./common/core
     ./common/optional
     ./bundles/full.nix

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./../../modules/homeManager
+    ./../common
     ./common/core
     ./common/optional
     ./bundles/full.nix
@@ -16,4 +16,7 @@
       refreshRate = 60.03;
     }
   ];
+
+  # enable host-specific modules here
+  settings = { };
 }

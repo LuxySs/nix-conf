@@ -14,8 +14,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs29-gtk3;
-      extraPackages = epkgs: [ epkgs.vterm ];
+      package = pkgs.emacs-gtk;
     };
   };
 }

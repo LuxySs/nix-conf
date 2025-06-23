@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf (cfg.enable) {
-    services.xserver.desktopManager.gnome.enable = true;
+    services.desktopManager.gnome.enable = true;
 
     # Exclude the useless apps unless "bloated" was enabled
     services.gnome.rygel.enable = cfg.bloated;
