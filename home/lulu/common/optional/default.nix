@@ -2,15 +2,16 @@
 
 {
   imports = [
-    ./GUI
     ./WM
     ./browsers
     ./editors
     ./games
     ./git.nix
     ./shells
-    ./terminal
+    ./starship.nix
+    ./terminals
     ./theming
+    ./thunderbird.nix
     ./university
   ];
 }
