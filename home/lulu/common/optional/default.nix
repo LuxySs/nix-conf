@@ -4,9 +4,11 @@
   imports = [
     ./GUI
     ./WM
+    ./browsers
     ./editors
     ./games
-    ./shell
+    ./git.nix
+    ./shells
     ./terminal
     ./theming
     ./university
