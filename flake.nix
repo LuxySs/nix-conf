@@ -43,8 +43,21 @@
     let
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
+
+      systems = [
+        "aarch64-linux"
+        "i686-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
+      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+
+      overlays = import ./overlays { inherit inputs; };
+
       nixosConfigurations = {
         cooking_plate = nixpkgs.lib.nixosSystem {
           specialArgs = {
