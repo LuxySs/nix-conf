@@ -52,7 +52,6 @@
           };
           modules = [
             ./hosts/cooking_plate
-            { nixpkgs.hostPlatform = "x86_64-linux"; }
           ];
         };
 
@@ -62,7 +61,6 @@
           };
           modules = [
             ./hosts/dishwasher
-            { nixpkgs.hostPlatform = "x86_64-linux"; }
           ];
         };
       };
@@ -74,7 +72,6 @@
           };
           modules = [
             ./home/lulu/archlinux.nix
-            { nixpkgs.hostPlatform = "x86_64-linux"; }
           ];
         };
       };
