@@ -10,6 +10,5 @@
     ./lazygit.nix
     ./man-pages.nix
     ./multiplexers
-    ./nixCats
   ];
 }
