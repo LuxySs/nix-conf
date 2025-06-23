@@ -46,12 +46,12 @@
     in
     {
       nixosConfigurations = {
-        cooking-plate = nixpkgs.lib.nixosSystem {
+        cooking_plate = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs lib;
           };
           modules = [
-            ./hosts/cooking-plate
+            ./hosts/cooking_plate
             { nixpkgs.hostPlatform = "x86_64-linux"; }
           ];
         };

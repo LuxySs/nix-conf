@@ -7,7 +7,7 @@
     ####### HARDWARE #######
     ./hardware-configuration.nix
     ##### disk config
-    ./disko-config.nix
+    ./disko_config.nix
     { _module.args.device = "/dev/sda"; }
 
     ##### CORE

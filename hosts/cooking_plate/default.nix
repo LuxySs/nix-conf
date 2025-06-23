@@ -7,7 +7,7 @@
     ####### HARDWARE #######
     ./hardware-configuration.nix
     ##### disk config
-    ./disko-config.nix
+    ./disko_config.nix
     { _module.args.device = "/dev/sda"; }
 
     ##### CORE
@@ -18,7 +18,7 @@
 
     ##### USERS
     ./../common/users/lulu
-    { _module.args.host = "cooking-plate"; }
+    { _module.args.host = "cooking_plate"; }
   ];
 
   boot.loader = {

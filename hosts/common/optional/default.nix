@@ -3,19 +3,19 @@
 {
   imports = [
     ./bluetooth.nix
-    ./cache-substituters.nix
+    ./cache_substituters.nix
     ./fish.nix
     ./gnome.nix
     ./hyprland.nix
     ./kde.nix
-    ./minecraft-server.nix
-    ./network-manager.nix
-    ./nix-helper.nix
+    ./minecraft_server.nix
+    ./network_manager.nix
+    ./nix_helper.nix
     ./nvidia.nix
     ./pipewire.nix
     ./sddm.nix
     ./services
-    ./usefulPrograms.nix
+    ./useful_programs.nix
     ./virt.nix
   ];
 }

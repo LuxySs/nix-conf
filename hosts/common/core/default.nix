@@ -3,7 +3,7 @@
 {
   imports = [
     ./console.nix
-    ./experimental-features.nix
+    ./experimental_features.nix
     ./locale.nix
   ];
 }
