@@ -1,12 +1,9 @@
 {
   device ? throw "Set this to your disk devie, e.g /dev/sda",
-  inputs ? null,
   ...
 }:
-{
-  # conditionally import if inputs exist
-  imports = if inputs != null then [ inputs.disko.nixosModules.default ] else [ ];
 
+{
   disko.devices = {
     disk.main = {
       inherit device;
@@ -26,7 +23,7 @@
           };
 
           home = {
-            size = "250G";
+            size = "300G";
             content = {
               type = "filesystem";
               format = "ext4";

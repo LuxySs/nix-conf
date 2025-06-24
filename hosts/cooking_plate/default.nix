@@ -7,8 +7,8 @@
     ####### HARDWARE #######
     ./hardware-configuration.nix
     ##### disk config
-    ./disko_config.nix
-    { _module.args.device = "/dev/sda"; }
+    inputs.disko.nixosModules.default
+    (import ./disko.nix { device = "/dev/nvme0n1"; })
 
     ##### CORE
     ./../common/core
