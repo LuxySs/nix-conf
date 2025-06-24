@@ -1,5 +1,5 @@
-# Custom packages, that can be defined similarly to ones from nixpkgs
-# You can build them using 'nix build .#example'
-pkgs: {
-  # example = pkgs.callPackage ./example { };
+{pkgs, ...}: {
+  # Define your custom packages here
+  zellij-ps = pkgs.callPackage ./zellij-ps {};
+  n8n-custom = pkgs.callPackage ./n8n-custom {};
 }

@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -39,8 +40,15 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
+      inherit (self) outputs;
+
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
 
@@ -51,6 +59,7 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
+
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
@@ -60,32 +69,20 @@
 
       nixosConfigurations = {
         cooking_plate = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs lib;
-          };
-          modules = [
-            ./hosts/cooking_plate
-          ];
+          specialArgs = { inherit inputs outputs lib; };
+          modules = [ ./hosts/cooking_plate ];
         };
 
         dishwasher = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs lib;
-          };
-          modules = [
-            ./hosts/dishwasher
-          ];
+          specialArgs = { inherit inputs outputs lib; };
+          modules = [ ./hosts/dishwasher ];
         };
       };
 
       homeConfigurations = {
         "lulu@archlinux" = home-manager.lib.homeManagerConfiguration {
-          extraSpecialArgs = {
-            inherit inputs lib;
-          };
-          modules = [
-            ./home/lulu/archlinux.nix
-          ];
+          extraSpecialArgs = { inherit inputs outputs lib; };
+          modules = [ ./home/lulu/archlinux.nix ];
         };
       };
     };

@@ -26,8 +26,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   networking.hostName = "cooking-plate";
 
   settings = {
