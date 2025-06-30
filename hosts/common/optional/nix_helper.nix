@@ -13,7 +13,6 @@ in
         enable = true;
         dates = "monthly";
       };
-      flake = "/home/lulu/nix-conf";
     };
   };
 }

@@ -68,7 +68,7 @@
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
-        cooking_plate = nixpkgs.lib.nixosSystem {
+        cooking-plate = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs lib; };
           modules = [ ./hosts/cooking_plate ];
         };
