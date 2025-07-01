@@ -28,7 +28,6 @@ in
       extraPackages = with pkgs; [
         accountsservice
         gtksourceview
-        webkitgtk
       ];
     };
 
