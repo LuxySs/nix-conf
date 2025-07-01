@@ -10,7 +10,7 @@
     ./kde.nix
     ./minecraft_server.nix
     ./network_manager.nix
-    ./nix_helper.nix
+    ./nh.nix
     ./nvidia.nix
     ./pipewire.nix
     ./sddm.nix

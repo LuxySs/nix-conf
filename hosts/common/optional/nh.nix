@@ -4,7 +4,7 @@ let
   cfg = config.settings.nixHelper;
 in
 {
-  options.settings.nixHelper.enable = lib.mkDisableOption "nixHelper";
+  options.settings.nixHelper.enable = lib.mkDisableOption "nh (nix-helper)";
 
   config = lib.mkIf (cfg.enable) {
     programs.nh = {
