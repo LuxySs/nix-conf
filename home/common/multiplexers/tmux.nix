@@ -7,8 +7,6 @@
 
 let
   cfg = config.settings.tmux;
-
-  fish_enabled = config.programs.fish.enable;
 in
 {
   options.settings.tmux.enable = lib.mkEnableOption "tmux";
@@ -37,7 +35,11 @@ in
         yank
       ];
 
-      shell = if fish_enabled then "${pkgs.fish}/bin/fish" else null;
+      shell =
+        let
+          fish_enabled = config.programs.fish.enable;
+        in
+        if fish_enabled then "${pkgs.fish}/bin/fish" else null;
     };
   };
 }
