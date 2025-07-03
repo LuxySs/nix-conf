@@ -1,10 +1,17 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 let
-  cfg = config.settings.nixHelper;
+  cfg = config.settings.nh;
 in
 {
-  options.settings.nixHelper.enable = lib.mkDisableOption "nh (nix-helper)";
+  options.settings.nh = {
+    enable = lib.mkDisableOption "nh (nix-helper)";
+    flakePath = lib.mkStrOption "/home/lulu/nix-conf" "flake path";
+  };
 
   config = lib.mkIf (cfg.enable) {
     programs.nh = {
@@ -13,6 +20,7 @@ in
         enable = true;
         dates = "monthly";
       };
+      flake = cfg.flakePath;
     };
   };
 }

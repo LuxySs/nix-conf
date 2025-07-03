@@ -29,6 +29,7 @@
   networking.hostName = "cooking-plate";
 
   settings = {
+    nh.flakePath = "/home/lulu/nix-conf";
     fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
