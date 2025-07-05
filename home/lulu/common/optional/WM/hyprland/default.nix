@@ -16,10 +16,14 @@ in
     ./misc.nix
     ./settings.nix
     ./window.nix
-    ./windowRules.nix
+    ./window_rules.nix
   ];
 
-  options.settings.wm.hyprland.enable = lib.mkEnableOption "Hyprland WM";
+  options.settings.wm.hyprland = {
+    enable = lib.mkEnableOption "Hyprland WM";
+    animationsEnabled = lib.mkEnableOption "enable animations";
+    smartGapsEnabled = lib.mkEnableOption "enable smart gaps";
+  };
 
   config = lib.mkIf (cfg.enable) {
     wayland.windowManager.hyprland = {
