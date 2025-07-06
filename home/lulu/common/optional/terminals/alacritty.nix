@@ -1,4 +1,8 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 let
   cfg = config.settings.alacritty;
@@ -11,19 +15,13 @@ in
       enable = true;
 
       settings = {
-        main = {
-          term = "xterm-256color";
-          font = lib.mkForce "Iosevka NF:size=13";
-          dpi-aware = lib.mkForce "yes";
-        };
         cursor = {
-          color = lib.mkDefault "000000 ffffff";
+          style = {
+            shape = "Block";
+          };
         };
         mouse = {
-          hide-when-typing = "yes";
-        };
-        tweak = {
-          font-monospace-warn = "no";
+          hide_when_typing = true;
         };
       };
     };

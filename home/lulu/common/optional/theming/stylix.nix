@@ -47,6 +47,10 @@ in
         package = pkgs.dejavu_fonts;
         name = "DejaVu Serif";
       };
+
+      sizes = {
+        terminal = 15;
+      };
     };
   };
 }
