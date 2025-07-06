@@ -26,7 +26,7 @@ in
         font-family = "Iosevka Nerd Font";
         font-size = 17;
 
-        shell-integration-features = "no-cursor";
+        shell-integration-features = "no-cursor,no-sudo,no-title";
 
         confirm-close-surface = false;
         window-decoration = false;
