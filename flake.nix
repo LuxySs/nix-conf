@@ -52,18 +52,21 @@
       customLib = import ./lib { inherit (nixpkgs) lib; };
       lib = nixpkgs.lib.extend (self: super: customLib // home-manager.lib);
 
-      systems = [
-        "aarch64-linux"
-        "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
+      forAllSystems =
+        function:
+        nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
+          system:
+          function (
+            import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            }
+          )
+        );
 
-      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      packages = forAllSystems (pkgs: import ./pkgs { inherit pkgs; });
 
       overlays = import ./overlays { inherit inputs; };
 
