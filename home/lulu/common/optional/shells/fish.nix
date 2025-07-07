@@ -2,11 +2,12 @@
 
 let
   cfg = config.settings.fish;
+  aliases = import ./common_aliases.nix { inherit config lib; };
 in
 {
   options.settings.fish.enable = lib.mkEnableOption "enable fish";
 
-  config = lib.mkIf (cfg.enable) {
+  config = lib.mkIf cfg.enable {
     programs.fish = {
       enable = true;
 
@@ -16,33 +17,7 @@ in
         set fish_cursor_insert block
       '';
 
-      shellAliases = lib.mkMerge [
-        {
-          ".." = "cd ..";
-          "..." = "cd ../../";
-          "...." = "cd ../../../";
-
-          ng = "neovide & disown"; # neovim gui
-        }
-        (
-          let
-            eza_enabled = config.settings.eza.enable;
-            eza_ls_replacement = {
-              ls = "eza --color=always --group-directories-first";
-              la = "eza -a --color=always --group-directories-first";
-              ll = "eza -l --color=always --group-directories-first";
-              lla = "eza -la --color=always --group-directories-first";
-              lt = "eza -aT --color=always --group-directories-first";
-
-              # ls from above
-              "l." = "eza -al --color=always --group-directories-first ../";
-              "l.." = "eza -al --color=always --group-directories-first ../../";
-              "l..." = "eza -al --color=always --group-directories-first ../../../";
-            };
-          in
-          lib.mkIf eza_enabled eza_ls_replacement
-        )
-      ];
+      shellAliases = aliases;
 
       functions = {
         fish_user_key_bindings = ''
@@ -67,7 +42,6 @@ in
           end
         '';
       };
-
     };
   };
 }
