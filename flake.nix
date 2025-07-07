@@ -73,7 +73,7 @@
       nixosConfigurations = {
         cooking-plate = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs lib; };
-          modules = [ ./hosts/cooking_plate ];
+          modules = [ ./hosts/cooking-plate ];
         };
 
         dishwasher = nixpkgs.lib.nixosSystem {

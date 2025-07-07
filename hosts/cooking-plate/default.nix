@@ -18,7 +18,7 @@
 
     ##### USERS
     ./../common/users/lulu
-    { _module.args.host = "cooking_plate"; }
+    { _module.args.host = "cooking-plate"; }
   ];
 
   boot.loader = {

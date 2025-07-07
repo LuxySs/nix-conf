@@ -5,16 +5,16 @@
     ./bat.nix
     ./btop.nix
     ./direnv.nix
-    ./discord_clients
+    ./discord-clients
     ./eza.nix
-    ./file_managers
+    ./file-managers
     ./fzf.nix
     ./gtk.nix
     ./lazygit.nix
-    ./man_pages.nix
-    ./media_viewers
+    ./man-pages.nix
+    ./media-viewers
     ./multiplexers
-    ./obs_studio.nix
+    ./obs-studio.nix
     ./obsidian.nix
     ./pwvucontrol.nix
     ./spotify.nix

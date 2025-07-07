@@ -2,7 +2,7 @@
 
 let
   cfg = config.settings.bash;
-  aliases = import ./common_aliases.nix { inherit config lib; };
+  aliases = import ./common-aliases.nix { inherit config lib; };
 in
 {
   options.settings.bash.enable = lib.mkEnableOption "enable bash";

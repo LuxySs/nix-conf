@@ -3,7 +3,7 @@
 {
   imports = [
     ./gcc.nix
-    ./latex_support.nix
+    ./latex-support.nix
     ./python.nix
   ];
 }

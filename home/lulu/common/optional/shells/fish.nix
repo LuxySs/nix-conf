@@ -2,7 +2,7 @@
 
 let
   cfg = config.settings.fish;
-  aliases = import ./common_aliases.nix { inherit config lib; };
+  aliases = import ./common-aliases.nix { inherit config lib; };
 in
 {
   options.settings.fish.enable = lib.mkEnableOption "enable fish";
