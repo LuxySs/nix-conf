@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  term = "foot";
+in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
@@ -9,14 +12,14 @@
       "SUPER, Home, exec, pkill wlogout || wlogout"
       "SUPER, End, exec, hyprlock"
 
-      "SUPER, RETURN, exec, foot"
-      "SUPER, E, exec, foot -e yazi"
+      "SUPER, RETURN, exec, ${term}"
+      "SUPER, E, exec, ${term} -e yazi"
       "SUPER SHIFT, E, exec, nautilus"
       "SUPER, B, exec, firefox"
       "SUPER SHIFT, B, exec, firefox --private-window"
       "SUPER, D, exec, pkill -x fuzzel || fuzzel"
-      "SUPER, S, exec, foot -e nvim"
-      "SUPER, C, exec, foot -e qalc"
+      "SUPER, S, exec, ${term} -e nvim"
+      "SUPER, C, exec, ${term} -e qalc"
 
       "SUPER SHIFT CTRL, End, exit,"
 

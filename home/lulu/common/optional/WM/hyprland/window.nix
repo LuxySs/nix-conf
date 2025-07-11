@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, config, ... }:
 
 let
   cfg = config.settings.wm.hyprland;
@@ -11,19 +11,15 @@ in
       border_size = 2;
       layout = "dwindle";
 
-      workspace =
-        if cfg.smartGapsEnabled then
-          # this allows for smart gaps (no gaps when one single window)
-          [
-            "w[tv1], gapsout:0, gapsin:0"
-            "f[1], gapsout:0, gapsin:0"
-            "bordersize 0, floating:0, onworkspace:w[tv1]"
-            "rounding 0, floating:0, onworkspace:w[tv1]"
-            "bordersize 0, floating:0, onworkspace:f[1]"
-            "rounding 0, floating:0, onworkspace:f[1]"
-          ]
-        else
-          [ ];
+      # this allows for smart gaps (no gaps when one single window)
+      workspace = lib.mkIf cfg.smartGapsEnabled [
+        "w[tv1], gapsout:0, gapsin:0"
+        "f[1], gapsout:0, gapsin:0"
+        "bordersize 0, floating:0, onworkspace:w[tv1]"
+        "rounding 0, floating:0, onworkspace:w[tv1]"
+        "bordersize 0, floating:0, onworkspace:f[1]"
+        "rounding 0, floating:0, onworkspace:f[1]"
+      ];
     };
   };
 }
