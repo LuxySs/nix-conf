@@ -34,12 +34,6 @@ in
         vim-tmux-navigator
         yank
       ];
-
-      shell =
-        let
-          fish_enabled = config.programs.fish.enable;
-        in
-        if fish_enabled then "${pkgs.fish}/bin/fish" else null;
     };
   };
 }
