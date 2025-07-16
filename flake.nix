@@ -34,8 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    webcord.url = "github:fufexan/webcord-flake";
-
     myNixCats.url = "github:LuxySs/nixcats-conf";
   };
 

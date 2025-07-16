@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -11,5 +10,5 @@ in
 {
   options.settings.vesktop.enable = lib.mkEnableOption "vesktop";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.vesktop ]; };
+  config = lib.mkIf (cfg.enable) { programs.vesktop.enable = true; };
 }
