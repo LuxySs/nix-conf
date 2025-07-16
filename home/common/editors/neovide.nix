@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -12,6 +11,6 @@ in
   options.settings.neovide.enable = lib.mkEnableOption "neovide";
 
   config = lib.mkIf (cfg.enable) {
-    home.packages = [ pkgs.neovide ];
+    programs.neovide.enable = true;
   };
 }

@@ -6,6 +6,7 @@
     ./btop.nix
     ./direnv.nix
     ./discord-clients
+    ./editors
     ./eza.nix
     ./file-managers
     ./fzf.nix
