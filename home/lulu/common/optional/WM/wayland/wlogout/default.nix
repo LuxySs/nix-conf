@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 
@@ -14,7 +13,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.wlogout = {
       enable = true;
-      package = pkgs.wlogout;
+
       layout = [
         {
           label = "lock";

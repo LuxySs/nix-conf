@@ -12,6 +12,6 @@ in
   options.settings.minecraft.enable = lib.mkEnableOption "minecraft (lunar client)";
 
   config = lib.mkIf (cfg.enable) {
-    home.packages = [ pkgs.lunar-client ];
+    home.packages = with pkgs; [ lunar-client ];
   };
 }

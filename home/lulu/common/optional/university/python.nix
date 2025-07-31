@@ -11,5 +11,5 @@ in
 {
   options.settings.python.enable = lib.mkEnableOption "Python3 Interpreter";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.python3 ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ python3 ]; };
 }

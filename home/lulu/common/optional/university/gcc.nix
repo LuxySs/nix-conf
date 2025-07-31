@@ -11,5 +11,5 @@ in
 {
   options.settings.gcc.enable = lib.mkEnableOption "gcc compiler";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.gcc ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ gcc ]; };
 }

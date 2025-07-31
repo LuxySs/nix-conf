@@ -11,5 +11,5 @@ in
 {
   options.settings.wm.swww.enable = lib.mkEnableOption "swww";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.swww ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ swww ]; };
 }

@@ -11,5 +11,5 @@ in
 {
   options.settings.obsidian.enable = lib.mkEnableOption "obsidian";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.obsidian ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ obsidian ]; };
 }

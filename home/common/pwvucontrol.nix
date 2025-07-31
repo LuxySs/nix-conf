@@ -11,5 +11,5 @@ in
 {
   options.settings.pwvucontrol.enable = lib.mkEnableOption "pwvucontrol";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.pwvucontrol ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ pwvucontrol ]; };
 }

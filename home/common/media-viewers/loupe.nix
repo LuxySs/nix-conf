@@ -11,5 +11,5 @@ in
 {
   options.settings.loupe.enable = lib.mkEnableOption "loupe media viewer";
 
-  config = lib.mkIf (cfg.enable) { home.packages = [ pkgs.loupe ]; };
+  config = lib.mkIf (cfg.enable) { home.packages = with pkgs; [ loupe ]; };
 }

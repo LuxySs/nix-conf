@@ -17,6 +17,6 @@ in
       allowedTCPPorts = [ 25565 ];
     };
 
-    environment.systemPackages = [ pkgs.minecraft-server ];
+    environment.systemPackages = with pkgs; [ minecraft-server ];
   };
 }

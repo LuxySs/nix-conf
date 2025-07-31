@@ -45,8 +45,8 @@ in
           valign = "center";
         };
 
-        # TIME
         label = [
+          # TIME
           {
             text = ''cmd[update:1000] echo "$(date +"%-I:%M%p")"'';
             # color = "$foreground"
@@ -69,16 +69,16 @@ in
           }
 
           # CURRENT MEDIA
-          {
-            text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{title}} ~ {{artist}}')"'';
-
-            # color = $foreground;
-            font_size = 18;
-            # font_family = JetBrainsMono, Font Awesome 6 Free Solid;
-            position = "0, 5";
-            halign = "center";
-            valign = "bottom";
-          }
+          # {
+          #   text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{title}} ~ {{artist}}')"'';
+          #
+          #   # color = $foreground;
+          #   font_size = 18;
+          #   # font_family = JetBrainsMono, Font Awesome 6 Free Solid;
+          #   position = "0, 5";
+          #   halign = "center";
+          #   valign = "bottom";
+          # }
         ];
       };
     };
