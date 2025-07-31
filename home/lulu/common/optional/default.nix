@@ -3,6 +3,7 @@
 {
   imports = [
     ./WM
+    ./bemoji.nix
     ./browsers
     ./editors
     ./games

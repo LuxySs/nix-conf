@@ -37,7 +37,5 @@ in
         };
       };
     };
-
-    home.packages = with pkgs; [ bemoji ];
   };
 }
