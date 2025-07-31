@@ -2,48 +2,38 @@
 
 {
   settings = {
-    ###### User-Specific ######
-    #### WM
-    wm.hyprland.enable = true;
 
-    #### GUI
+    ###### User-Specific ######
+
+    wm.hyprland.enable = true;
     firefox.enable = true;
+    nixCats.enable = true;
+    bash.enable = true;
+    fish.enable = true;
     foot.enable = true;
-    spotify.enable = true;
+    stylix.enable = true;
+    gcc.enable = true;
+    python.enable = true;
+    bemoji.enable = true;
+    git.enable = true;
     starship.enable = true;
 
-    #### terminal
+    ###### Shared Across Users ######
+    
+    vesktop.enable = true;
+    nautilus.enable = true;
+    loupe.enable = true;
+    mpv.enable = true;
+    zathura.enable = true;
+    tmux.enable = true;
     bat.enable = true;
+    btop.enable = true;
     direnv.enable = true;
     eza.enable = true;
     fzf.enable = true;
-    git.enable = true;
     man-pages.enable = true;
-    nixCats.enable = true;
-    tmux.enable = true;
-
-    #### Shell
-    bash.enable = true;
-    fish.enable = true;
-
-    #### Theming
-    stylix.enable = true;
-
-    #### University
-    gcc.enable = true;
-    python.enable = true;
-
-    ###### Shared Across Users ######
-    #### GUI
-    loupe.enable = true;
-    mpv.enable = true;
-    nautilus.enable = true;
     pwvucontrol.enable = true;
-    vesktop.enable = true;
-    zathura.enable = true;
-
-    #### terminal
-    btop.enable = true;
+    spotify.enable = true;
     yazi.enable = true;
   };
 }
