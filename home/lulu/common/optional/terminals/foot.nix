@@ -18,9 +18,7 @@ in
         };
         colors = {
           alpha = lib.mkDefault "0.10";
-        };
-        cursor = {
-          color = lib.mkDefault "000000 ffffff";
+           cursor = lib.mkDefault "000000 ffffff";
         };
         mouse = {
           hide-when-typing = "yes";
