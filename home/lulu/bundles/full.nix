@@ -19,7 +19,7 @@
     starship.enable = true;
 
     ###### Shared Across Users ######
-    
+
     vesktop.enable = true;
     nautilus.enable = true;
     loupe.enable = true;

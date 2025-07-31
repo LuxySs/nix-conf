@@ -14,7 +14,7 @@
     git.enable = true;
 
     ###### Shared Across Users ######
-    
+
     tmux.enable = true;
     bat.enable = true;
     btop.enable = true;

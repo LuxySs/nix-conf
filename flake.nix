@@ -66,6 +66,8 @@
     {
       packages = forAllSystems (pkgs: import ./pkgs { inherit pkgs; });
 
+      formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
+
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {

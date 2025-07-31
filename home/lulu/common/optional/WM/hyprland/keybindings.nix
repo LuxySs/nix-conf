@@ -70,7 +70,7 @@ in
       # "SUPER, exclam, workspace, 8"
       # "SUPER, ccedilla, workspace, 9"
       # "SUPER, agrave, workspace, 10"
-      # 
+      #
       # "SUPER SHIFT, ampersand, movetoworkspacesilent, 1"
       # "SUPER SHIFT, eacute, movetoworkspacesilent, 2"
       # "SUPER SHIFT, quotedbl, movetoworkspacesilent, 3"

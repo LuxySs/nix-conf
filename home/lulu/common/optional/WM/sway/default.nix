@@ -22,7 +22,8 @@ in
           "Mod4+d" = "exec pkill -x fuzzel || fuzzel ";
 
           "Mod4+Shift+r" = "reload";
-          "Mod4+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+          "Mod4+Shift+e" =
+            "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
           # === Windows ===
           "Mod4+h" = "focus left";
