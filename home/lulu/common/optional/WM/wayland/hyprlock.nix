@@ -37,7 +37,6 @@ in
           inner_color = "rgba(0, 0, 0, 0.5)";
           font_color = "rgb(200, 200, 200)";
           fade_on_empty = false;
-          # font_family = JetBrains Mono Nerd Font Mono;
           placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
           hide_input = false;
           position = "0, -120";
@@ -49,9 +48,7 @@ in
           # TIME
           {
             text = ''cmd[update:1000] echo "$(date +"%-I:%M%p")"'';
-            # color = "$foreground"
             font_size = 120;
-            # font_family = JetBrains Mono Nerd Font Mono ExtraBold;
             position = "0, -300";
             halign = "center";
             valign = "top";
@@ -60,25 +57,11 @@ in
           # USER
           {
             text = "Hi there, $USER";
-            # color = $foreground;
             font_size = 25;
-            # font_family = JetBrains Mono Nerd Font Mono;
             position = "0, -40";
             halign = "center";
             valign = "center";
           }
-
-          # CURRENT MEDIA
-          # {
-          #   text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{title}} ~ {{artist}}')"'';
-          #
-          #   # color = $foreground;
-          #   font_size = 18;
-          #   # font_family = JetBrainsMono, Font Awesome 6 Free Solid;
-          #   position = "0, 5";
-          #   halign = "center";
-          #   valign = "bottom";
-          # }
         ];
       };
     };
