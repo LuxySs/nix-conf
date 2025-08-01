@@ -85,20 +85,20 @@ in
 
     binde = [
       # move focus
-      "SUPER, h, movefocus, l"
-      "SUPER, l, movefocus, r"
-      "SUPER, k, movefocus, u"
-      "SUPER, j, movefocus, d"
+      "SUPER, H, movefocus, l"
+      "SUPER, L, movefocus, r"
+      "SUPER, K, movefocus, u"
+      "SUPER, J, movefocus, d"
 
       # resize
-      "SUPER CTRL, l, resizeactive, 100 0"
-      "SUPER CTRL, h, resizeactive, -100 0"
-      "SUPER CTRL, k, resizeactive, 0 -100"
-      "SUPER CTRL, j, resizeactive, 0 100"
+      "SUPER CTRL, L, resizeactive, 100 0"
+      "SUPER CTRL, H, resizeactive, -100 0"
+      "SUPER CTRL, K, resizeactive, 0 -100"
+      "SUPER CTRL, J, resizeactive, 0 100"
 
       # audio
-      "ALT, up, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-      "ALT, down, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+      "ALT, UP, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+      "ALT, DOWN, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" # mute/unmute output

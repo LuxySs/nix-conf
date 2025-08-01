@@ -19,37 +19,40 @@ in
 
   config = lib.mkIf (cfg.enable) {
 
-    stylix.enable = true;
-    stylix.targets.hyprlock.enable = false;
+    stylix = {
+      enable = true;
 
-    stylix.image = ./../../../../../wallpapers/wallpaper.png;
+      image = ./../../../../../wallpapers/wallpaper.png;
 
-    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
 
-    stylix.cursor = {
-      package = pkgs.banana-cursor;
-      size = 30;
-      name = "Banana";
-    };
-
-    stylix.targets.firefox.profileNames = [ "lulu" ];
-
-    stylix.fonts = {
-      monospace = {
-        package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka NF";
-      };
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+      cursor = {
+        package = pkgs.banana-cursor;
+        size = 30;
+        name = "Banana";
       };
 
-      sizes = {
-        terminal = 15;
+      targets = {
+        firefox.profileNames = [ "lulu" ];
+      };
+
+      fonts = {
+        monospace = {
+          package = pkgs.nerd-fonts.iosevka;
+          name = "Iosevka NF";
+        };
+        sansSerif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Sans";
+        };
+        serif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Serif";
+        };
+
+        sizes = {
+          terminal = 15;
+        };
       };
     };
   };
