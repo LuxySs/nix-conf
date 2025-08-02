@@ -10,7 +10,7 @@
     cursor.no_hardware_cursors = true;
     xwayland.force_zero_scaling = true;
 
-    exec-once = "swww-daemon & ags";
+    exec-once = "ags";
 
     # automatically configure monitors based on the monitors.nix module
     monitor = map (

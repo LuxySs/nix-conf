@@ -31,7 +31,7 @@ in
     hyprlock.enable = lib.mkDefault true;
     playerctl.enable = lib.mkDefault true;
     screenshots.enable = lib.mkDefault true;
-    swww.enable = lib.mkDefault true;
+    swww.enable = lib.mkDefault false;
     waybar.enable = lib.mkDefault false;
     wlogout.enable = lib.mkDefault true;
   };
