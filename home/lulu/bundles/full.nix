@@ -25,7 +25,10 @@
     loupe.enable = true;
     mpv.enable = true;
     zathura.enable = true;
-    tmux.enable = true;
+    tmux = {
+      enable = true;
+      tmux-sessionizer.enable = true;
+    };
     bat.enable = true;
     btop.enable = true;
     direnv.enable = true;

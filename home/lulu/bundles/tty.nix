@@ -15,7 +15,10 @@
 
     ###### Shared Across Users ######
 
-    tmux.enable = true;
+    tmux = {
+      enable = true;
+      tmux-sessionizer.enable = true;
+    };
     bat.enable = true;
     btop.enable = true;
     direnv.enable = true;

@@ -9,7 +9,10 @@ let
   cfg = config.settings.tmux;
 in
 {
-  options.settings.tmux.enable = lib.mkEnableOption "tmux";
+  options.settings.tmux = {
+    enable = lib.mkEnableOption "tmux";
+    tmux-sessionizer.enable = lib.mkEnableOption "tmux";
+  };
 
   config = lib.mkIf cfg.enable {
     programs.tmux = {
@@ -25,6 +28,12 @@ in
         bind-key -T copy-mode-vi v send-keys -X begin-selection
         bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
         bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+      ''
+      + lib.optionalString cfg.tmux-sessionizer.enable ''
+        bind C-o display-popup -E "tms"
+        bind C-j display-popup -E "tms switch"
+        bind C-w display-popup -E "tms windows"
+        bind C-r "run-shell 'tms refresh'"
       '';
 
       # vim-like navigation
@@ -35,5 +44,7 @@ in
         yank
       ];
     };
+
+    home.packages = lib.mkIf cfg.tmux-sessionizer.enable [ pkgs.tmux-sessionizer ];
   };
 }
