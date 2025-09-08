@@ -7,7 +7,6 @@
 
 let
   cfg = config.settings.sddm;
-
 in
 {
   options.settings.sddm.enable = lib.mkEnableOption "SDDM";
