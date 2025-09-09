@@ -12,7 +12,6 @@
     ./network-manager.nix
     ./nh.nix
     ./nvidia.nix
-    ./pipewire.nix
     ./sddm.nix
     ./services
     ./useful-programs.nix
