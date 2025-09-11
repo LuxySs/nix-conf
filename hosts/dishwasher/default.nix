@@ -29,7 +29,7 @@
   networking.hostName = "dishwasher";
 
   settings = {
-    nh.flakePath = "/home/lulu/nix-conf";
+    nh.flakePath = "/home/lulu/.config/nix-conf";
     fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
