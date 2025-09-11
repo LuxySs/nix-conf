@@ -10,7 +10,6 @@
     ./eza.nix
     ./file-managers
     ./fzf.nix
-    ./gtk.nix
     ./lazygit.nix
     ./man-pages.nix
     ./media-viewers

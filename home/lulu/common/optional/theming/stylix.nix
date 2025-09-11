@@ -36,6 +36,13 @@ in
         firefox.profileNames = [ "lulu" ];
       };
 
+      icons = {
+        enable = true;
+        dark = "Papirus-Dark";
+        light = "Papirus-Light";
+        package = pkgs.papirus-icon-theme;
+      };
+
       fonts = {
         monospace = {
           package = pkgs.nerd-fonts.iosevka;
