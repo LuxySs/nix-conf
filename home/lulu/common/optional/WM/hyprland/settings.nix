@@ -10,7 +10,7 @@
     cursor.no_hardware_cursors = true;
     xwayland.force_zero_scaling = true;
 
-    exec-once = "ags";
+    exec-once = "quickshell";
 
     # automatically configure monitors based on the monitors.nix module
     monitor = map (

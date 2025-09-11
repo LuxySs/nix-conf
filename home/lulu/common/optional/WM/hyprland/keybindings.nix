@@ -8,7 +8,7 @@ in
     bind = [
       ''SUPER, Print, exec, grim -g "$(slurp)" - | swappy -f - ''
 
-      "SUPER, O, exec, pkill .ags-wrapped || ags"
+      "SUPER, O, exec, pkill .quickshell-wra || quickshell"
       "SUPER, Home, exec, pkill wlogout || wlogout"
       "SUPER, End, exec, hyprlock"
 

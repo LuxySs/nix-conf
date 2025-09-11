@@ -11,12 +11,12 @@ let
 in
 {
   imports = [
-    ./ags.nix
     ./brightness.nix
     ./fuzzel.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./playerctl.nix
+    ./quickshell.nix
     ./screenshots.nix
     ./swww.nix
     ./waybar.nix
@@ -24,12 +24,12 @@ in
   ];
 
   settings.wm = lib.mkIf compositorEnabled {
-    ags.enable = lib.mkDefault true;
     brightness.enable = lib.mkDefault true;
     fuzzel.enable = lib.mkDefault true;
     hypridle.enable = lib.mkDefault true;
     hyprlock.enable = lib.mkDefault true;
     playerctl.enable = lib.mkDefault true;
+    quickshell.enable = lib.mkDefault true;
     screenshots.enable = lib.mkDefault true;
     swww.enable = lib.mkDefault false;
     waybar.enable = lib.mkDefault false;
