@@ -22,7 +22,7 @@ in
     stylix = {
       enable = true;
 
-      image = ./../../../../../wallpapers/wallpaper.png;
+      image = ./../../../../../wallpapers/pacman-ghosts.png;
 
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
 
