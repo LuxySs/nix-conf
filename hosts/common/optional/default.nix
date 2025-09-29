@@ -5,6 +5,7 @@
     ./bluetooth.nix
     ./cache-substituters.nix
     ./fish.nix
+    ./gdm.nix
     ./gnome.nix
     ./hyprland.nix
     ./kde.nix
