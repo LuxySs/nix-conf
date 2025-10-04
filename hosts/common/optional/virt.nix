@@ -9,5 +9,7 @@ in
   config = lib.mkIf (cfg.enable) {
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
+    users.groups.libvirtd.members = [ "lulu" ];
+    # virtualisation.spiceUSBRedirection.enable = true;
   };
 }
