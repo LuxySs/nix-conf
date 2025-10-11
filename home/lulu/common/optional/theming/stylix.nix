@@ -22,9 +22,10 @@ in
     stylix = {
       enable = true;
 
-      image = ./../../../../../wallpapers/pacman-ghosts.png;
+      image = ./../../../../../wallpapers/nix_vague1.png;
 
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
+      # base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
+      base16Scheme = "${pkgs.vague}/share/themes/vague.yaml";
 
       cursor = {
         package = pkgs.banana-cursor;
