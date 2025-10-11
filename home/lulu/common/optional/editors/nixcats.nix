@@ -16,7 +16,18 @@ in
   options.settings.nixCats.enable = lib.mkEnableOption "nixCats";
 
   config = lib.mkIf cfg.enable {
-    nixCats.enable = true;
+    nixCats = {
+      enable = true;
+      packageDefinitions.replace = {
+        nixCats =
+          { ... }:
+          {
+            categories = {
+              colorscheme = "vague";
+            };
+          };
+      };
+    };
 
     home.sessionVariables.EDITOR = "nixcats";
   };
