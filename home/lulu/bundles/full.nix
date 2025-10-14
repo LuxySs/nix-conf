@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   settings = {
@@ -11,7 +11,15 @@
     bash.enable = true;
     fish.enable = true;
     foot.enable = true;
-    stylix.enable = true;
+
+    stylix = {
+      enable = true;
+      colorScheme = {
+        name = "vague";
+        package = pkgs.vague;
+      };
+    };
+
     gcc.enable = true;
     python.enable = true;
     git.enable = true;

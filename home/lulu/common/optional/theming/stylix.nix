@@ -14,18 +14,20 @@ in
 
   options.settings.stylix = {
     enable = lib.mkEnableOption "stylix";
-    theme = lib.mkStrOption "gruvbox-dark-medium" "stylix theme";
+
+    colorScheme = {
+      name = lib.mkStrOption "gruvbox-dark-medium" "colorscheme name";
+      package = lib.mkPkgOption pkgs.base16-schemes "colorscheme package";
+    };
   };
 
   config = lib.mkIf (cfg.enable) {
-
     stylix = {
       enable = true;
 
       image = ./../../../../../wallpapers/nix_vague1.png;
 
-      # base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
-      base16Scheme = "${pkgs.vague}/share/themes/vague.yaml";
+      base16Scheme = "${cfg.colorScheme.package}/share/themes/${cfg.colorScheme.name}.yaml";
 
       cursor = {
         package = pkgs.banana-cursor;
