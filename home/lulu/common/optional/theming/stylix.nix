@@ -19,13 +19,15 @@ in
       name = lib.mkStrOption "gruvbox-dark-medium" "colorscheme name";
       package = lib.mkPkgOption pkgs.base16-schemes "colorscheme package";
     };
+
+    wallpaper = lib.mkPathOption ./../../../../../wallpapers/black.png "wallpaper path";
   };
 
   config = lib.mkIf (cfg.enable) {
     stylix = {
       enable = true;
 
-      image = ./../../../../../wallpapers/nix_vague1.png;
+      image = cfg.wallpaper;
 
       base16Scheme = "${cfg.colorScheme.package}/share/themes/${cfg.colorScheme.name}.yaml";
 

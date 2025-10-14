@@ -14,10 +14,13 @@
 
     stylix = {
       enable = true;
+
       colorScheme = {
         name = "vague";
         package = pkgs.vague;
       };
+
+      wallpaper = ./../../../wallpapers/nix_vague1.png;
     };
 
     gcc.enable = true;

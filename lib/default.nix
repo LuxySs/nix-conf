@@ -13,6 +13,7 @@ rec {
   mkIntOption = default: name: mkOption' types.int default name;
   mkStrOption = default: name: mkOption' types.str default name;
   mkPkgOption = default: name: mkOption' types.package default name;
+  mkPathOption = default: name: mkOption' types.path default name;
 
   mkChoiceOption =
     choices: default: description:
