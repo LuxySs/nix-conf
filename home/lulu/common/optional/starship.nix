@@ -53,13 +53,13 @@ in
           + "$nix_shell"
           + "[](${mkFg base01})"
           + "\n"
-          + "[ ❯](${mkFg base0B})"
-          + "[❯](${mkFg base0C})"
-          + "[❯ ](${mkFg base0D})";
+          + "[ ❯](${mkFg base0C})"
+          + "[❯](${mkFg base0E})"
+          + "[❯ ](${mkFg base09})";
 
         os = {
           disabled = false;
-          style = mkColors base0E base02;
+          style = mkColors base0C base02;
           symbols = {
             NixOS = "";
             Windows = "󰍲";
