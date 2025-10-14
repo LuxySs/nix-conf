@@ -16,6 +16,7 @@
     ./multiplexers
     ./obs-studio.nix
     ./obsidian.nix
+    ./bemoji.nix
     ./pwvucontrol.nix
     ./spotify.nix
     ./yazi.nix

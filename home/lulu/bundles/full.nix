@@ -14,12 +14,12 @@
     stylix.enable = true;
     gcc.enable = true;
     python.enable = true;
-    bemoji.enable = true;
     git.enable = true;
     starship.enable = true;
 
     ###### Shared Across Users ######
 
+    bemoji.enable = true;
     vesktop.enable = true;
     nautilus.enable = true;
     loupe.enable = true;
