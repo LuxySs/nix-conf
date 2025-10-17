@@ -1,7 +1,7 @@
 {
   pkgs,
   inputs,
-  host ? throw "missing host parameter",
+  config,
   ...
 }:
 
@@ -28,6 +28,6 @@
     };
 
     # import the user's home-manager according to the host.
-    users.lulu = import ../../../../home/lulu/${host}.nix;
+    users.lulu = import ../../../../home/lulu/${config.networking.hostName}.nix;
   };
 }

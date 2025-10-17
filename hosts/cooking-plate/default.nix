@@ -1,6 +1,6 @@
 { inputs, ... }:
 
-rec {
+{
   imports = [
     inputs.home-manager.nixosModules.default
 
@@ -18,7 +18,6 @@ rec {
 
     ##### USERS
     ./../common/users/lulu
-    { _module.args.host = networking.hostName; }
   ];
 
   networking.hostName = "cooking-plate";
