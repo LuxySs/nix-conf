@@ -1,6 +1,6 @@
 { inputs, ... }:
 
-{
+rec {
   imports = [
     inputs.home-manager.nixosModules.default
 
@@ -18,15 +18,15 @@
 
     ##### USERS
     ./../common/users/lulu
-    { _module.args.host = "cooking-plate"; }
+    { _module.args.host = networking.hostName; }
   ];
+
+  networking.hostName = "cooking-plate";
 
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-
-  networking.hostName = "cooking-plate";
 
   settings = {
     nh.flakePath = "/home/lulu/.config/nix-conf";
