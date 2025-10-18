@@ -50,8 +50,8 @@ in
 
       fonts = {
         monospace = {
-          package = pkgs.nerd-fonts.iosevka;
-          name = "Iosevka NF";
+          package = pkgs.ioskeley-mono;
+          name = "Ioskeley Mono";
         };
         sansSerif = {
           package = pkgs.dejavu_fonts;

@@ -13,7 +13,6 @@ in
       settings = {
         main = {
           term = "xterm-256color";
-          font = lib.mkForce "Iosevka NF:size=15";
           dpi-aware = lib.mkForce "yes";
         };
         colors = {
