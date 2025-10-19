@@ -17,7 +17,6 @@ in
 
       settings = {
         main = {
-          font = lib.mkForce "Iosevka NF:weight=bold:size=15";
           prompt = "'❯ '";
           terminal = "${lib.getBin pkgs.foot}";
           width = 65;

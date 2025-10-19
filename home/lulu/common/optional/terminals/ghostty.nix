@@ -23,9 +23,6 @@ in
         cursor-style = "block";
         cursor-style-blink = false;
 
-        font-family = "Iosevka Nerd Font";
-        font-size = 17;
-
         shell-integration-features = "no-cursor,no-sudo,no-title";
 
         confirm-close-surface = false;
