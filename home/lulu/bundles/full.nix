@@ -46,6 +46,7 @@
     eza.enable = true;
     fzf.enable = true;
     man-pages.enable = true;
+    ollama.enable = true;
     pwvucontrol.enable = true;
     spotify.enable = true;
     yazi.enable = true;

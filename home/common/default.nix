@@ -3,6 +3,7 @@
 {
   imports = [
     ./bat.nix
+    ./bemoji.nix
     ./btop.nix
     ./direnv.nix
     ./discord-clients
@@ -16,7 +17,7 @@
     ./multiplexers
     ./obs-studio.nix
     ./obsidian.nix
-    ./bemoji.nix
+    ./ollama.nix
     ./pwvucontrol.nix
     ./spotify.nix
     ./yazi.nix
