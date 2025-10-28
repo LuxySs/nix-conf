@@ -15,6 +15,11 @@
       "networkmanager"
       "video"
       "wheel"
+
+      # add those 3 to make arduino-ide work
+      # "dialout"
+      # "uucp"
+      # "tty"
     ];
 
     openssh.authorizedKeys.keys = [
