@@ -33,6 +33,7 @@
     gnome.enable = true;
     hyprland.enable = true;
     sddm.enable = true;
+    virtualization.enable = true;
   };
 
   # This value determines the NixOS release from which the default
