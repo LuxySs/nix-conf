@@ -16,6 +16,6 @@
     ./sddm.nix
     ./services
     ./useful-programs.nix
-    ./virt.nix
+    ./virtualization.nix
   ];
 }
