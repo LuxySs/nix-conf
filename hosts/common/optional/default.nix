@@ -10,6 +10,7 @@
     ./gnome.nix
     ./hyprland.nix
     ./kde.nix
+    ./mangowc.nix
     ./minecraft-server.nix
     ./network-manager.nix
     ./nh.nix

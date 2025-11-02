@@ -31,6 +31,7 @@
     fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
+    mangowc.enable = true;
     nvidia = {
       enable = true;
       release = "stable";
