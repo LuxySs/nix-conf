@@ -96,16 +96,16 @@ in
       "SUPER CTRL, J, resizeactive, 0 100"
 
       # audio
-      "ALT, UP, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-      "ALT, DOWN, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+      "ALT, UP, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      "ALT, DOWN, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" # mute/unmute output
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" # mute/unmute mic
 
       # brightness
-      ",XF86MonBrightnessDown, exec, brightnessctl set 3%-"
-      ",XF86MonBrightnessUp, exec, brightnessctl set 3%+"
+      ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+      ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
     ];
 
     bindm = [
