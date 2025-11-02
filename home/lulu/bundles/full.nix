@@ -6,6 +6,7 @@
     ###### User-Specific ######
 
     wm.hyprland.enable = true;
+    wm.mangowc.enable = true;
     firefox.enable = true;
     nixCats.enable = true;
     bash.enable = true;

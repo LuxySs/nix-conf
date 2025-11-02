@@ -3,6 +3,7 @@
 {
   imports = [
     ./hyprland
+    ./mangowc
     ./sway
   ];
 }
