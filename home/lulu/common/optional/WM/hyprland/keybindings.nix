@@ -19,7 +19,6 @@ in
       "SUPER SHIFT, B, exec, firefox --private-window"
       "SUPER, D, exec, pkill -x fuzzel || fuzzel"
       "SUPER, S, exec, ${term} -e nvim"
-      "SUPER, C, exec, ${term} -e qalc"
 
       "SUPER SHIFT CTRL, End, exit,"
 
