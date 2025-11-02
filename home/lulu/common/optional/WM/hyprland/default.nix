@@ -15,7 +15,7 @@ in
     ./keybindings.nix
     ./misc.nix
     ./settings.nix
-    ./window.nix
+    ./general.nix
     ./window-rules.nix
   ];
 
