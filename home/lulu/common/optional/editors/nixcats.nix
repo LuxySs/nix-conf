@@ -23,7 +23,7 @@ in
           { ... }:
           {
             categories = {
-              colorscheme = "vague";
+              mainColorscheme = "vague";
             };
           };
       };

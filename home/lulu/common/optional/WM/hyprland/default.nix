@@ -16,7 +16,6 @@ in
     ./misc.nix
     ./settings.nix
     ./general.nix
-    ./window-rules.nix
   ];
 
   options.settings.wm.hyprland = {
