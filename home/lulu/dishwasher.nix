@@ -18,10 +18,5 @@
   ];
 
   # enable host-specific modules here
-  settings = {
-    ollama = {
-      enable = true;
-      acceleration = "cuda";
-    };
-  };
+  settings = { };
 }
