@@ -4,6 +4,7 @@
   imports = [
     ./bluetooth.nix
     ./cache-substituters.nix
+    ./docker.nix
     ./fish.nix
     ./gdm.nix
     ./gnome.nix
