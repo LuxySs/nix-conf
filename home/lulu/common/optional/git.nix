@@ -23,8 +23,7 @@ in
       };
 
       ignores = [
-        ".env"
-        ".envrc"
+        ".env*"
         ".direnv"
       ];
     };
