@@ -11,7 +11,7 @@ in
 {
   options.settings.tmux = {
     enable = lib.mkEnableOption "tmux";
-    tmux-sessionizer.enable = lib.mkEnableOption "tmux";
+    tmux-sessionizer.enable = lib.mkEnableOption "tms";
   };
 
   config = lib.mkIf cfg.enable {
@@ -46,5 +46,23 @@ in
     };
 
     home.packages = lib.mkIf cfg.tmux-sessionizer.enable [ pkgs.tmux-sessionizer ];
+
+    xdg.configFile."tms/config.toml".text = lib.mkIf cfg.tmux-sessionizer.enable ''
+      excluded_dirs = [
+          ".direnv",
+      ]
+
+      [[search_dirs]]
+      path = "/home/lulu/nix-conf"
+      depth = 10
+
+      [[search_dirs]]
+      path = "/home/lulu/.config/nixcats-conf"
+      depth = 10
+
+      [[search_dirs]]
+      path = "/home/lulu/Projects"
+      depth = 10
+    '';
   };
 }
