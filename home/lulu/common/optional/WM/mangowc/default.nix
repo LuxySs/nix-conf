@@ -17,6 +17,9 @@ let
         ""
     ) config.monitors
   );
+
+  volumeUpCmd = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1";
+  volumeDownCmd = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
 in
 {
   imports = [ inputs.mango.hmModules.mango ];
@@ -296,6 +299,18 @@ in
         # Axis Bindings
         axisbind=SUPER,UP,viewtoleft_have_client
         axisbind=SUPER,DOWN,viewtoright_have_client
+
+        # Audio
+        bindl=ALT,UP,                   spawn,${volumeUpCmd}
+        bindl=ALT,DOWN,                 spawn,${volumeDownCmd}
+        bindl=NONE,XF86AudioRaiseVolume,spwan,${volumeUpCmd}
+        bindl=NONE,XF86AudioLowerVolume,spawn,${volumeDownCmd}
+        bindl=NONE,XF86AudioMute,       spawn,wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
+        bindl=NONE,XF86AudioMicMute,    spawn,wpctl set-mute   @DEFAULT_AUDIO_SOURCE@ toggle
+
+        # Brightness
+        bindl=NONE,XF86MonBrightnessUp,  spawn,brightnessctl -e4 -n2 set 5%+
+        bindl=NONE,XF86MonBrightnessDown,spawn,brightnessctl -e4 -n2 set 5%-
       '';
 
       autostart_sh = ''
