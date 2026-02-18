@@ -7,6 +7,16 @@
 
 let
   cfg = config.settings.wm.mangowc;
+
+  monitorLines = lib.concatStringsSep "\n" (
+    map (
+      m:
+      if m.enabled then
+        "monitorrule=name:${m.name},width:${toString m.width},height:${toString m.height},refresh:${toString m.refreshRate},x:${toString m.x},y:${toString m.y}"
+      else
+        ""
+    ) config.monitors
+  );
 in
 {
   imports = [ inputs.mango.hmModules.mango ];
@@ -18,6 +28,8 @@ in
       enable = true;
 
       settings = ''
+        ${monitorLines}
+
         # Window effect
         blur=0
         blur_layer=0
