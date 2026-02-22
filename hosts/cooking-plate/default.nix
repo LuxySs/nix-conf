@@ -32,6 +32,7 @@
     fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
+    mangowc.enable = true;
     sddm.enable = true;
     virtualization.enable = true;
     docker.enable = true;
