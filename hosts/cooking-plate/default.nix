@@ -32,6 +32,7 @@
     gnome.enable = true;
     hyprland.enable = true;
     gdm.enable = true;
+    mangowc.enable = true;
     virtualization.enable = true;
     docker.enable = true;
   };
