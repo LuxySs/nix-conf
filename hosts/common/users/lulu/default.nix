@@ -6,6 +6,8 @@
 }:
 
 {
+  imports = [ inputs.home-manager.nixosModules.default ];
+
   users.users.lulu = {
     description = "main user";
     isNormalUser = true;

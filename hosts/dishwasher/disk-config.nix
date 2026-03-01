@@ -1,24 +1,25 @@
 {
-  device ? throw "Set this to your disk device, e.g /dev/sda",
-  ...
-}:
-
-{
   disko.devices = {
     disk.main = {
-      inherit device;
       type = "disk";
+      device = "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_1TB_S6PUNS0W117700K";
       content = {
         type = "gpt";
         partitions = {
 
+          boot = {
+            size = "1M";
+            type = "EF02";
+          };
+
           ESP = {
-            type = "EF00";
             size = "256M";
+            type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
+              mountOptions = [ "umask=0077" ];
             };
           };
 
