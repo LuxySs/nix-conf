@@ -1,27 +1,30 @@
 {
-  device ? throw "Set this to your disk device, e.g /dev/sda",
-}:
-{
   disko.devices = {
     disk.main = {
-      inherit device;
       type = "disk";
+      device = "/dev/disk/by-id/XXXXXXXXXXXXXXXXXXXXXXXXXXXXx";
       content = {
         type = "gpt";
         partitions = {
 
+          boot = {
+            size = "1M";
+            type = "EF02";
+          };
+
           ESP = {
-            type = "EF00";
             size = "256M";
+            type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
+              mountOptions = [ "umask=0077" ];
             };
           };
 
           home = {
-            size = "250G";
+            size = "300G";
             content = {
               type = "filesystem";
               format = "ext4";

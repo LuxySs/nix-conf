@@ -24,7 +24,7 @@
           };
 
           home = {
-            size = "300G";
+            size = "250G";
             content = {
               type = "filesystem";
               format = "ext4";
