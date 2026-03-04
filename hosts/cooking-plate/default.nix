@@ -20,10 +20,10 @@
 
   networking.hostName = "cooking-plate";
 
-  # TODO: switch cooking-plate and diswasher to either grub or systemd-boot
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
   };
 
   settings = {
