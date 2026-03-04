@@ -2,7 +2,7 @@
   disko.devices = {
     disk.main = {
       type = "disk";
-      device = "/dev/disk/by-id/XXXXXXXXXXXXXXXXXXXXXXXXXXXXx";
+      device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL4512HBLU-00BL7_S67VNF1T902648";
       content = {
         type = "gpt";
         partitions = {
@@ -24,7 +24,7 @@
           };
 
           home = {
-            size = "300G";
+            size = "250G";
             content = {
               type = "filesystem";
               format = "ext4";
