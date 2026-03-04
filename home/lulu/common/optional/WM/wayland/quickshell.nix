@@ -17,7 +17,7 @@ in
 
     programs.quickshell = {
       enable = true;
-      package = inputs.quickshell.packages.${pkgs.system}.default.withModules [
+      package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.withModules [
         pkgs.kdePackages.qtsvg
         pkgs.kdePackages.qtimageformats
         pkgs.kdePackages.qtmultimedia
