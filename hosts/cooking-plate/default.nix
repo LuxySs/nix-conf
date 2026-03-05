@@ -31,7 +31,7 @@
     fish.enable = true;
     gnome.enable = true;
     hyprland.enable = true;
-    sddm.enable = true;
+    gdm.enable = true;
     virtualization.enable = true;
     docker.enable = true;
   };

@@ -35,7 +35,7 @@
       enable = true;
       release = "stable";
     };
-    sddm.enable = true;
+    gdm.enable = true;
     docker.enable = true;
   };
 
