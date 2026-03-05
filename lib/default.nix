@@ -21,6 +21,4 @@ rec {
       type = types.enum choices;
       inherit default description;
     };
-
-  ifAnyTrue = boolList: builtins.foldl' (acc: val: acc || val) false boolList;
 }
