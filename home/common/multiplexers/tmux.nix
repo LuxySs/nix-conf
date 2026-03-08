@@ -53,7 +53,7 @@ in
       ]
 
       [[search_dirs]]
-      path = "/home/lulu/nix-conf"
+      path = "/home/lulu/.config/nix-conf"
       depth = 10
 
       [[search_dirs]]
