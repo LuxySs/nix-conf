@@ -293,8 +293,6 @@ in
         mousebind=SUPER,btn_left,moveresize,curmove
         # mousebind=NONE,btn_middle,togglemaximizescreen,0
         mousebind=SUPER,btn_right,moveresize,curresize
-        mousebind=NONE,btn_left,toggleoverview,1
-        mousebind=NONE,btn_right,killclient,0
 
         # Axis Bindings
         axisbind=SUPER,UP,viewtoleft_have_client
@@ -303,7 +301,7 @@ in
         # Audio
         bindl=ALT,UP,                   spawn,${volumeUpCmd}
         bindl=ALT,DOWN,                 spawn,${volumeDownCmd}
-        bindl=NONE,XF86AudioRaiseVolume,spwan,${volumeUpCmd}
+        bindl=NONE,XF86AudioRaiseVolume,spawn,${volumeUpCmd}
         bindl=NONE,XF86AudioLowerVolume,spawn,${volumeDownCmd}
         bindl=NONE,XF86AudioMute,       spawn,wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
         bindl=NONE,XF86AudioMicMute,    spawn,wpctl set-mute   @DEFAULT_AUDIO_SOURCE@ toggle
