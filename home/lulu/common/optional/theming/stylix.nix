@@ -50,7 +50,7 @@ in
 
       fonts = {
         monospace = {
-          package = pkgs.ioskeley-mono-nerd;
+          package = pkgs.nerd-fonts.ioskeley-mono;
           name = "IoskeleyMono Nerd Font";
         };
         sansSerif = {
