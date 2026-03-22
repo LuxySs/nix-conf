@@ -26,6 +26,8 @@
     efiInstallAsRemovable = true;
   };
 
+  nix.gc.dates = "weekly";
+
   settings = {
     nh.flakePath = "/home/lulu/.config/nix-conf";
     fish.enable = true;
