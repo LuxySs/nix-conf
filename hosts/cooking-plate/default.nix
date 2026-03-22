@@ -35,6 +35,7 @@
     mangowc.enable = true;
     virtualization.enable = true;
     docker.enable = true;
+    printing.enable = true;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,

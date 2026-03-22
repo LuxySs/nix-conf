@@ -15,6 +15,7 @@
     ./network-manager.nix
     ./nh.nix
     ./nvidia.nix
+    ./printing.nix
     ./sddm.nix
     ./services
     ./useful-programs.nix
