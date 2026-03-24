@@ -24,6 +24,7 @@
     enable = true;
     efiSupport = true;
     efiInstallAsRemovable = true;
+    configurationLimit = 5;
   };
 
   nix.gc.dates = "weekly";
