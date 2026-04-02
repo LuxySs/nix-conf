@@ -19,7 +19,7 @@ in
     ./playerctl.nix
     ./quickshell.nix
     ./screenshots.nix
-    ./swww.nix
+    ./awww.nix
     ./waybar.nix
     ./wlogout
   ];
@@ -34,7 +34,7 @@ in
         playerctl.enable = lib.mkDefault true;
         quickshell.enable = lib.mkDefault true;
         screenshots.enable = lib.mkDefault true;
-        swww.enable = lib.mkDefault true;
+        awww.enable = lib.mkDefault true;
         waybar.enable = lib.mkDefault false;
         wlogout.enable = lib.mkDefault true;
       };

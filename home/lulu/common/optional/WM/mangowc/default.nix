@@ -311,7 +311,7 @@ in
         bindl=NONE,XF86MonBrightnessDown,spawn,brightnessctl -e4 -n2 set 5%-
 
         exec-once=quickshell
-        exec-once=swww-daemon
+        exec-once=awww-daemon
       '';
 
       autostart_sh = ''
