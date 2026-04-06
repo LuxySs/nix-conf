@@ -20,6 +20,28 @@ let
 
   volumeUpCmd = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1";
   volumeDownCmd = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+
+  stylixEnabled = config.settings.stylix.enable; # check if stylix is enabled
+  colors = # get the stylix colors if stylix is enabled else some other colors
+    if stylixEnabled then
+      config.lib.stylix.colors
+    else
+      {
+        base00 = "#282c34";
+        base01 = "#3a3f58";
+        base02 = "#4e5266";
+        base03 = "#5a5f7a";
+        base04 = "#6c71c4";
+        base05 = "#93a1a1";
+        base0A = "#268bd2";
+        base0B = "#2aa198";
+        base0C = "#b58900";
+        base0D = "#6c71c4";
+        base0E = "#d33682";
+        base08 = "#dc322f";
+      };
+
+  mkColor = color: "0x${color}ff";
 in
 {
   imports = [ inputs.mango.hmModules.mango ];
@@ -154,7 +176,7 @@ in
         borderpx=2
         rootcolor=0x201b14ff
         bordercolor=0x444444ff
-        focuscolor=0x7e98e8ff
+        focuscolor=${mkColor colors.base0D}
         maximizescreencolor=0x89aa61ff
         urgentcolor=0xad401fff
         scratchpadcolor=0x516c93ff

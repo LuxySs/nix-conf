@@ -15,13 +15,7 @@
 
     stylix = {
       enable = true;
-
-      colorScheme = {
-        name = "vague";
-        package = pkgs.vague;
-      };
-
-      wallpaper = ./../../../wallpapers/nix_vague1.png;
+      wallpaper = ./../../../wallpapers/pacman-ghosts.png;
     };
 
     gcc.enable = true;
