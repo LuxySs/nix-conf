@@ -53,9 +53,9 @@ in
           + "$nix_shell"
           + "[](${mkFg base01})"
           + "\n"
-          + "[ ❯](${mkFg base0C})"
-          + "[❯](${mkFg base0E})"
-          + "[❯ ](${mkFg base09})";
+          + "[ ❯](${mkFg base09})"
+          + "[❯](${mkFg base0A})"
+          + "[❯ ](${mkFg base0B})";
 
         os = {
           disabled = false;
