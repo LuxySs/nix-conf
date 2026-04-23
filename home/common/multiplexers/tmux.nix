@@ -57,7 +57,7 @@ in
       depth = 10
 
       [[search_dirs]]
-      path = "/home/lulu/.config/nixcats-conf"
+      path = "/home/lulu/.config/nvim"
       depth = 10
 
       [[search_dirs]]

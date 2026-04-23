@@ -5,7 +5,7 @@
 
     ###### User-Specific ######
 
-    nixCats.enable = true;
+    nvim.enable = true;
     bash.enable = true;
     fish.enable = true;
     stylix.enable = true;

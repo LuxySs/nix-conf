@@ -42,7 +42,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    myNixCats.url = "github:LuxySs/nixcats-conf";
+    myNvim.url = "github:LuxySs/nvim";
   };
 
   outputs =

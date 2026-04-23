@@ -3,6 +3,6 @@
 {
   imports = [
     ./emacs.nix
-    ./nixcats.nix
+    ./nvim.nix
   ];
 }

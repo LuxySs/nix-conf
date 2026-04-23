@@ -8,7 +8,7 @@
     wm.hyprland.enable = true;
     wm.mangowc.enable = true;
     firefox.enable = true;
-    nixCats.enable = true;
+    nvim.enable = true;
     bash.enable = true;
     fish.enable = true;
     foot.enable = true;
