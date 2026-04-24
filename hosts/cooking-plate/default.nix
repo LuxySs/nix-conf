@@ -33,9 +33,8 @@
     nh.flakePath = "/home/lulu/.config/nix-conf";
     fish.enable = true;
     gnome.enable = true;
-    hyprland.enable = true;
     gdm.enable = true;
-    mangowc.enable = true;
+    mangowm.enable = true;
     virtualization.enable = true;
     docker.enable = true;
     printing.enable = true;

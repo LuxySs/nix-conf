@@ -33,8 +33,7 @@
     nh.flakePath = "/home/lulu/.config/nix-conf";
     fish.enable = true;
     gnome.enable = true;
-    hyprland.enable = true;
-    mangowc.enable = true;
+    mangowm.enable = true;
     nvidia = {
       enable = true;
       release = "stable";

@@ -6,6 +6,7 @@ let
   compositorEnabled = lib.any (x: x) [
     wm.sway.enable
     wm.hyprland.enable
+    wm.mangowm.enable
   ];
 
   hyprlandEnabled = wm.hyprland.enable;

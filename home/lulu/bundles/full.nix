@@ -1,12 +1,11 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   settings = {
 
     ###### User-Specific ######
 
-    wm.hyprland.enable = true;
-    wm.mangowc.enable = true;
+    wm.mangowm.enable = true;
     firefox.enable = true;
     nvim.enable = true;
     bash.enable = true;

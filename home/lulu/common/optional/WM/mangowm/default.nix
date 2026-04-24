@@ -7,7 +7,7 @@
 }:
 
 let
-  cfg = config.settings.wm.mangowc;
+  cfg = config.settings.wm.mangowm;
 
   monitorLines = lib.concatStringsSep "\n" (
     map (
@@ -51,9 +51,16 @@ in
 {
   imports = [ inputs.mango.hmModules.mango ];
 
-  options.settings.wm.mangowc.enable = lib.mkEnableOption "Mangowc wm";
+  options.settings.wm.mangowm.enable = lib.mkEnableOption "mango wm";
 
   config = lib.mkIf (cfg.enable) {
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = null;
+      portalPackage = null;
+      systemd.enable = false;
+    };
+
     wayland.windowManager.mango = {
       enable = true;
 

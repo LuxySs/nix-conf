@@ -6,13 +6,13 @@
 }:
 
 let
-  cfg = config.settings.mangowc;
+  cfg = config.settings.mangowm;
 in
 {
   imports = [ inputs.mango.nixosModules.mango ];
 
-  options.settings.mangowc = {
-    enable = lib.mkEnableOption "mangowc WM";
+  options.settings.mangowm = {
+    enable = lib.mkEnableOption "mango WM";
   };
 
   config = lib.mkIf (cfg.enable) {
